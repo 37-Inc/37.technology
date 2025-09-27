@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #fdfbf7;
+  --color-surface: #ffffff;
+  --color-ink: #211f1a;
+  --color-muted: #6c6860;
+  --color-accent: #d1b59a;
+  --color-hairline: rgba(33, 31, 26, 0.12);
+  --space-unit: 8px;
+  --radius-card: 16px;
+  --transition-snappy: 160ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --color-hairline: var(--color-hairline);
+  --spacing-6: calc(var(--space-unit) * 6);
+  --spacing-10: calc(var(--space-unit) * 10);
+  --radius-card: var(--radius-card);
+  --shadow-soft: 0 18px 36px rgba(24, 23, 19, 0.08);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont;
+  text-rendering: optimizeLegibility;
+}
+
+main {
+  scroll-margin-top: 120px;
+}
+
+.font-serif {
+  font-family: var(--font-serif), "Times New Roman", serif;
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.bg-background {
+  background-color: var(--color-background);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.text-ink {
+  color: var(--color-ink);
+}
+
+.text-surface {
+  color: var(--color-surface);
+}
+
+.bg-ink {
+  background-color: var(--color-ink);
+}
+
+.border-hairline {
+  border-color: var(--color-hairline);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.bg-accent\/10 {
+  background-color: color-mix(in oklab, var(--color-accent) 12%, white 88%);
+}
+
+.bg-accent\/60 {
+  background-color: color-mix(in oklab, var(--color-accent) 60%, white 40%);
+}
+
+.border-accent\/40 {
+  border-color: color-mix(in oklab, var(--color-accent) 40%, white 60%);
+}
+
+.focus-outline {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.skip-link {
+  transform: translateY(-200%);
+  transition: transform var(--transition-snappy);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+.prose {
+  line-height: 1.7;
+  letter-spacing: -0.005em;
+}
+
+.prose h2,
+.prose h3 {
+  margin-top: 2.5rem;
+  font-family: var(--font-serif), serif;
+  color: var(--color-ink);
+}
+
+.prose p,
+.prose ul,
+.prose li {
+  color: var(--color-ink);
+}
+
+.prose a {
+  color: var(--color-ink);
+  text-underline-offset: 4px;
+}
+
+.prose ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  header nav ul {
+    gap: 1.5rem;
+  }
+}
