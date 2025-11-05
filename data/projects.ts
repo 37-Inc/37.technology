@@ -155,6 +155,29 @@ export const projects: Project[] = [
       "https://erepsonline.com/bundles/erepsuser/images/imac-images.png",
     ],
   },
+  {
+    slug: "goose-gifts",
+    name: "Goose Gifts",
+    oneLiner: "AI-powered gift discovery that turns any description into thoughtful bundles.",
+    description:
+      "An intelligent gift curation platform that helps users find humorous and thoughtful presents by describing the recipient. The AI curates gift concepts paired with real products from trending items to community bundles—ready to purchase or share.",
+    tags: ["Web", "AI", "E-commerce"],
+    featured: true,
+    hero: "/assets/projects/goose-gifts.png",
+    highlights: [
+      "Describe recipient interests and AI generates personalized gift bundles",
+      "Browse trending products and community-curated collections",
+      "Seamless purchase flow with Amazon integration",
+    ],
+    platforms: [
+      {
+        label: "Website",
+        url: "https://goose.gifts/",
+        kind: "website",
+      },
+    ],
+    screenshots: [],
+  },
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined =>
