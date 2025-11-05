@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PlatformButtons } from "@/components/PlatformButtons";
 import { projects, getProjectBySlug } from "@/data/projects";
@@ -73,11 +72,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <header className="space-y-6">
         <div className="flex flex-wrap items-center gap-6">
           <div className="relative h-20 w-20 overflow-hidden rounded-3xl border border-hairline bg-background">
-            <Image
+            <img
               src={project.hero}
               alt={`${project.name} icon`}
-              width={160}
-              height={160}
               className="h-full w-full object-cover"
             />
           </div>
@@ -131,27 +128,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     key={src}
                     className="overflow-hidden rounded-2xl border border-hairline bg-background"
                   >
-                    <Image
+                    <img
                       src={src}
                       alt={`${project.name} screenshot ${index + 1}`}
-                      width={1200}
-                      height={800}
+                      loading="lazy"
                       className="h-auto w-full object-cover"
                     />
                   </div>
                 ))}
               </div>
             </div>
-          ) : (
-            <div className="rounded-3xl border border-dashed border-hairline bg-surface/40 p-8 text-muted">
-              <p className="text-sm uppercase tracking-[0.3em]">Snapshots</p>
-              <p className="mt-4 leading-relaxed">
-                Drop your latest screenshots here. Replace the placeholder assets in
-                <code className="mx-1 rounded bg-background px-2 py-1 text-xs">/public/assets</code>
-                to showcase current visuals.
-              </p>
-            </div>
-          )}
+          ) : null}
         </section>
       ) : null}
     </article>

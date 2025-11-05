@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
@@ -22,12 +21,10 @@ export function ProjectCard({ project, priority }: ProjectCardProps) {
       >
         <div className="flex items-start gap-4">
           <div className="relative h-12 w-12 flex-none overflow-hidden rounded-2xl border border-hairline bg-background">
-            <Image
+            <img
               src={project.hero}
               alt={`${project.name} icon`}
-              width={96}
-              height={96}
-              priority={priority}
+              loading={priority ? "eager" : "lazy"}
               className="h-full w-full object-cover"
             />
           </div>
