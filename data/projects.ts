@@ -28,17 +28,17 @@ export const projects: Project[] = [
     slug: "reshoot",
     name: "ReShoot",
     oneLiner:
-      "Reframe videos with phone motion — turn landscape footage into portrait content instantly.",
+      "The only app that lets you reframe video using your phone's motion.",
     description:
-      "ReShoot maps your phone's gyroscope motion and pinch gestures to a virtual crop window over existing video. Move your phone to pan and tilt, pinch to zoom, and export a new video with the motion path baked in. Works with video and still images.",
+      "ReShoot transforms landscape videos into portrait content for TikTok, Instagram Reels, and YouTube Shorts. Hold your phone and move to create dynamic crop paths, or use touch gestures for precise control. Export in any aspect ratio at up to 4K with voiceover recording and motion path export for After Effects.",
     tags: ["iOS", "Video", "Creativity"],
     featured: true,
     hero: "/assets/projects/reshoot.png",
     highlights: [
       "Gyroscope-based reframing — physically move your phone to control the crop",
       "Export to 9:16, 16:9, 1:1, 4:5 at up to 4K with source frame rate preserved",
+      "Record voiceover narration while reframing",
       "Motion path export to JSON, CSV, FCPXML, or After Effects .jsx",
-      "HDR detection with GPU tone mapping for iPhone ProRes footage",
     ],
     platforms: [],
     screenshots: [],
