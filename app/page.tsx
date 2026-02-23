@@ -36,13 +36,13 @@ export default function HomePage() {
         </div>
         <div className="rounded-3xl border border-hairline bg-surface/60 p-8 shadow-md">
           <p className="text-sm uppercase tracking-[0.3em] text-muted">
-            Expertise
+            What we do
           </p>
           <ul className="mt-4 grid gap-3 text-base text-ink">
-            <li>Product strategy &amp; brand positioning</li>
-            <li>iOS &amp; Android native experiences</li>
-            <li>AI-assisted creative workflows</li>
-            <li>Enterprise-grade infrastructure</li>
+            <li>Figure out product and positioning without deck theater</li>
+            <li>Build iOS and Android apps people do not rage-delete</li>
+            <li>Use AI where it helps and skip it where it does not</li>
+            <li>Set up backend and ops so launches are boring (the good kind)</li>
           </ul>
         </div>
       </section>
