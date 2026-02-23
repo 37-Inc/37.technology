@@ -34,8 +34,8 @@ export default function TermsPage() {
       </p>
       <p>
         Contact: Questions about these terms? Email
-        <a className="ml-1" href="mailto:legal@37.technology">
-          legal@37.technology
+        <a className="ml-1" href="mailto:info@37.technology">
+          info@37.technology
         </a>
         .
       </p>

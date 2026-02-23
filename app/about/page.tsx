@@ -31,8 +31,8 @@ export default function AboutPage() {
       </p>
       <p>
         Need a collaborator for your next release? Reach out at
-        <a className="ml-1" href="mailto:hello@37.technology">
-          hello@37.technology
+        <a className="ml-1" href="mailto:info@37.technology">
+          info@37.technology
         </a>
         .
       </p>

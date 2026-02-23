@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const contactEmail = "hello@37.technology";
+const contactEmail = "info@37.technology";
 
 export function Footer() {
   const year = new Date().getFullYear();

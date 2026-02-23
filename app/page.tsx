@@ -27,7 +27,7 @@ export default function HomePage() {
               About Thirty Seven, Inc.
             </Link>
             <a
-              href="mailto:hello@37.technology"
+              href="mailto:info@37.technology"
               className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-surface transition duration-150 ease-out hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d1b59a]"
             >
               Start a conversation

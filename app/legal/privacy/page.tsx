@@ -79,8 +79,8 @@ export default function PrivacyPage() {
       <p>
         You can request access to, correction of, or deletion of personal
         information you have shared with us by contacting
-        <a className="ml-1" href="mailto:privacy@37.technology">
-          privacy@37.technology
+        <a className="ml-1" href="mailto:info@37.technology">
+          info@37.technology
         </a>
         .
       </p>
@@ -100,8 +100,8 @@ export default function PrivacyPage() {
       <h2>Contact</h2>
       <p>
         Questions about this policy can be sent to
-        <a className="ml-1" href="mailto:privacy@37.technology">
-          privacy@37.technology
+        <a className="ml-1" href="mailto:info@37.technology">
+          info@37.technology
         </a>
         .
       </p>
