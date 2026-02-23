@@ -16,10 +16,8 @@ export default function HomePage() {
             Intentional products for mobile-first audiences.
           </h1>
           <p className="max-w-xl text-lg text-muted">
-            We build confident, considered experiences that feel effortless—
-            from rapid-fire creative tools to enterprise-ready operations
-            stacks. Explore the portfolio and discover how Thirty Seven, Inc.
-            delivers clarity across every platform.
+            We build apps people actually use, from creative tools to
+            enterprise plumbing. No buzzwords, just good software.
           </p>
           <div className="flex gap-4 text-sm font-medium">
             <Link

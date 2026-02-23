@@ -205,6 +205,9 @@ export const getProjectBySlug = (slug: string): Project | undefined =>
 export const orderedProjects = projects
   .slice()
   .sort((a, b) => {
+    if (a.slug === "goose-gifts" && b.slug !== "goose-gifts") return 1;
+    if (b.slug === "goose-gifts" && a.slug !== "goose-gifts") return -1;
+
     if (a.featured && !b.featured) return -1;
     if (!a.featured && b.featured) return 1;
     return a.name.localeCompare(b.name);
