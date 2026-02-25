@@ -16,6 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
     },
     {
+      url: `${baseUrl}/news`,
+      lastModified: now,
+    },
+    {
       url: `${baseUrl}/legal/privacy`,
       lastModified: now,
     },

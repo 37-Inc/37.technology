@@ -40,7 +40,13 @@ export const projects: Project[] = [
       "Record voiceover narration while reframing",
       "Motion path export to JSON, CSV, FCPXML, or After Effects .jsx",
     ],
-    platforms: [],
+    platforms: [
+      {
+        label: "App Store",
+        url: "https://apps.apple.com/us/app/reshoot-video-reframe-crop/id6753581365",
+        kind: "app-store",
+      },
+    ],
     screenshots: [],
   },
   {
