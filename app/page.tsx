@@ -82,9 +82,7 @@ export default function HomePage() {
                 </h3>
                 <p className="mt-3 text-sm text-muted">{release.summary}</p>
                 <Link
-                  href={release.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`/news/${release.slug}`}
                   className="mt-5 inline-flex items-center rounded-full border border-hairline bg-surface px-4 py-2 text-sm font-medium text-ink transition duration-150 ease-out hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d1b59a]"
                 >
                   Read release

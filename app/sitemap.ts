@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { pressReleases } from "@/data/press-releases";
 import { projects } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 
@@ -19,6 +20,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/news`,
       lastModified: now,
     },
+    ...pressReleases.map((release) => ({
+      url: `${baseUrl}/news/${release.slug}`,
+      lastModified: now,
+    })),
     {
       url: `${baseUrl}/legal/privacy`,
       lastModified: now,

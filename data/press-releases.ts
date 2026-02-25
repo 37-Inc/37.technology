@@ -3,7 +3,6 @@ export interface PressRelease {
   title: string;
   summary: string;
   publishedLabel: string;
-  href: string;
 }
 
 export const pressReleases: PressRelease[] = [
@@ -13,15 +12,15 @@ export const pressReleases: PressRelease[] = [
     summary:
       "New iOS app turns landscape footage into polished portrait content without desktop re-editing.",
     publishedLabel: "February 2026",
-    href: "/press-releases/reshoot-launch.md",
   },
   {
     slug: "stitch-it-2026",
-    title:
-      "Stitch It! Remains the Go-To Screenshot Stitching App With Millions of Downloads",
+    title: "Stitch It! 2026 Product Update",
     summary:
-      "The original screenshot combiner continues evolving with cross-platform support and privacy-focused editing tools.",
+      "Updated release with accurate stitching workflow, horizontal support, and correct platform links.",
     publishedLabel: "February 2026",
-    href: "/press-releases/stitch-it-2026.md",
   },
 ];
+
+export const getPressReleaseBySlug = (slug: string): PressRelease | undefined =>
+  pressReleases.find((release) => release.slug === slug);

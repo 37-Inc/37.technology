@@ -59,7 +59,7 @@ export const projects: Project[] = [
     featured: true,
     hero: "/assets/projects/stitch-it.jpg",
     highlights: [
-      "Vertical and horizontal stitching with automatic overlap detection",
+      "Vertical and horizontal stitching with precise manual control",
       "Redact private details before sharing to any app",
       "Export high-resolution PNG, JPG, or PDF with watermark-free Pro tier",
     ],

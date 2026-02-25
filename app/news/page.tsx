@@ -38,9 +38,7 @@ export default function NewsPage() {
               </h2>
               <p className="mt-3 max-w-3xl text-base text-muted">{release.summary}</p>
               <Link
-                href={release.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/news/${release.slug}`}
                 className="mt-5 inline-flex items-center gap-2 rounded-full border border-hairline bg-surface px-4 py-2 text-sm font-medium text-ink transition duration-150 ease-out hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d1b59a]"
               >
                 Read release
@@ -53,10 +51,10 @@ export default function NewsPage() {
       <p className="text-sm text-muted">
         Need press materials or interviews?{" "}
         <a
-          href="mailto:press@37.technology"
+          href="mailto:info@37.technology"
           className="font-medium text-ink underline decoration-accent/60 underline-offset-4"
         >
-          Contact press@37.technology
+          Contact info@37.technology
         </a>
       </p>
     </div>
