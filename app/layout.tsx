@@ -50,6 +50,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    other: {
+      "facebook-domain-verification": "xekoqtndf94hxrzinxltwyk89xbx7z",
+    },
+  },
 };
 
 export const viewport: Viewport = {
