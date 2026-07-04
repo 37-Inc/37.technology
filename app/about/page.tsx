@@ -4,7 +4,7 @@ import { Prose } from "@/components/Prose";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Thirty Seven, Inc. crafts mobile-first products with meticulous strategy, design, and engineering.",
+    "Thirty Seven, Inc. is a small, senior product studio that ships its own iOS apps and takes on select client work across iOS, Android, web, and backend.",
   alternates: {
     canonical: "/about",
   },
@@ -14,23 +14,27 @@ export default function AboutPage() {
   return (
     <Prose
       title="About Thirty Seven, Inc."
-      intro="We build products that feel timeless the first time you open them."
+      intro="A small, senior studio. We ship our own apps and build for a few clients at a time."
     >
       <p>
-        Thirty Seven, Inc. is a boutique product studio at the intersection of
-        design, engineering, and brand narrative. We partner with founders and
-        established teams to deliver experiences that are instantly understood,
-        undeniably polished, and ready to scale.
+        Thirty Seven, Inc. is an independent product studio. We design, build,
+        and run our own consumer apps — the ones on our homepage — and we take
+        on select consulting work for teams that need software shipped.
       </p>
       <p>
-        From category-defining consumer apps to enterprise-grade infrastructure,
-        we thrive on clarity: crisp information architecture, soulful
-        typography, and rapid performance throughout the stack. Every launch is
-        underpinned by research, accessibility, and a measurable growth
-        strategy.
+        iOS is the deep specialty: native Swift, from first prototype through
+        the App Store and everything after. Around it sits a full-stack range —
+        Android, web, backend and infrastructure, and AI features where they
+        actually earn their place.
       </p>
       <p>
-        Need a collaborator for your next release? Reach out at
+        We work as a small team with direct communication. No account managers,
+        no deck theater; the people you talk to are the people writing the
+        code. Because we ship our own products, we build like owners: pragmatic
+        scope, boring launches, software that keeps working.
+      </p>
+      <p>
+        Have an app to build, or a team that needs senior hands? Write to
         <a className="ml-1" href="mailto:info@37.technology">
           info@37.technology
         </a>

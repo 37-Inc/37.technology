@@ -26,6 +26,16 @@ export const metadata: Metadata = {
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  keywords: [
+    "iOS app development",
+    "iOS consultant",
+    "iOS app studio",
+    "app studio",
+    "mobile app development",
+    "Android app development",
+    "backend development",
+    "AI integration",
+  ],
   applicationName: siteConfig.name,
   openGraph: {
     type: "website",
