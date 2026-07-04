@@ -1,6 +1,21 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import { notFound } from "next/navigation";
-import { PlatformButtons } from "@/components/PlatformButtons";
+import { Breadcrumbs } from "@/components/landing/Breadcrumbs";
+import { ComparisonTable } from "@/components/landing/ComparisonTable";
+import { FaqList } from "@/components/landing/FaqList";
+import { FeatureGrid } from "@/components/landing/FeatureGrid";
+import { FinalCta } from "@/components/landing/FinalCta";
+import { JsonLd } from "@/components/landing/JsonLd";
+import { LandingHero } from "@/components/landing/LandingHero";
+import { ProblemSolution } from "@/components/landing/ProblemSolution";
+import { ScreenshotStrip } from "@/components/landing/ScreenshotStrip";
+import { UseCaseList } from "@/components/landing/UseCaseList";
+import {
+  buildBreadcrumbLd,
+  buildFaqLd,
+  buildSoftwareApplicationLd,
+} from "@/components/landing/structured-data";
 import { projects, getProjectBySlug } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 
@@ -25,14 +40,17 @@ export async function generateMetadata({
     return {};
   }
 
-  const title = `${project.name}`;
-  const description = project.oneLiner;
+  const title = project.seo.title;
+  const description = project.seo.description;
   const canonical = `${siteConfig.url}/${project.slug}`;
   const ogUrl = `${siteConfig.url}/api/og?slug=${project.slug}`;
 
   return {
-    title,
+    // absolute: the hand-tuned SEO title is already complete; the root
+    // layout's "%s · Thirty Seven, Inc." template would push it past ~60 chars
+    title: { absolute: title },
     description,
+    keywords: project.keywords,
     alternates: {
       canonical,
     },
@@ -67,80 +85,30 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
+  const themeVars = {
+    "--pa": project.theme.accent,
+    "--pa-soft": project.theme.accentSoft,
+    "--pa-ink": project.theme.accentInk,
+  } as CSSProperties;
+
   return (
-    <article className="space-y-12">
-      <header className="space-y-6">
-        <div className="flex flex-wrap items-center gap-6">
-          <div className="relative h-20 w-20 overflow-hidden rounded-3xl border border-hairline bg-background">
-            <img
-              src={project.hero}
-              alt={`${project.name} icon`}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div className="space-y-3">
-            <p className="text-sm uppercase tracking-[0.3em] text-muted">
-              Thirty Seven, Inc.
-            </p>
-            <h1 className="font-serif text-5xl tracking-tight text-ink">
-              {project.name}
-            </h1>
-          </div>
-        </div>
-        <p className="max-w-2xl text-lg text-muted">{project.description}</p>
-        <ul className="flex flex-wrap gap-3">
-          {project.tags.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-full border border-hairline bg-surface/80 px-3 py-1 text-xs font-medium uppercase tracking-wide text-muted"
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
-        <PlatformButtons platforms={project.platforms} />
-      </header>
-      {project.highlights?.length || project.screenshots?.length ? (
-        <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-          {project.highlights?.length ? (
-            <div className="rounded-3xl border border-hairline bg-surface/80 p-8 shadow-sm">
-              <h2 className="font-serif text-2xl tracking-tight text-ink">
-                Why it matters
-              </h2>
-              <ul className="mt-4 space-y-3 text-base text-ink">
-                {project.highlights.map((highlight) => (
-                  <li key={highlight} className="flex items-start gap-3">
-                    <span className="mt-1 inline-block h-1.5 w-8 rounded-full bg-accent/60" aria-hidden />
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-          {project.screenshots?.length ? (
-            <div className="rounded-3xl border border-hairline bg-surface/60 p-6 shadow-sm">
-              <p className="mb-4 text-sm uppercase tracking-[0.3em] text-muted">
-                In product
-              </p>
-              <div className="grid gap-4">
-                {project.screenshots.map((src, index) => (
-                  <div
-                    key={src}
-                    className="overflow-hidden rounded-2xl border border-hairline bg-background"
-                  >
-                    <img
-                      src={src}
-                      alt={`${project.name} screenshot ${index + 1}`}
-                      loading="lazy"
-                      className="h-auto w-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : null}
-        </section>
-      ) : null}
+    <article style={themeVars} className="space-y-16">
+      <JsonLd data={buildSoftwareApplicationLd(project)} />
+      <JsonLd data={buildBreadcrumbLd(project)} />
+      {project.faqs.length > 0 ? <JsonLd data={buildFaqLd(project.faqs)} /> : null}
+
+      <div className="space-y-8">
+        <Breadcrumbs current={project.name} />
+        <LandingHero project={project} />
+      </div>
+
+      <ProblemSolution problem={project.problem} solution={project.solution} />
+      <FeatureGrid features={project.features} />
+      <ScreenshotStrip name={project.name} screenshots={project.screenshots} />
+      <UseCaseList useCases={project.useCases} />
+      <ComparisonTable name={project.name} comparison={project.comparison} />
+      <FaqList faqs={project.faqs} />
+      <FinalCta project={project} />
     </article>
   );
 }
