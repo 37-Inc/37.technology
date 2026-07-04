@@ -123,6 +123,7 @@ export const ereps: Project = {
     description:
       "Build evidence-based rehab exercise programs in minutes, send them to patients, and track outcomes. Cloud-based, from $20/month with a 14-day free trial.",
   },
+  applicationCategory: "HealthApplication",
   theme: {
     accent: "#1b8fce",
     accentSoft: "#e9f4fb",
@@ -132,15 +133,21 @@ export const ereps: Project = {
   hero: "/assets/projects/ereps.png",
   screenshots: [
     {
-      src: "/assets/projects/ereps/screenshot-1.png",
+      src: "/assets/projects/ereps/screenshot-1.webp",
+      width: 402,
+      height: 242,
       alt: "Ereps exercise prescription dashboard on a desktop computer, with search filters and patient programs",
     },
     {
-      src: "/assets/projects/ereps/screenshot-2.png",
+      src: "/assets/projects/ereps/screenshot-2.webp",
+      width: 402,
+      height: 242,
       alt: "Adding a rehabilitation program in Ereps on a tablet, with treatment goals and criteria to progress",
     },
     {
-      src: "/assets/projects/ereps/screenshot-3.png",
+      src: "/assets/projects/ereps/screenshot-3.webp",
+      width: 402,
+      height: 242,
       alt: "A rehab program in Ereps on a tablet showing an exercise demonstration photo and progression criteria",
     },
   ],
@@ -151,7 +158,7 @@ export const ereps: Project = {
       kind: "website",
     },
   ],
-  price: "14-day free trial, then from $20/month",
+  offer: { price: "20", description: "From $20/month after a 14-day free trial" },
   operatingSystem: "Web",
   cta: {
     heading: "Retire the photocopied exercise sheet",

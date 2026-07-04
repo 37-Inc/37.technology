@@ -46,6 +46,9 @@ export interface ProjectTheme {
 export interface Screenshot {
   src: string;
   alt: string;
+  /** Intrinsic pixel dimensions so the browser reserves layout space */
+  width: number;
+  height: number;
 }
 
 export interface Project {
@@ -70,6 +73,8 @@ export interface Project {
   /** Search phrases this page should rank for */
   keywords: string[];
   seo: { title: string; description: string };
+  /** schema.org applicationCategory value, e.g. "UtilitiesApplication" */
+  applicationCategory: string;
   theme: ProjectTheme;
   tags: string[];
   featured?: boolean;
@@ -77,10 +82,9 @@ export interface Project {
   hero: string;
   screenshots?: Screenshot[];
   platforms: PlatformLink[];
-  appStoreId?: string;
-  /** e.g. "Free", "Free + Pro subscription" — used in JSON-LD offers */
-  price?: string;
+  /** Machine-readable JSON-LD offer; price is "0" for free products */
+  offer?: { price: string; description?: string };
   /** e.g. "iOS", "iOS, Android", "Web" — used in JSON-LD */
   operatingSystem?: string;
-  cta?: { heading: string; body: string };
+  cta: { heading: string; body: string };
 }

@@ -40,15 +40,17 @@ export async function generateMetadata({
     return {};
   }
 
-  const title = project.seo.title || project.name;
-  const description = project.seo.description || project.oneLiner;
+  const title = project.seo.title;
+  const description = project.seo.description;
   const canonical = `${siteConfig.url}/${project.slug}`;
   const ogUrl = `${siteConfig.url}/api/og?slug=${project.slug}`;
 
   return {
-    title,
+    // absolute: the hand-tuned SEO title is already complete; the root
+    // layout's "%s · Thirty Seven, Inc." template would push it past ~60 chars
+    title: { absolute: title },
     description,
-    keywords: project.keywords.length > 0 ? project.keywords : undefined,
+    keywords: project.keywords,
     alternates: {
       canonical,
     },

@@ -115,6 +115,7 @@ export const gooseGifts: Project = {
     description:
       "You know the person, not the gift. Goose Gifts is a curated catalog of funny, weird, real products — gift guides and search for hard-to-shop-for people.",
   },
+  applicationCategory: "ShoppingApplication",
   theme: {
     accent: "#e0861a",
     accentSoft: "#fbf1e0",
@@ -130,7 +131,7 @@ export const gooseGifts: Project = {
       kind: "website",
     },
   ],
-  price: "Free",
+  offer: { price: "0" },
   operatingSystem: "Web",
   cta: {
     heading: "Skip the gift card this year",

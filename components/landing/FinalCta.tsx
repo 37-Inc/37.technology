@@ -7,8 +7,7 @@ interface FinalCtaProps {
 }
 
 export function FinalCta({ project }: FinalCtaProps) {
-  const heading = project.cta?.heading ?? `Get ${project.name}`;
-  const body = project.cta?.body;
+  const { heading, body } = project.cta;
 
   return (
     <section
@@ -21,9 +20,7 @@ export function FinalCta({ project }: FinalCtaProps) {
       >
         {heading}
       </h2>
-      {body ? (
-        <p className="mx-auto mt-4 max-w-xl text-base text-muted">{body}</p>
-      ) : null}
+      <p className="mx-auto mt-4 max-w-xl text-base text-muted">{body}</p>
       {project.platforms.length > 0 ? (
         <div className="mt-8 flex justify-center">
           <PlatformButtons platforms={project.platforms} />

@@ -135,6 +135,7 @@ export const colorcub: Project = {
     description:
       "Kids want to color exactly what they imagine. ColorCub turns a typed or spoken idea into a printable coloring page — no ads, no tracking, free on iOS.",
   },
+  applicationCategory: "EntertainmentApplication",
   theme: {
     accent: "#db5a74",
     accentSoft: "#fbeef0",
@@ -145,19 +146,27 @@ export const colorcub: Project = {
   hero: "/assets/projects/colorcub.jpg",
   screenshots: [
     {
-      src: "/assets/projects/colorcub/screenshot-1.png",
+      src: "/assets/projects/colorcub/screenshot-1.webp",
+      width: 442,
+      height: 960,
       alt: "ColorCub app printing and sharing a finished flower coloring page from an iPhone",
     },
     {
-      src: "/assets/projects/colorcub/screenshot-2.png",
+      src: "/assets/projects/colorcub/screenshot-2.webp",
+      width: 600,
+      height: 800,
       alt: "ColorCub turning ideas into coloring pages with AI — pizza astronaut and dragon line-art pages",
     },
     {
-      src: "/assets/projects/colorcub/screenshot-3.png",
+      src: "/assets/projects/colorcub/screenshot-3.webp",
+      width: 600,
+      height: 800,
       alt: "Coloring a generated page on iPad with ColorCub's palette, fill, and undo tools",
     },
     {
-      src: "/assets/projects/colorcub/screenshot-4.png",
+      src: "/assets/projects/colorcub/screenshot-4.webp",
+      width: 600,
+      height: 800,
       alt: "ColorCub gallery of saved coloring pages on iPad — kid-safe with no ads and no tracking",
     },
   ],
@@ -168,8 +177,7 @@ export const colorcub: Project = {
       kind: "app-store",
     },
   ],
-  appStoreId: "6745206164",
-  price: "Free, with optional premium features",
+  offer: { price: "0", description: "Free download with optional premium features" },
   operatingSystem: "iOS",
   cta: {
     heading: "Give them the exact page they asked for",

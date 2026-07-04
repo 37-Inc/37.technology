@@ -119,6 +119,7 @@ export const reshoot: Project = {
     description:
       "You shot landscape; TikTok, Reels, and Shorts want vertical. ReShoot reframes video by recording your phone's motion — any ratio, up to 4K.",
   },
+  applicationCategory: "MultimediaApplication",
   theme: {
     accent: "#3d5fd0",
     accentSoft: "#eef1fa",
@@ -129,19 +130,27 @@ export const reshoot: Project = {
   hero: "/assets/projects/reshoot.png",
   screenshots: [
     {
-      src: "/assets/projects/reshoot/screenshot-1.png",
+      src: "/assets/projects/reshoot/screenshot-1.webp",
+      width: 442,
+      height: 960,
       alt: "ReShoot capture screen reframing a landscape street video in real time, with a minimap showing the crop's position in the source frame",
     },
     {
-      src: "/assets/projects/reshoot/screenshot-2.png",
+      src: "/assets/projects/reshoot/screenshot-2.webp",
+      width: 442,
+      height: 960,
       alt: "Output format picker with aspect ratios for every platform — 9:16 for TikTok, 16:9 for YouTube, 1:1 and 4:5 for Instagram, plus 21:9 and 2:3",
     },
     {
-      src: "/assets/projects/reshoot/screenshot-3.png",
+      src: "/assets/projects/reshoot/screenshot-3.webp",
+      width: 442,
+      height: 960,
       alt: "Settings screen with pro controls: stabilization, edge clamping, minimap, viewfinder guides, and voiceover replace-or-mix audio options",
     },
     {
-      src: "/assets/projects/reshoot/screenshot-4.png",
+      src: "/assets/projects/reshoot/screenshot-4.webp",
+      width: 442,
+      height: 960,
       alt: "Three-step workflow — import footage, reframe with gyro or touch, then export the finished clip",
     },
   ],
@@ -152,8 +161,7 @@ export const reshoot: Project = {
       kind: "app-store",
     },
   ],
-  appStoreId: "6753581365",
-  price: "Free + $4.99 Pro upgrade",
+  offer: { price: "0", description: "Free download; optional $4.99 Pro upgrade" },
   operatingSystem: "iOS",
   cta: {
     heading: "Reframe your first clip",

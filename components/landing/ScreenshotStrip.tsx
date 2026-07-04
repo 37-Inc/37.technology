@@ -32,6 +32,8 @@ export function ScreenshotStrip({ name, screenshots }: ScreenshotStripProps) {
             <img
               src={screenshot.src}
               alt={screenshot.alt}
+              width={screenshot.width}
+              height={screenshot.height}
               loading="lazy"
               decoding="async"
               className="h-[480px] max-h-[480px] w-auto object-cover"

@@ -123,6 +123,7 @@ export const stitchIt: Project = {
     description:
       "A conversation never fits one screen. Stitch It merges screenshots into a single long image — align, redact private details, share. iOS and Android.",
   },
+  applicationCategory: "UtilitiesApplication",
   theme: {
     accent: "#7fae43",
     accentSoft: "#eef4e2",
@@ -133,19 +134,27 @@ export const stitchIt: Project = {
   hero: "/assets/projects/stitch-it.jpg",
   screenshots: [
     {
-      src: "/assets/projects/stitch-it/screenshot-1.png",
+      src: "/assets/projects/stitch-it/screenshot-1.webp",
+      width: 443,
+      height: 960,
       alt: "A long text message conversation stitched into one continuous image with Stitch It",
     },
     {
-      src: "/assets/projects/stitch-it/screenshot-2.png",
+      src: "/assets/projects/stitch-it/screenshot-2.webp",
+      width: 442,
+      height: 960,
       alt: "Arranging two chat screenshots vertically in Stitch It before combining them",
     },
     {
-      src: "/assets/projects/stitch-it/screenshot-3.png",
+      src: "/assets/projects/stitch-it/screenshot-3.webp",
+      width: 442,
+      height: 960,
       alt: "Horizontal stitching in Stitch It placing two product screenshots side by side",
     },
     {
-      src: "/assets/projects/stitch-it/screenshot-4.png",
+      src: "/assets/projects/stitch-it/screenshot-4.webp",
+      width: 442,
+      height: 960,
       alt: "Redacting private details in a text conversation with Stitch It's markup tools",
     },
   ],
@@ -166,8 +175,7 @@ export const stitchIt: Project = {
       kind: "google-play",
     },
   ],
-  appStoreId: "554594252",
-  price: "Free + Pro upgrade",
+  offer: { price: "0", description: "Free download; optional Pro upgrade" },
   operatingSystem: "iOS, Android",
   cta: {
     heading: "Turn scattered screenshots into one image",

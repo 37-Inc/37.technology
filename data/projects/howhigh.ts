@@ -129,6 +129,7 @@ export const howhigh: Project = {
     description:
       "GPS altitude is coarse. HowHigh uses your iPhone's barometric sensor to track elevation gain, air pressure, and climbs in real time. Free on iOS.",
   },
+  applicationCategory: "UtilitiesApplication",
   theme: {
     accent: "#4a8ac9",
     accentSoft: "#edf4fb",
@@ -138,15 +139,21 @@ export const howhigh: Project = {
   hero: "/assets/projects/howhigh.jpg",
   screenshots: [
     {
-      src: "/assets/projects/howhigh/screenshot-2.png",
+      src: "/assets/projects/howhigh/screenshot-2.webp",
+      width: 444,
+      height: 960,
       alt: "HowHigh altimeter tab showing current altitude, a live elevation chart, and a session summary of gain, loss, and duration",
     },
     {
-      src: "/assets/projects/howhigh/screenshot-1.png",
+      src: "/assets/projects/howhigh/screenshot-1.webp",
+      width: 444,
+      height: 960,
       alt: "HowHigh barometer tab with current air pressure, pressure trend, and a live pressure chart",
     },
     {
-      src: "/assets/projects/howhigh/screenshot-3.png",
+      src: "/assets/projects/howhigh/screenshot-3.webp",
+      width: 444,
+      height: 960,
       alt: "HowHigh settings with metric or imperial units, sea-level pressure calibration, and WeatherKit auto-calibration",
     },
   ],
@@ -157,8 +164,7 @@ export const howhigh: Project = {
       kind: "app-store",
     },
   ],
-  appStoreId: "921339656",
-  price: "Free",
+  offer: { price: "0" },
   operatingSystem: "iOS",
   cta: {
     heading: "Know exactly how high",

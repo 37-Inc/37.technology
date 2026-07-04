@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { JsonLd } from "@/components/landing/JsonLd";
 import { ProjectCard } from "@/components/ProjectCard";
 import { pressReleases } from "@/data/press-releases";
 import { orderedProjects } from "@/data/projects";
@@ -60,10 +61,7 @@ export default function HomePage() {
 
   return (
     <div className="space-y-16">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      <JsonLd data={structuredData} />
       <section className="space-y-6">
         <p className="text-sm uppercase tracking-[0.3em] text-muted">
           Thirty Seven, Inc.

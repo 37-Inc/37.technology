@@ -123,6 +123,7 @@ export const faxit: Project = {
     description:
       "Need to fax a form but don't own a fax machine? Fax It sends faxes from your iPhone to 50+ countries. Pay per page — credits never expire.",
   },
+  applicationCategory: "BusinessApplication",
   theme: {
     accent: "#7448c8",
     accentSoft: "#f2eefa",
@@ -132,19 +133,27 @@ export const faxit: Project = {
   hero: "/assets/projects/faxit.jpg",
   screenshots: [
     {
-      src: "/assets/projects/faxit/screenshot-1.png",
+      src: "/assets/projects/faxit/screenshot-1.webp",
+      width: 392,
+      height: 696,
       alt: "Fax It compose screen with a recipient fax number entered and an Add Page button — fax securely with no subscription",
     },
     {
-      src: "/assets/projects/faxit/screenshot-2.png",
+      src: "/assets/projects/faxit/screenshot-2.webp",
+      width: 392,
+      height: 696,
       alt: "Country picker listing international dialing codes for faxing to 50+ countries, above the document scanner and file import options",
     },
     {
-      src: "/assets/projects/faxit/screenshot-3.png",
+      src: "/assets/projects/faxit/screenshot-3.webp",
+      width: 392,
+      height: 696,
       alt: "Delivery record for a 5-page fax to a medical group showing recipient, cost in credits, date, and a Success status",
     },
     {
-      src: "/assets/projects/faxit/screenshot-4.png",
+      src: "/assets/projects/faxit/screenshot-4.webp",
+      width: 392,
+      height: 696,
       alt: "Import source menu for adding fax pages from Gallery, Camera, Files, or Dropbox",
     },
   ],
@@ -155,8 +164,7 @@ export const faxit: Project = {
       kind: "app-store",
     },
   ],
-  appStoreId: "1458261691",
-  price: "Free + pay-per-page credits",
+  offer: { price: "0", description: "Free app; sending uses pay-per-page credits" },
   operatingSystem: "iOS",
   cta: {
     heading: "Send that fax and move on",
