@@ -29,8 +29,6 @@ const services = [
   },
 ];
 
-const selectedClients = ["Rhythmic", "Hale"];
-
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -109,16 +107,6 @@ export default function HomePage() {
               </div>
             ))}
           </dl>
-          <div className="mt-8 flex flex-wrap items-baseline gap-x-6 gap-y-2 border-t border-hairline pt-6">
-            <span className="text-xs uppercase tracking-[0.3em] text-muted">
-              Selected clients
-            </span>
-            {selectedClients.map((client) => (
-              <span key={client} className="text-base text-ink">
-                {client}
-              </span>
-            ))}
-          </div>
         </div>
       </section>
       <section className="space-y-6">

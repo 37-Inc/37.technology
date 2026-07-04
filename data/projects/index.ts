@@ -6,7 +6,6 @@ import { howhigh } from "./howhigh";
 import { faxit } from "./faxit";
 import { ereps } from "./ereps";
 import { gooseGifts } from "./goose-gifts";
-import { faceup } from "./faceup";
 
 export * from "./types";
 
@@ -18,7 +17,6 @@ export const projects: Project[] = [
   faxit,
   ereps,
   gooseGifts,
-  faceup,
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined =>
