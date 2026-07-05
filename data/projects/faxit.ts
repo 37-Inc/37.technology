@@ -103,7 +103,7 @@ export const faxit: Project = {
     },
     {
       question: "What happens to my documents?",
-      answer: "You preview exactly what will be transmitted before sending, and each fax keeps a delivery record in the app. The full privacy policy is at 37.technology/legal/privacy/faxit.",
+      answer: "You preview exactly what will be transmitted before sending, and each fax keeps a delivery record in the app. The full privacy policy is at 37.technology/legal/privacy.",
     },
   ],
   keywords: [

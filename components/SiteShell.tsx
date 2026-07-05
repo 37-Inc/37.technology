@@ -7,8 +7,6 @@ const primaryLinks = [
   { href: "/", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/news", label: "News" },
-  { href: "/legal/privacy", label: "Privacy" },
-  { href: "/legal/terms", label: "Terms" },
 ];
 
 interface SiteShellProps {

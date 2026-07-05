@@ -7,29 +7,6 @@ import { siteConfig } from "@/data/site";
 
 export const revalidate = false;
 
-const services = [
-  {
-    title: "iOS",
-    body: "The deep specialty. Native Swift apps, designed and shipped end to end.",
-  },
-  {
-    title: "Android",
-    body: "Native or cross-platform, when the product calls for it.",
-  },
-  {
-    title: "Web",
-    body: "Fast, unfussy sites and web apps.",
-  },
-  {
-    title: "Backend & infrastructure",
-    body: "APIs, data, and ops that keep launches boring (the good kind).",
-  },
-  {
-    title: "AI features",
-    body: "Used where they help, skipped where they do not.",
-  },
-];
-
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -39,7 +16,7 @@ const structuredData = {
       url: siteConfig.url,
       email: "info@37.technology",
       description:
-        "Product studio and consulting practice specialized in iOS app development, with full-stack capabilities across Android, web, backend, and AI.",
+        "A small product studio that ships its own apps and builds for clients across iOS, Android, web, and backend.",
       knowsAbout: [
         "iOS development",
         "Android development",
@@ -67,12 +44,11 @@ export default function HomePage() {
           Thirty Seven, Inc.
         </p>
         <h1 className="max-w-3xl font-serif text-5xl leading-tight tracking-tight text-ink">
-          A product studio building iOS apps — our own, and our clients&rsquo;.
+          A small product studio with deep iOS roots.
         </h1>
         <p className="max-w-xl text-lg text-muted">
-          We ship consumer apps under our own name and take on select
-          consulting work. Deep iOS specialization, full-stack range. No
-          buzzwords, just good software.
+          We ship our own apps and build for clients across iOS, Android, web,
+          and backend. No buzzwords, just good software.
         </p>
         <div className="flex gap-4 text-sm font-medium">
           <Link
@@ -87,24 +63,6 @@ export default function HomePage() {
           >
             Work with us
           </a>
-        </div>
-      </section>
-      <section className="space-y-6">
-        <div className="flex items-center justify-between">
-          <h2 className="font-serif text-3xl tracking-tight text-ink">
-            What we do
-          </h2>
-          <p className="text-sm text-muted">For ourselves, and for clients.</p>
-        </div>
-        <div className="rounded-3xl border border-hairline bg-surface p-8 shadow-sm">
-          <dl className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
-            {services.map((service) => (
-              <div key={service.title}>
-                <dt className="font-medium text-ink">{service.title}</dt>
-                <dd className="mt-1 text-sm text-muted">{service.body}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </section>
       <section className="space-y-6">
