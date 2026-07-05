@@ -131,26 +131,6 @@ export const ereps: Project = {
   },
   tags: ["Web", "Healthcare", "Rehabilitation"],
   hero: "/assets/projects/ereps.png",
-  screenshots: [
-    {
-      src: "/assets/projects/ereps/screenshot-1.webp",
-      width: 402,
-      height: 242,
-      alt: "Ereps exercise prescription dashboard on a desktop computer, with search filters and patient programs",
-    },
-    {
-      src: "/assets/projects/ereps/screenshot-2.webp",
-      width: 402,
-      height: 242,
-      alt: "Adding a rehabilitation program in Ereps on a tablet, with treatment goals and criteria to progress",
-    },
-    {
-      src: "/assets/projects/ereps/screenshot-3.webp",
-      width: 402,
-      height: 242,
-      alt: "A rehab program in Ereps on a tablet showing an exercise demonstration photo and progression criteria",
-    },
-  ],
   platforms: [
     {
       label: "Website",
