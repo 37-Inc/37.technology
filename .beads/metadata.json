@@ -1,7 +1,0 @@
-{
-  "database": "dolt",
-  "backend": "dolt",
-  "dolt_mode": "embedded",
-  "dolt_database": "bd_37_technology",
-  "project_id": "129fda44-f5b7-46bf-a8ad-6a402fa76182"
-}
