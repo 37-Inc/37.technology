@@ -46,12 +46,19 @@ export default function PrivacyPage() {
 
       <h2>The Website</h2>
       <p>
-        When analytics is enabled, we use Plausible Analytics in cookieless
-        mode to understand traffic trends: pages viewed, approximate visit
-        counts, referring site, browser and device type, and approximate
-        country. This reporting is aggregated and is not used to identify you
-        personally. If you email us, we receive the information in your message
-        (such as your email address and message content) so we can respond.
+        We use Google Analytics to understand traffic trends on 37.technology:
+        pages viewed, referring site, browser and device type, and approximate
+        location. Google Analytics sets cookies and collects device identifiers
+        on Google&apos;s behalf; we review this data only in aggregate, and we
+        do not use it for advertising or to identify you personally. You can
+        block analytics with standard browser tooling (content blockers,
+        &ldquo;Do Not Track,&rdquo; or Google&apos;s{" "}
+        <a href="https://tools.google.com/dlpage/gaoptout">
+          opt-out browser add-on
+        </a>
+        ) and the site works identically. If you email us, we receive the
+        information in your message (such as your email address and message
+        content) so we can respond.
       </p>
 
       <h2>Our Apps — General Practices</h2>
@@ -205,7 +212,11 @@ export default function PrivacyPage() {
           </a>
         </li>
         <li>
-          <strong>Plausible Analytics</strong> — cookieless website analytics.
+          <strong>Google Analytics</strong> — website traffic measurement on
+          37.technology.{" "}
+          <a href="https://policies.google.com/privacy">
+            policies.google.com/privacy
+          </a>
         </li>
       </ul>
       <p>We do not sell personal information.</p>
