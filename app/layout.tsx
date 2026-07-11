@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Fraunces, Inter } from "next/font/google";
 import { SiteShell } from "@/components/SiteShell";
 import { siteConfig } from "@/data/site";
@@ -17,7 +17,10 @@ const fraunces = Fraunces({
   variable: "--font-serif",
 });
 
-const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
+const gaMeasurementId =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? siteConfig.gaMeasurementId;
+const googleSiteVerification =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -61,6 +64,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   verification: {
+    ...(googleSiteVerification ? { google: googleSiteVerification } : {}),
     other: {
       "facebook-domain-verification": "xekoqtndf94hxrzinxltwyk89xbx7z",
     },
@@ -80,13 +84,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${fraunces.variable} antialiased`}>
         <SiteShell>{children}</SiteShell>
-        {plausibleDomain ? (
-          <Script
-            defer
-            data-domain={plausibleDomain}
-            src="https://plausible.io/js/script.tagged.js"
-          />
-        ) : null}
+        {gaMeasurementId ? <GoogleAnalytics gaId={gaMeasurementId} /> : null}
       </body>
     </html>
   );
