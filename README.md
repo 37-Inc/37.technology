@@ -1,21 +1,21 @@
 # Thirty Seven, Inc. portfolio
 
-A minimal, high-performance portfolio for [Thirty Seven, Inc.](https://37.technology) built with the Next.js App Router, TypeScript, and Tailwind CSS. Every route is statically generated for instant loads and clean deep links to each project.
+The marketing site for [Thirty Seven, Inc.](https://37.technology) — a problem-first landing page per app, plus the studio homepage — built with the Next.js App Router, TypeScript, and Tailwind CSS. Every route is statically generated.
 
 ## Stack
 - Next.js 15 (App Router, SSG)
 - TypeScript with strict mode
-- Tailwind CSS 4 with CSS variables for the neutral theme
+- Tailwind CSS 4 with CSS variables for the warm neutral theme
 - `next/font` for Inter (UI) and Fraunces (display)
 - Edge-based Open Graph image generation (`/api/og`)
-- Optional Plausible analytics (cookieless)
+- Google Analytics 4 via `@next/third-parties`
 
 ## Local development
 ```bash
 npm install
 npm run dev
 ```
-Visit `http://localhost:3000` to preview the site. The dev server uses file watching with hot reload.
+Visit `http://localhost:3000` to preview the site.
 
 ### Quality checks
 ```bash
@@ -25,37 +25,34 @@ npm run build
 `npm run build` runs a production bundle to ensure all routes render statically without type errors.
 
 ## Editing the portfolio
-All project content comes from a single data source at [`data/projects.ts`](data/projects.ts). Update or add entries there to change the homepage grid and project detail pages—no layout edits required.
+Each project lives in its own file under [`data/projects/`](data/projects/) (e.g. `data/projects/reshoot.ts`), aggregated by `data/projects/index.ts`. The schema is defined in [`data/projects/types.ts`](data/projects/types.ts) and drives both the homepage grid and the landing page template at `app/[slug]/page.tsx` — no layout edits required to add or change a project.
 
-Each project supports:
-- `slug`, `name`, `oneLiner`, `description`
-- `tags` (rendered as chips)
-- `featured` flag to pin items ahead of alphabetical sorting
-- `hero` icon path and optional `highlights`/`screenshots`
-- `platforms` array driving the platform buttons
+Each project defines:
+- identity: `slug`, `name`, `category`, `oneLiner`, `description`, `tags`, `featured`
+- SEO content: `problem`, `solution`, `features`, `useCases`, `comparison`, `faqs`, `keywords`, `seo`, `applicationCategory`, `cta`
+- structured-data inputs: `offer` (machine-readable price), `operatingSystem`
+- visuals: `hero` icon, `screenshots` (WebP with intrinsic `width`/`height`), and a per-project `theme` (accent colors sampled from the app icon)
 
-Project icons live in [`public/assets/projects`](public/assets/projects). Replace the placeholder SVGs with production-ready artwork (keep the same filenames or update the `hero` path in the data file).
+Copy rules: every claim must be verifiable from the App Store listing, the official product site, or first-hand knowledge. No invented stats, ratings, or user counts.
+
+Assets live in [`public/assets/projects`](public/assets/projects) — icons at ≤192px, screenshots resized to ≤960px tall and encoded as WebP before committing.
 
 ## SEO & sharing
-- Site-wide metadata lives in [`app/layout.tsx`](app/layout.tsx)
-- Per-project `generateMetadata` populates canonical URLs and Open Graph tags
-- `/api/og?slug=<project>` creates branded OG/Twitter cards using project data
+- Site-wide metadata lives in [`app/layout.tsx`](app/layout.tsx); `data/site.ts` holds the site config
+- Per-project `generateMetadata` sets absolute titles (bypassing the layout template), descriptions, keywords, and canonicals
+- Landing pages emit SoftwareApplication/WebApplication, BreadcrumbList, and FAQPage JSON-LD (`components/landing/structured-data.ts`); the homepage emits Organization/WebSite
+- `/api/og?slug=<project>` creates branded OG/Twitter cards
 - `app/sitemap.ts` and `app/robots.ts` keep search engines informed automatically
+- `37.technology` is the primary domain; `www` 308-redirects to it (configured in Vercel), matching all canonical URLs
+
+## Legal pages
+One consolidated privacy policy (`/legal/privacy`) and terms of service (`/legal/terms`) cover the website and every app — these are the URLs App Store Connect listings point at. The old app-specific URLs (`/legal/privacy/faxit`, `/legal/terms/faxit`) permanently redirect to them via `next.config.ts`; remove the redirects only after every store listing has shipped a version pointing at the consolidated pages.
 
 ## Analytics
-Plausible is opt-in. Set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` (e.g. `37.technology`) in your environment to load the analytics script. Leave it unset to disable tracking everywhere (no client JavaScript shipped).
+Google Analytics 4 is enabled via `siteConfig.gaMeasurementId` in [`data/site.ts`](data/site.ts) (currently the `37.technology` web stream in the Thirty Seven, Inc. GA account). The `NEXT_PUBLIC_GA_MEASUREMENT_ID` env var overrides it; setting the config value to `""` with no env var disables analytics entirely (no client JavaScript shipped). Search Console is verified via the GA tag; `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` is available for meta-tag verification if ever needed.
 
 ## Deployment
-Deploy with Vercel for zero-config static output:
-```bash
-npm run build
-vercel deploy --prebuilt  # optional preview
-vercel deploy --prod       # promotion to production
-```
-Ensure the `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` env var is set on Vercel if analytics are desired. The build output is static, so the default Vercel CDN handles every page efficiently.
+Vercel deploys automatically: PRs get preview deployments and merges to `main` go to production. The build output is static, so the default Vercel CDN handles every page.
 
-## Brand notes
-- Use neutral, airy imagery respecting the white/beige palette.
-- Maintain the wordmark “Thirty Seven, Inc.” in headers, footers, and copy.
-- Swap the placeholder screenshots on project pages when final assets are ready.
-# 37.technology
+## Task tracking
+Follow-up work is tracked in the owner's roadmap, not in this repo. The `.beads/` workspace is local-only and gitignored — do not commit it.

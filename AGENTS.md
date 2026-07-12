@@ -126,3 +126,33 @@ bd prime                # Refresh Beads context
 
 **Architecture in one line:** issues live in a local Dolt DB; sync uses `refs/dolt/data` on your git remote; `.beads/issues.jsonl` is a passive export. See https://github.com/gastownhall/beads/blob/main/docs/SYNC_CONCEPTS.md for details and anti-patterns.
 <!-- END BEADS CODEX SETUP -->
+
+## Build & Test
+
+```bash
+npm install
+npm run lint    # ESLint
+npm run build   # production build; also the type/SSG correctness check
+npx tsc --noEmit
+```
+
+There is no test suite; `npm run build` (all routes must render statically) plus `tsc` is the quality gate.
+
+## Architecture Overview
+
+Next.js 15 App Router, fully static (SSG). The site is data-driven:
+
+- `data/projects/<slug>.ts` — one file per app/project, typed by `data/projects/types.ts`, aggregated in `data/projects/index.ts`. This content drives everything.
+- `app/[slug]/page.tsx` — the shared landing-page template (hero, problem/solution, features, screenshots, comparison, FAQ, CTA), themed per-project via CSS custom properties.
+- `components/landing/` — landing sections + JSON-LD builders (`structured-data.ts` emits SoftwareApplication/WebApplication, BreadcrumbList, FAQPage; homepage emits Organization/WebSite).
+- `app/legal/privacy` and `app/legal/terms` — single consolidated documents covering the site and every app; old app-specific URLs redirect via `next.config.ts`.
+- Analytics: GA4 through `@next/third-parties`, gated by `siteConfig.gaMeasurementId` in `data/site.ts` (env `NEXT_PUBLIC_GA_MEASUREMENT_ID` overrides).
+
+## Conventions & Patterns
+
+- **Truthful copy only**: every claim on a landing page must be verifiable from the App Store listing, the official product site, or the owner. No invented stats, ratings, or user counts. Never emit aggregateRating/review JSON-LD.
+- **SEO**: per-project titles are absolute (they bypass the layout title template); keep `seo.title` ≤60 chars and `seo.description` ≤155 chars. Canonical domain is apex `37.technology` (www redirects to it).
+- **Images**: icons ≤192px; screenshots ≤960px tall, WebP, committed with intrinsic `width`/`height` in the data file.
+- **Voice**: short, humble, plain. "No buzzwords, just good software." When in doubt, cut words.
+- **`.beads/` is local-only and gitignored** — never commit it; the owner tracks follow-up work in an external roadmap. (The managed Beads block above predates this; the gitignore wins.)
+- AGENTS.md mirrors this file — apply substantive edits to both.
