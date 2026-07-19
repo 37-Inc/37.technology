@@ -24,8 +24,13 @@ function parseArgs(argv) {
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
     if (arg === "--dry-run") dryRun = true;
-    else if (arg === "--url") urls.push(argv[(index += 1)]);
-    else if (arg === "--endpoint") endpoint = argv[(index += 1)];
+    else if (arg === "--url" || arg === "--endpoint") {
+      const value = argv[index + 1];
+      if (!value || value.startsWith("--")) throw new Error(`${arg} requires a value`);
+      if (arg === "--url") urls.push(value);
+      else endpoint = value;
+      index += 1;
+    }
     else if (arg?.startsWith("http")) urls.push(arg);
     else throw new Error(`Unknown argument: ${arg}`);
   }
