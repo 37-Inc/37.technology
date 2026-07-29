@@ -38,8 +38,8 @@ export const colorcub: Project = {
       body: "Free and Pro users get the same focused experience without ads or pop-ups.",
     },
     {
-      title: "Offline once created",
-      body: "Generated pages keep working without a connection — made for car rides and flights.",
+      title: "Saved pages work offline",
+      body: "Saved pages remain available without a connection — made for car rides and flights.",
     },
   ],
   useCases: [
@@ -49,7 +49,7 @@ export const colorcub: Project = {
     },
     {
       title: "Car rides and flights",
-      body: "Create a few pages before you leave; they stay colorable offline, with no ads to wander into.",
+      body: "Create and save a few pages before you leave; they stay colorable offline, with no ads to wander into.",
     },
     {
       title: "Print-outs for the kitchen table",
@@ -110,7 +110,7 @@ export const colorcub: Project = {
     {
       question: "Does ColorCub work offline?",
       answer:
-        "Pages work offline once they've been created, so you can generate a few before a car ride or flight.",
+        "Saved pages remain available offline, so you can create and save a few before a car ride or flight.",
     },
     {
       question: "What devices does ColorCub run on?",
