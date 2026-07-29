@@ -7,14 +7,14 @@ export const colorcub: Project = {
   oneLiner:
     "An AI coloring page generator — describe anything, get a printable page in seconds.",
   description:
-    "ColorCub turns a typed or spoken idea into custom line art your kid can color, print, or share. No ads, no tracking, no fixed library — just the exact page they asked for.",
+    "ColorCub turns a typed or spoken idea into custom line art you can color together, print, or share. No ads and no fixed library — just the page you imagined.",
   problem: {
-    heading: "Kids want to color the thing in their head, right now",
-    body: "A T-rex flying a rocket. A princess riding a narwhal. No coloring book has that page, and searching for printables means wading through ad-choked sites to land on something generic. Most coloring apps just swap the paper for a fixed library and a pile of pop-ups.",
+    heading: "The page they imagine rarely exists in a coloring book",
+    body: "A T-rex flying a rocket. A princess riding a narwhal. Searching for a very specific printable often means wading through ad-choked sites to find something generic. Most coloring apps simply replace the paper with a fixed library and a pile of pop-ups.",
   },
   solution: {
     heading: "Describe it, and ColorCub draws it",
-    body: "Type the idea — or let your kid say it out loud — and ColorCub generates a clean line-art page in seconds. Color it in the app with fills and palettes, or print it and hand over the crayons. No ads, no tracking, and pages keep working offline once created.",
+    body: "Say or type the idea and ColorCub generates a clean line-art page in seconds. Color it together in the app with fills and palettes, or print it and bring out the crayons. There are no ads, and saved pages remain available offline.",
   },
   features: [
     {
@@ -22,20 +22,20 @@ export const colorcub: Project = {
       body: "Describe a scene in plain words and AI drafts a custom line-art coloring page built for filling in.",
     },
     {
-      title: "Voice input for pre-readers",
-      body: "Kids who can't type yet can speak their idea and watch it appear.",
+      title: "Say it or type it",
+      body: "Speak an idea instead of typing, then watch it become a page you can color together.",
     },
     {
       title: "Real coloring tools",
-      body: "Brushes, color palettes, flood fill, and undo/redo — friendly for small hands, capable enough for grown-ups.",
+      body: "Brushes, color palettes, flood fill, and undo/redo make it easy to color on screen.",
     },
     {
       title: "Print and share",
       body: "Send finished pages to the printer or share the artwork straight from the app.",
     },
     {
-      title: "No ads, no tracking",
-      body: "Nothing to tap on by accident and nothing watching — screen time that stays on task.",
+      title: "Ad-free for everyone",
+      body: "Free and Pro users get the same focused experience without ads or pop-ups.",
     },
     {
       title: "Offline once created",
@@ -66,23 +66,23 @@ export const colorcub: Project = {
       {
         alternative: "Googling printable coloring pages",
         drawback:
-          "Ad-heavy sites, pop-ups, and generic pages that rarely match what your kid actually asked for.",
+          "Ad-heavy sites, pop-ups, and generic pages that rarely match the idea you started with.",
         advantage:
-          "Generates the exact page from their description, with no ads and no tracking.",
+          "Generates a custom page from your description, with no ads in the app.",
       },
       {
         alternative: "Coloring apps with fixed libraries",
         drawback:
-          "A finite catalog — the specific scene your kid is obsessed with this week usually isn't in it.",
+          "A finite catalog — the specific scene your family wants to color usually isn't in it.",
         advantage:
-          "Unlimited pages: every prompt makes a new one, so they never run out.",
+          "Create three custom pages free; Pro unlocks unlimited generation.",
       },
       {
         alternative: "General AI image tools",
         drawback:
-          "Not built for kids, and the output is rarely clean, printable line art you'd hand to a six-year-old.",
+          "The output is rarely the clean, printable line art you want for a coloring activity.",
         advantage:
-          "Purpose-built for coloring: clean outlines, kid-friendly tools, rated 4+.",
+          "Purpose-built for coloring, with clean outlines and drawing tools in the same app.",
       },
     ],
   },
@@ -90,12 +90,12 @@ export const colorcub: Project = {
     {
       question: "Is ColorCub free?",
       answer:
-        "ColorCub is free to download, and basic features don't require a subscription. Optional premium features are available in the app.",
+        "Yes. Create three custom pages free. Pro unlocks unlimited generation. Drawing, saving, sharing, and printing remain available without Pro.",
     },
     {
       question: "Does ColorCub have ads?",
       answer:
-        "No. ColorCub is ad-free and doesn't track you or your kids.",
+        "No. ColorCub is ad-free for free and Pro users.",
     },
     {
       question: "Can I print the coloring pages?",
@@ -115,14 +115,14 @@ export const colorcub: Project = {
     {
       question: "What devices does ColorCub run on?",
       answer:
-        "ColorCub runs on iPhone and iPad and is rated 4+ on the App Store.",
+        "ColorCub runs on iPhone and iPad.",
     },
   ],
   keywords: [
     "AI coloring page generator",
-    "custom coloring pages for kids",
+    "custom coloring pages for families",
     "printable coloring pages from a description",
-    "ad-free kids coloring app",
+    "ad-free family coloring app",
     "coloring app without ads",
     "make your own coloring page",
     "AI coloring book app",
@@ -131,9 +131,9 @@ export const colorcub: Project = {
     "dinosaur and unicorn coloring pages",
   ],
   seo: {
-    title: "ColorCub — AI Coloring Page Generator for Kids",
+    title: "ColorCub — AI Coloring Pages for Families",
     description:
-      "Kids want to color exactly what they imagine. ColorCub turns a typed or spoken idea into a printable coloring page — no ads, no tracking, free on iOS.",
+      "Turn any typed or spoken idea into a printable coloring page, then color it together. Three custom pages free, no ads, for iPhone and iPad.",
   },
   applicationCategory: "EntertainmentApplication",
   theme: {
@@ -167,7 +167,7 @@ export const colorcub: Project = {
       src: "/assets/projects/colorcub/screenshot-4.webp",
       width: 600,
       height: 800,
-      alt: "ColorCub gallery of saved coloring pages on iPad — kid-safe with no ads and no tracking",
+      alt: "ColorCub gallery of saved coloring pages on iPad",
     },
   ],
   platforms: [
@@ -180,7 +180,7 @@ export const colorcub: Project = {
   offer: { price: "0", description: "Free download with optional premium features" },
   operatingSystem: "iOS",
   cta: {
-    heading: "Give them the exact page they asked for",
-    body: "Free on the App Store for iPhone and iPad. Describe an idea, color it, print it.",
+    heading: "Color the page you imagined",
+    body: "Create three custom pages free on iPhone and iPad. Describe an idea, color it together, or print it.",
   },
 };
