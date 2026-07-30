@@ -3,11 +3,10 @@ import type { Project } from "./types";
 export const gooseGifts: Project = {
   slug: "goose-gifts",
   name: "Goose Gifts",
-  category: "Funny gift finder and gag gift catalog",
-  oneLiner:
-    "Funny gift ideas for people who are hard to shop for — weird, useful, real products.",
+  category: "Funny and unusual gift catalog",
+  oneLiner: "The internet's least serious gift catalog.",
   description:
-    "Goose Gifts (goose.gifts) is the internet's least serious gift catalog: a fast, curated collection of funny, weird, and genuinely useful products for people who are hard to shop for. Browse gift guides for white elephant parties, coworkers, and dads, or search the live catalog by describing the person. Every item is a real product with a direct Amazon link.",
+    "Goose Gifts is the internet’s least serious gift catalog—a searchable collection of funny, unusual, and actually purchasable gifts for people who are hard to surprise.",
   problem: {
     heading: "You know the person. You don't know the gift.",
     body: "Searching a marketplace by category surfaces the same generic bestsellers everyone else already bought. Gift-guide listicles recycle the same twenty items with affiliate padding. So you stall, and they get another gift card.",
@@ -30,8 +29,8 @@ export const gooseGifts: Project = {
       body: "Every listing is an actual product with a direct link to check the current price on Amazon.",
     },
     {
-      title: "Descriptions with jokes",
-      body: "Each find comes with a short, pun-heavy write-up, so browsing is entertainment rather than a chore.",
+      title: "Dryly funny descriptions",
+      body: "Each find comes with a short, useful write-up that lets the product carry the joke.",
     },
     {
       title: "Free, no account",
@@ -87,7 +86,7 @@ export const gooseGifts: Project = {
     },
     {
       question: "What kinds of gifts will I find?",
-      answer: "Funny gag gifts, white elephant ideas, novelty desk toys, weird kitchen gadgets, and other absurd-but-real products for people who are hard to shop for.",
+      answer: "Funny gifts, tasteful-but-unusual finds, white elephant ideas, novelty desk toys, weird kitchen gadgets, and other useful or absurd products for people who are hard to surprise.",
     },
     {
       question: "How do I find a gift for someone specific?",
@@ -117,9 +116,9 @@ export const gooseGifts: Project = {
   },
   applicationCategory: "ShoppingApplication",
   theme: {
-    accent: "#e0861a",
-    accentSoft: "#fbf1e0",
-    accentInk: "#7a4a10",
+    accent: "#c2410c",
+    accentSoft: "#fff7ed",
+    accentInk: "#9a3412",
   },
   tags: ["Web", "E-commerce"],
   featured: true,
