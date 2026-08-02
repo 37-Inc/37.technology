@@ -44,10 +44,10 @@ export default function HomePage() {
           Thirty Seven, Inc.
         </p>
         <h1 className="max-w-4xl font-serif text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
-          Thirty Seven builds and operates independent digital products.
+          Thirty Seven builds software.
         </h1>
         <p className="max-w-2xl text-base text-muted sm:text-lg">
-          We also help founders and small teams turn clear ideas into shipped,
+          We help founders and small teams turn clear ideas into shipped,
           dependable software. Our deepest experience is in iOS, with shipped
           work across Android, web, and backend systems.
         </p>

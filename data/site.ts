@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Thirty Seven, Inc.",
   description:
-    "Thirty Seven builds and operates independent digital products and helps founders and small teams ship dependable software.",
+    "Thirty Seven is an independent software company and consultancy with deep iOS expertise.",
   url: "https://37.technology",
   ogImage: "https://37.technology/api/og",
   // GA4 measurement ID (G-XXXXXXXXXX). Empty disables analytics entirely;
