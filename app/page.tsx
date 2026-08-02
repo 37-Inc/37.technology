@@ -71,7 +71,6 @@ export default function HomePage() {
           <h2 className="font-serif text-3xl tracking-tight text-ink">
             Products we build and operate
           </h2>
-          <p className="text-sm text-muted">Flagship products first.</p>
         </div>
         <ul className="grid gap-6 sm:grid-cols-2">
           {orderedProjects.map((project, index) => (
