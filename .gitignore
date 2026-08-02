@@ -48,3 +48,6 @@ next-env.d.ts
 
 # Beads workspace (tasks migrated out of git; local Dolt DB only)
 .beads/
+
+# Local code knowledge graph
+graphify-out/

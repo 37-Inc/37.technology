@@ -28,12 +28,15 @@ export function SiteShell({ children }: SiteShellProps) {
         Skip to content
       </a>
       <header className="border-b border-hairline bg-surface/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-6">
-          <Link href="/" className="text-lg font-semibold tracking-tight text-ink">
-            Thirty Seven, Inc.
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 sm:py-6">
+          <Link
+            href="/"
+            className="whitespace-nowrap text-base font-semibold tracking-tight text-ink sm:text-lg"
+          >
+            Thirty Seven
           </Link>
           <nav aria-label="Primary">
-            <ul className="flex items-center gap-6 text-sm font-medium text-muted">
+            <ul className="flex items-center gap-4 text-sm font-medium text-muted sm:gap-6">
               {primaryLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -48,7 +51,7 @@ export function SiteShell({ children }: SiteShellProps) {
           </nav>
         </div>
       </header>
-      <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-6 py-16">
+      <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-6 py-10 sm:py-16">
         {children}
       </main>
       <Footer />

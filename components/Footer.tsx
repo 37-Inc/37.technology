@@ -12,6 +12,12 @@ export function Footer() {
           © {year} Thirty Seven, Inc. Crafted in California.
         </p>
         <div className="flex flex-wrap items-center gap-4">
+          <Link
+            href="/contact"
+            className="transition-colors duration-150 ease-out hover:text-ink focus-visible:text-ink"
+          >
+            Work with us
+          </Link>
           <a
             href={`mailto:${contactEmail}`}
             className="transition-colors duration-150 ease-out hover:text-ink focus-visible:text-ink"

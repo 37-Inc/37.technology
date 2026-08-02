@@ -145,6 +145,6 @@ main {
 
 @media (max-width: 640px) {
   header nav ul {
-    gap: 1.5rem;
+    gap: 1rem;
   }
 }

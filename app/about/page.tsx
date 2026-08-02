@@ -1,10 +1,11 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Prose } from "@/components/Prose";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Thirty Seven, Inc. is a small product studio. We ship our own apps and websites, and build for clients across a range of platforms and use cases.",
+    "Thirty Seven is an independent software company that builds and operates digital products and selectively helps partners ship dependable software.",
   alternates: {
     canonical: "/about",
   },
@@ -14,27 +15,25 @@ export default function AboutPage() {
   return (
     <Prose
       title="About Thirty Seven, Inc."
-      intro="A small product studio. We ship our own apps and websites, and build for clients across a range of platforms and use cases."
+      intro="Thirty Seven builds and operates independent digital products and helps partners do the same."
     >
       <p>
-        We design, build, and run the apps on our homepage, and we take on
-        client work when it&rsquo;s a good fit.
+        We are an independent software company. We build, own, and operate the
+        products on our homepage, and we selectively partner with founders and
+        small teams when the work is a good fit.
       </p>
       <p>
-        iOS is where we&rsquo;ve spent the most years — native Swift, from
-        prototype to App Store. We&rsquo;re just as comfortable on Android, the
-        web, and the backend.
+        iOS is where we&rsquo;ve spent the most years: native Swift, from
+        prototype to App Store. We have also shipped products across Android,
+        the web, and backend systems.
       </p>
       <p>
-        We keep things small and direct: you talk to the people writing the
-        code. We move fast, scope honestly, and price fairly.
+        Client work can include product guidance, implementation, launch, and
+        post-launch support. We keep the relationship direct: you work with
+        the people writing the code.
       </p>
       <p>
-        Have something to build? Write to
-        <a className="ml-1" href="mailto:info@37.technology">
-          info@37.technology
-        </a>
-        .
+        Have something to build? <Link href="/contact">Tell us about the project.</Link>
       </p>
     </Prose>
   );

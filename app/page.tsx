@@ -15,14 +15,14 @@ const structuredData = {
       name: siteConfig.name,
       url: siteConfig.url,
       email: "info@37.technology",
-      description:
-        "A small product studio that ships its own apps and builds for clients across iOS, Android, web, and backend.",
+      description: siteConfig.description,
       knowsAbout: [
         "iOS development",
         "Android development",
         "Web development",
         "Backend engineering",
-        "AI integration",
+        "Product strategy",
+        "Software operations",
       ],
     },
     {
@@ -39,36 +39,39 @@ export default function HomePage() {
   return (
     <div className="space-y-16">
       <JsonLd data={structuredData} />
-      <section className="space-y-6">
+      <section className="space-y-5 sm:space-y-6">
         <p className="text-sm uppercase tracking-[0.3em] text-muted">
           Thirty Seven, Inc.
         </p>
-        <h1 className="max-w-3xl font-serif text-5xl leading-tight tracking-tight text-ink">
-          A small product studio with deep iOS roots.
+        <h1 className="max-w-4xl font-serif text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
+          Thirty Seven builds and operates independent digital products.
         </h1>
-        <p className="max-w-xl text-lg text-muted">
-          We ship our own apps and build for clients across iOS, Android, web,
-          and backend. No buzzwords, just good software.
+        <p className="max-w-2xl text-base text-muted sm:text-lg">
+          We also help founders and small teams turn clear ideas into shipped,
+          dependable software. Our deepest experience is in iOS, with shipped
+          work across Android, web, and backend systems.
         </p>
-        <div className="flex gap-4 text-sm font-medium">
+        <div className="flex flex-wrap gap-3 text-sm font-medium sm:gap-4">
           <Link
             href="/about"
             className="inline-flex items-center gap-2 rounded-full border border-hairline bg-surface px-4 py-2 transition duration-150 ease-out hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d1b59a]"
           >
-            About the studio
+            About Thirty Seven
           </Link>
-          <a
-            href="mailto:info@37.technology"
+          <Link
+            href="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-surface transition duration-150 ease-out hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d1b59a]"
           >
-            Work with us
-          </a>
+            Discuss a project
+          </Link>
         </div>
       </section>
       <section className="space-y-6">
-        <div className="flex items-center justify-between">
-          <h2 className="font-serif text-3xl tracking-tight text-ink">Our work</h2>
-          <p className="text-sm text-muted">Featured first, then alphabetical.</p>
+        <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <h2 className="font-serif text-3xl tracking-tight text-ink">
+            Products we build and operate
+          </h2>
+          <p className="text-sm text-muted">Flagship products first.</p>
         </div>
         <ul className="grid gap-6 sm:grid-cols-2">
           {orderedProjects.map((project, index) => (
@@ -77,7 +80,7 @@ export default function HomePage() {
         </ul>
       </section>
       <section className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="font-serif text-3xl tracking-tight text-ink">News</h2>
           <Link
             href="/news"

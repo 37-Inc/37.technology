@@ -33,7 +33,6 @@ export default function PrivacyPage() {
       <h2>The Short Version</h2>
       <ul>
         <li>We do not sell personal information.</li>
-        <li>We do not run advertising trackers or build user profiles.</li>
         <li>
           Most of our apps process your content on your device; it never
           reaches our servers.

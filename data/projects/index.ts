@@ -22,11 +22,22 @@ export const projects: Project[] = [
 export const getProjectBySlug = (slug: string): Project | undefined =>
   projects.find((project) => project.slug === slug);
 
-export const orderedProjects = projects.slice().sort((a, b) => {
-  if (a.slug === "goose-gifts" && b.slug !== "goose-gifts") return 1;
-  if (b.slug === "goose-gifts" && a.slug !== "goose-gifts") return -1;
+const portfolioOrder = [
+  "ereps",
+  "stitch-it",
+  "faxit",
+  "reshoot",
+  "colorcub",
+  "howhigh",
+  "goose-gifts",
+];
 
-  if (a.featured && !b.featured) return -1;
-  if (!a.featured && b.featured) return 1;
-  return a.name.localeCompare(b.name);
+export const orderedProjects = projects.slice().sort((a, b) => {
+  const aIndex = portfolioOrder.indexOf(a.slug);
+  const bIndex = portfolioOrder.indexOf(b.slug);
+
+  if (aIndex === -1 && bIndex === -1) return a.name.localeCompare(b.name);
+  if (aIndex === -1) return 1;
+  if (bIndex === -1) return -1;
+  return aIndex - bIndex;
 });
