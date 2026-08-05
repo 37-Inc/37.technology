@@ -15,7 +15,7 @@ Creators regularly have usable footage in the wrong orientation. Landscape clips
 ### How ReShoot Works
 
 1. Import any video or photo from your library.
-2. Choose an output format: 9:16, 1:1, 4:5, 16:9, or custom.
+2. Choose an output format: 9:16, 16:9, 1:1, 4:5, 21:9, or 2:3.
 3. Play the media and move your phone to pan and follow the action.
 4. Export a new render with your motion path and source audio preserved.
 
@@ -30,7 +30,7 @@ Creators regularly have usable footage in the wrong orientation. Landscape clips
 
 ### Pricing and Availability
 
-ReShoot is available as a free download on the App Store for iPhone and iPad (iOS 17+).
+ReShoot is available as a free download on the App Store for iPhone with iOS 18 or later and iPad with iPadOS 18 or later.
 
 - App Store: [https://apps.apple.com/us/app/reshoot-video-reframe-crop/id6753581365](https://apps.apple.com/us/app/reshoot-video-reframe-crop/id6753581365)
 

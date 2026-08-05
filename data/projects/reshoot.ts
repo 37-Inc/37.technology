@@ -22,7 +22,7 @@ export const reshoot: Project = {
       body: "Hold your phone and move it — the gyroscope records your crop path over the footage in real time, with optional stabilization to smooth out jitter.",
     },
     {
-      title: "Every aspect ratio",
+      title: "Six aspect ratio presets",
       body: "Convert to 9:16, 1:1, 4:5, 16:9, 21:9, or 2:3 — vertical, square, landscape, or cinematic from the same source clip.",
     },
     {
@@ -79,7 +79,7 @@ export const reshoot: Project = {
   faqs: [
     {
       question: "Is ReShoot free?",
-      answer: "Yes — ReShoot is free to download on the App Store, with an optional $4.99 Pro Upgrade in-app purchase.",
+      answer: "Yes — ReShoot is free to download on the App Store.",
     },
     {
       question: "How do I convert a landscape video to portrait on iPhone?",
@@ -99,7 +99,7 @@ export const reshoot: Project = {
     },
     {
       question: "What devices does it support?",
-      answer: "ReShoot runs on iPhone and iPad with iOS 18.0 or later.",
+      answer: "ReShoot runs on iPhone with iOS 18.0 or later and on iPad with iPadOS 18.0 or later.",
     },
   ],
   keywords: [
@@ -117,7 +117,7 @@ export const reshoot: Project = {
   seo: {
     title: "ReShoot — Convert Landscape Video to Portrait on iPhone",
     description:
-      "You shot landscape; TikTok, Reels, and Shorts want vertical. ReShoot reframes video by recording your phone's motion — any ratio, up to 4K.",
+      "You shot landscape; TikTok, Reels, and Shorts want vertical. ReShoot reframes video by recording your phone's motion in six useful aspect ratios, up to 4K.",
   },
   applicationCategory: "MultimediaApplication",
   theme: {
@@ -139,7 +139,7 @@ export const reshoot: Project = {
       src: "/assets/projects/reshoot/screenshot-2.webp",
       width: 442,
       height: 960,
-      alt: "Output format picker with aspect ratios for every platform — 9:16 for TikTok, 16:9 for YouTube, 1:1 and 4:5 for Instagram, plus 21:9 and 2:3",
+      alt: "Output format picker with six aspect ratio presets — 9:16 for TikTok, 16:9 for YouTube, 1:1 and 4:5 for Instagram, plus 21:9 and 2:3",
     },
     {
       src: "/assets/projects/reshoot/screenshot-3.webp",
@@ -161,7 +161,7 @@ export const reshoot: Project = {
       kind: "app-store",
     },
   ],
-  offer: { price: "0", description: "Free download; optional $4.99 Pro upgrade" },
+  offer: { price: "0", description: "Free download" },
   operatingSystem: "iOS",
   cta: {
     heading: "Reframe your first clip",
