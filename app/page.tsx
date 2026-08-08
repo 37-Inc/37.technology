@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { JsonLd } from "@/components/landing/JsonLd";
 import { ProjectCard } from "@/components/ProjectCard";
 import { pressReleases } from "@/data/press-releases";
@@ -58,12 +59,14 @@ export default function HomePage() {
           >
             About Thirty Seven
           </Link>
-          <Link
+          <TrackedLink
             href="/contact"
+            eventName="contact_cta_click"
+            eventProperties={{ placement: "homepage_hero" }}
             className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-surface transition duration-150 ease-out hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d1b59a]"
           >
             Discuss a project
-          </Link>
+          </TrackedLink>
         </div>
       </section>
       <section className="space-y-6">

@@ -1,6 +1,5 @@
 import Link from "next/link";
-
-const contactEmail = "info@37.technology";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -12,18 +11,14 @@ export function Footer() {
           © {year} Thirty Seven, Inc. Crafted in California.
         </p>
         <div className="flex flex-wrap items-center gap-4">
-          <Link
+          <TrackedLink
             href="/contact"
+            eventName="contact_cta_click"
+            eventProperties={{ placement: "footer" }}
             className="transition-colors duration-150 ease-out hover:text-ink focus-visible:text-ink"
           >
             Work with us
-          </Link>
-          <a
-            href={`mailto:${contactEmail}`}
-            className="transition-colors duration-150 ease-out hover:text-ink focus-visible:text-ink"
-          >
-            {contactEmail}
-          </a>
+          </TrackedLink>
           <Link
             href="/legal/privacy"
             className="transition-colors duration-150 ease-out hover:text-ink focus-visible:text-ink"

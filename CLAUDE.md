@@ -63,21 +63,23 @@ This protocol applies when ending a Beads implementation workflow. It is subordi
 ```bash
 npm install
 npm run lint    # ESLint
+npm test        # Vitest contact validation, delivery boundary, and email tests
 npm run build   # production build; also the type/SSG correctness check
 npx tsc --noEmit
 ```
 
-There is no test suite; `npm run build` (all routes must render statically) plus `tsc` is the quality gate.
+Run the focused Vitest suite plus lint, `tsc`, and the production build. Public pages render statically; `/api/contact` is intentionally dynamic.
 
 ## Architecture Overview
 
-Next.js 15 App Router, fully static (SSG). The site is data-driven:
+Next.js 16 App Router. Public pages are static and data-driven; the protected inquiry endpoint is dynamic:
 
 - `data/projects/<slug>.ts` — one file per app/project, typed by `data/projects/types.ts`, aggregated in `data/projects/index.ts`. This content drives everything.
 - `app/[slug]/page.tsx` — the shared landing-page template (hero, problem/solution, features, screenshots, comparison, FAQ, CTA), themed per-project via CSS custom properties.
 - `components/landing/` — landing sections + JSON-LD builders (`structured-data.ts` emits SoftwareApplication/WebApplication, BreadcrumbList, FAQPage; homepage emits Organization/WebSite).
 - `app/legal/privacy` and `app/legal/terms` — single consolidated documents covering the site and every app; old app-specific URLs redirect via `next.config.ts`.
-- Analytics: GA4 through `@next/third-parties`, gated by `siteConfig.gaMeasurementId` in `data/site.ts` (env `NEXT_PUBLIC_GA_MEASUREMENT_ID` overrides).
+- Contact: `components/contact/ContactForm.tsx` posts to `app/api/contact/route.ts`; Resend and Turnstile secrets must remain server-only.
+- Analytics: `lib/analytics.ts` sends one sanitized event contract to GA4 and optional PostHog. Never include form contents or personal data.
 
 ## Conventions & Patterns
 

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Prose } from "@/components/Prose";
 
 export const metadata: Metadata = {
@@ -139,11 +140,8 @@ export default function TermsPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about these terms? Email
-        <a className="ml-1" href="mailto:info@37.technology">
-          info@37.technology
-        </a>
-        .
+        Questions about these terms can be sent through our{" "}
+        <Link href="/contact?type=other">inquiry form</Link>.
       </p>
     </Prose>
   );

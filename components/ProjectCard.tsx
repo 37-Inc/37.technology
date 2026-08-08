@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
@@ -10,8 +10,10 @@ interface ProjectCardProps {
 export function ProjectCard({ project, priority }: ProjectCardProps) {
   return (
     <li>
-      <Link
+      <TrackedLink
         href={`/${project.slug}`}
+        eventName="project_open"
+        eventProperties={{ project: project.slug, placement: "homepage" }}
         className={cn(
           "group block h-full rounded-3xl border border-transparent bg-surface",
           "p-6 shadow-sm transition duration-150 ease-out",
@@ -47,7 +49,7 @@ export function ProjectCard({ project, priority }: ProjectCardProps) {
             </ul>
           </div>
         </div>
-      </Link>
+      </TrackedLink>
     </li>
   );
 }

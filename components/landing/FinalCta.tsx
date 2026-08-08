@@ -23,7 +23,10 @@ export function FinalCta({ project }: FinalCtaProps) {
       <p className="mx-auto mt-4 max-w-xl text-base text-muted">{body}</p>
       {project.platforms.length > 0 ? (
         <div className="mt-8 flex justify-center">
-          <PlatformButtons platforms={project.platforms} />
+          <PlatformButtons
+            platforms={project.platforms}
+            projectSlug={project.slug}
+          />
         </div>
       ) : null}
       <p className="mt-8">

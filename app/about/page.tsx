@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Link from "next/link";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { Prose } from "@/components/Prose";
 
 export const metadata: Metadata = {
@@ -33,7 +33,14 @@ export default function AboutPage() {
         the people writing the code.
       </p>
       <p>
-        Have something to build? <Link href="/contact">Tell us about the project.</Link>
+        Have something to build?{" "}
+        <TrackedLink
+          href="/contact"
+          eventName="contact_cta_click"
+          eventProperties={{ placement: "about_body" }}
+        >
+          Tell us about the project.
+        </TrackedLink>
       </p>
     </Prose>
   );

@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
+import { TrackedAnchor } from "@/components/analytics/TrackedLink";
 import { PlatformLink } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
@@ -28,15 +29,21 @@ const platformIcons: Record<PlatformLink["kind"], ReactNode> = {
 
 interface PlatformButtonsProps {
   platforms: PlatformLink[];
+  projectSlug: string;
 }
 
-export function PlatformButtons({ platforms }: PlatformButtonsProps) {
+export function PlatformButtons({ platforms, projectSlug }: PlatformButtonsProps) {
   return (
     <div className="flex flex-wrap gap-3">
       {platforms.map((platform) => (
-        <a
+        <TrackedAnchor
           key={platform.url}
           href={platform.url}
+          eventName="outbound_product_click"
+          eventProperties={{
+            destination: platform.kind,
+            project: projectSlug,
+          }}
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
@@ -48,7 +55,7 @@ export function PlatformButtons({ platforms }: PlatformButtonsProps) {
         >
           {platformIcons[platform.kind]}
           <span>{platform.label}</span>
-        </a>
+        </TrackedAnchor>
       ))}
     </div>
   );

@@ -29,7 +29,10 @@ export function LandingHero({ project }: LandingHeroProps) {
       <p className="mt-6 max-w-2xl text-lg text-muted">{project.description}</p>
       {project.platforms.length > 0 ? (
         <div className="mt-8">
-          <PlatformButtons platforms={project.platforms} />
+          <PlatformButtons
+            platforms={project.platforms}
+            projectSlug={project.slug}
+          />
         </div>
       ) : null}
     </header>

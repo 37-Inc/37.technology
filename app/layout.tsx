@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { Fraunces, Inter } from "next/font/google";
+import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import { GoogleAnalyticsProvider } from "@/components/analytics/GoogleAnalyticsProvider";
 import { SiteShell } from "@/components/SiteShell";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
@@ -17,8 +18,12 @@ const fraunces = Fraunces({
   variable: "--font-serif",
 });
 
-const gaMeasurementId =
-  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? siteConfig.gaMeasurementId;
+const isProductionDeployment = process.env.VERCEL_ENV
+  ? process.env.VERCEL_ENV === "production"
+  : process.env.NODE_ENV === "production";
+const gaMeasurementId = isProductionDeployment
+  ? (process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? siteConfig.gaMeasurementId)
+  : "";
 const googleSiteVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -84,7 +89,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${fraunces.variable} antialiased`}>
         <SiteShell>{children}</SiteShell>
-        {gaMeasurementId ? <GoogleAnalytics gaId={gaMeasurementId} /> : null}
+        <AnalyticsProvider />
+        {gaMeasurementId ? (
+          <GoogleAnalyticsProvider measurementId={gaMeasurementId} />
+        ) : null}
       </body>
     </html>
   );
