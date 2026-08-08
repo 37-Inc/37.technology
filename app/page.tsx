@@ -69,7 +69,7 @@ export default function HomePage() {
           </TrackedLink>
         </div>
       </section>
-      <section className="space-y-6">
+      <section id="work" className="scroll-mt-24 space-y-6">
         <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="font-serif text-3xl tracking-tight text-ink">
             Products we build and operate
