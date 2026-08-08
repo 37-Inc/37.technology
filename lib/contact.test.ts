@@ -35,12 +35,29 @@ describe("validateContactSubmission", () => {
     expect(result.errors.inquiryType).toBeDefined();
   });
 
-  it("rejects an invalid email and overlong message", () => {
+  it("rejects an invalid email", () => {
     const result = validateContactSubmission(
-      validSubmission({ email: "not-an-email", summary: "x".repeat(4_001) })
+      validSubmission({ email: "not-an-email" })
     );
     expect(result.errors.email).toBeDefined();
-    expect(result.errors.summary).toBeDefined();
+  });
+
+  it("accepts a message of any non-empty length", () => {
+    expect(
+      validateContactSubmission(validSubmission({ summary: "x" })).errors
+    ).toEqual({});
+    expect(
+      validateContactSubmission(
+        validSubmission({ summary: "x".repeat(20_000) })
+      ).errors
+    ).toEqual({});
+  });
+
+  it("rejects an empty or whitespace-only message", () => {
+    for (const summary of ["", "   ", "\n\t"]) {
+      const result = validateContactSubmission(validSubmission({ summary }));
+      expect(result.errors.summary).toBe("Tell us how we can help.");
+    }
   });
 
   it("ignores fields that are not part of the minimal contract", () => {

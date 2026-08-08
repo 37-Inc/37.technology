@@ -43,7 +43,7 @@ export function validateContactSubmission(
   input: unknown
 ): ContactValidationResult {
   if (!input || typeof input !== "object") {
-    return { errors: { summary: "Enter a little about what you need." } };
+    return { errors: { summary: "Tell us how we can help." } };
   }
 
   const raw = input as Record<string, unknown>;
@@ -73,8 +73,8 @@ export function validateContactSubmission(
   ) {
     errors.email = "Enter a valid email address.";
   }
-  if (data.summary.length < 30 || data.summary.length > 4_000) {
-    errors.summary = "Share between 30 and 4,000 characters.";
+  if (!data.summary) {
+    errors.summary = "Tell us how we can help.";
   }
 
   return Object.keys(errors).length > 0 ? { errors } : { data, errors };
