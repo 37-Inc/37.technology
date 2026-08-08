@@ -262,8 +262,6 @@ export function ContactForm({ initialInquiryType }: ContactFormProps) {
             id="summary"
             name="summary"
             rows={7}
-            minLength={30}
-            maxLength={4_000}
             placeholder="A short, direct note is enough."
             className={`${controlClassName} resize-y`}
             required

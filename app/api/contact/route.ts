@@ -10,7 +10,6 @@ import { verifyTurnstile } from "@/lib/turnstile";
 
 export const runtime = "nodejs";
 
-const MAX_BODY_BYTES = 16_000;
 const MIN_FILL_TIME_MS = 2_000;
 const MAX_FILL_TIME_MS = 2 * 60 * 60 * 1_000;
 
@@ -64,21 +63,12 @@ export async function POST(request: Request) {
     return json({ error: "Expected a JSON request." }, 415);
   }
 
-  const contentLength = Number(request.headers.get("content-length") ?? 0);
-  if (contentLength > MAX_BODY_BYTES) {
-    return json({ error: "The inquiry is too large." }, 413);
-  }
-
   let payload: unknown;
   try {
     payload = await request.json();
   } catch {
     return json({ error: "The inquiry could not be read." }, 400);
   }
-  if (JSON.stringify(payload).length > MAX_BODY_BYTES) {
-    return json({ error: "The inquiry is too large." }, 413);
-  }
-
   const validation = validateContactSubmission(payload);
   if (!validation.data) {
     return json(

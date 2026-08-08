@@ -90,6 +90,13 @@ describe("POST /api/contact", () => {
     });
   });
 
+  it("accepts a large message in local mock mode", async () => {
+    const response = await POST(
+      request(payload({ summary: "x".repeat(20_000) }))
+    );
+    expect(response.status).toBe(200);
+  });
+
   it("silently absorbs honeypot submissions", async () => {
     const response = await POST(
       request(payload({ companyWebsite: "https://spam.example" }))
