@@ -45,6 +45,23 @@ export const metadata: Metadata = {
     "AI integration",
   ],
   applicationName: siteConfig.name,
+  icons: {
+    icon: [
+      {
+        url: "/assets/brand/thirty-seven-favicon-v2.png",
+        sizes: "64x64",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/assets/brand/thirty-seven-favicon-v2.png",
+    apple: [
+      {
+        url: "/apple-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
   openGraph: {
     type: "website",
     url: siteConfig.url,

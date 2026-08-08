@@ -6,8 +6,11 @@
 - `../../public/assets/brand/thirty-seven-mark-448.png` is an exact 448 x 448
   crop of the circular mark from the source image. It is used in the site
   header.
-- `app/icon.png`, `app/apple-icon.png`, and `app/favicon.ico` are derived from
-  the mark crop for browser and device icon metadata.
+- `../../public/assets/brand/thirty-seven-favicon-v2.png` is the versioned
+  browser-tab icon declared in site metadata. The versioned URL avoids stale
+  favicon caches.
+- `../../public/favicon.ico` is the legacy browser fallback, and
+  `../../app/apple-icon.png` is the Apple touch icon.
 
 Keep the 1024px source file unchanged. Generate future web derivatives from it
 rather than recompressing an existing derivative.
