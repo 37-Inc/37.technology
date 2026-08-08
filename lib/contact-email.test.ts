@@ -6,18 +6,12 @@ import {
 import type { ContactSubmission } from "@/lib/contact";
 
 const submission: ContactSubmission = {
-  budget: "25-50",
   companyWebsite: "",
   email: "person@example.com",
   inquiryType: "project",
-  link: "https://example.com/brief",
   name: "Pat <Example>\nBcc: someone@example.com",
-  organization: "Example & Co",
-  platforms: "iOS",
-  projectStage: "prototype",
   startedAt: 1_786_110_400_000,
   summary: "Build <script>alert('no')</script> safely.",
-  timeline: "one-to-three",
   turnstileToken: "test-token",
 };
 
@@ -26,7 +20,7 @@ describe("contact email", () => {
     const email = buildInquiryEmail(submission);
     expect(email.html).not.toContain("<script>");
     expect(email.html).toContain("&lt;script&gt;");
-    expect(email.html).toContain("Example &amp; Co");
+    expect(email.html).toContain("Pat &lt;Example&gt;");
     expect(email.subject).not.toContain("\n");
   });
 

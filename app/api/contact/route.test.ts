@@ -13,18 +13,12 @@ let ipSuffix = 1;
 
 function payload(overrides: Record<string, unknown> = {}) {
   return {
-    budget: "25-50",
     companyWebsite: "",
     email: "person@example.com",
     inquiryType: "project",
-    link: "https://example.com/brief",
     name: "Pat Example",
-    organization: "Example Co",
-    platforms: "iOS",
-    projectStage: "prototype",
     startedAt: Date.now() - 3_000,
     summary: "We need help taking a tested prototype into production.",
-    timeline: "one-to-three",
     turnstileToken: "",
     ...overrides,
   };

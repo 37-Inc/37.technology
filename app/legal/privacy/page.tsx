@@ -68,8 +68,8 @@ export default function PrivacyPage() {
       </p>
       <p>
         If you submit our inquiry form or email us, we receive the information
-        you provide, such as your name, email address, organization, project
-        details, budget range, and links. We use it only to evaluate and respond
+        you provide, such as your name, email address, message, and any details
+        or links you include. We use it only to evaluate and respond
         to the inquiry, manage a resulting working relationship, prevent abuse,
         and maintain ordinary business records. Form messages are delivered by
         Resend and protected against automated abuse by Cloudflare Turnstile.

@@ -1,10 +1,7 @@
 import { createHash } from "node:crypto";
 import {
-  budgetOptions,
   inquiryTypes,
   labelFor,
-  projectStages,
-  timelineOptions,
   type ContactSubmission,
 } from "@/lib/contact";
 
@@ -21,26 +18,13 @@ function escapeHtml(value: string) {
   });
 }
 
-function displayValue(value: string) {
-  return value || "Not provided";
-}
-
 export function buildInquiryEmail(submission: ContactSubmission) {
   const inquiryType = labelFor(inquiryTypes, submission.inquiryType);
-  const stage = labelFor(projectStages, submission.projectStage);
-  const timeline = labelFor(timelineOptions, submission.timeline);
-  const budget = labelFor(budgetOptions, submission.budget);
   const subjectName = submission.name.replace(/[\r\n]+/g, " ");
   const fields = [
     ["Inquiry type", inquiryType],
     ["Name", submission.name],
     ["Email", submission.email],
-    ["Organization", displayValue(submission.organization)],
-    ["Project stage", stage],
-    ["Platforms or systems", displayValue(submission.platforms)],
-    ["Timeline", timeline],
-    ["Budget", budget],
-    ["Relevant link", displayValue(submission.link)],
   ];
 
   const text = `${fields
@@ -73,13 +57,7 @@ export function contactIdempotencyKey(submission: ContactSubmission) {
     submission.inquiryType,
     submission.name,
     submission.email,
-    submission.organization,
     submission.summary,
-    submission.projectStage,
-    submission.platforms,
-    submission.timeline,
-    submission.budget,
-    submission.link,
   ]);
 
   return `contact-${createHash("sha256").update(fingerprint).digest("hex")}`;

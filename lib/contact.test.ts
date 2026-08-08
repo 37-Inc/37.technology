@@ -3,18 +3,12 @@ import { validateContactSubmission } from "@/lib/contact";
 
 function validSubmission(overrides: Record<string, unknown> = {}) {
   return {
-    budget: "25-50",
     companyWebsite: "",
     email: "person@example.com",
     inquiryType: "project",
-    link: "https://example.com/brief",
     name: "Pat Example",
-    organization: "Example Co",
-    platforms: "iOS and web",
-    projectStage: "prototype",
     startedAt: Date.now() - 3_000,
     summary: "We need help taking a tested prototype into production.",
-    timeline: "one-to-three",
     turnstileToken: "test-token",
     ...overrides,
   };
@@ -27,32 +21,33 @@ describe("validateContactSubmission", () => {
     expect(result.data?.email).toBe("person@example.com");
   });
 
-  it("accepts a non-project inquiry without project fields", () => {
+  it("accepts a press inquiry with the same minimal fields", () => {
     const result = validateContactSubmission(
-      validSubmission({
-        budget: "",
-        inquiryType: "press",
-        platforms: "",
-        projectStage: "",
-        timeline: "",
-      })
+      validSubmission({ inquiryType: "press" })
     );
     expect(result.errors).toEqual({});
   });
 
-  it("rejects unknown select values", () => {
+  it("rejects an unknown inquiry type", () => {
     const result = validateContactSubmission(
-      validSubmission({ budget: "unlimited", projectStage: "done" })
+      validSubmission({ inquiryType: "sales" })
     );
-    expect(result.errors.budget).toBeDefined();
-    expect(result.errors.projectStage).toBeDefined();
+    expect(result.errors.inquiryType).toBeDefined();
   });
 
-  it("rejects non-http links and overlong messages", () => {
+  it("rejects an invalid email and overlong message", () => {
     const result = validateContactSubmission(
-      validSubmission({ link: "javascript:alert(1)", summary: "x".repeat(4_001) })
+      validSubmission({ email: "not-an-email", summary: "x".repeat(4_001) })
     );
-    expect(result.errors.link).toBeDefined();
+    expect(result.errors.email).toBeDefined();
     expect(result.errors.summary).toBeDefined();
+  });
+
+  it("ignores fields that are not part of the minimal contract", () => {
+    const result = validateContactSubmission(
+      validSubmission({ organization: "Not retained", budget: "$1" })
+    );
+    expect(result.data).not.toHaveProperty("organization");
+    expect(result.data).not.toHaveProperty("budget");
   });
 });

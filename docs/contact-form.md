@@ -1,7 +1,9 @@
 # Contact form operations
 
-The public form posts to `POST /api/contact`. It does not send an automated
-reply and never forwards form contents to analytics.
+The public form collects only name, email, and a message, then posts to
+`POST /api/contact`. The inquiry type is inferred from the contact link that
+opened the page. The form does not send an automated reply and never forwards
+form contents to analytics.
 
 ## Provider configuration
 
@@ -76,8 +78,7 @@ and PostHog:
 
 Form completion events carry no form-derived properties. The adapter also
 enforces a per-event property allowlist at runtime. Never add names, emails,
-free-form text, user-provided URLs, budget, timeline, project stage, or inquiry
-type to analytics events.
+free-form text, user-provided URLs, or inquiry type to analytics events.
 
 GA automatic pageviews are disabled. Route pageviews are emitted manually with
 the pathname only. Current, initial, session-entry, and referring URLs are

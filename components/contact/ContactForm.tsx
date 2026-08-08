@@ -12,10 +12,7 @@ import {
 } from "react";
 import { Turnstile } from "@/components/contact/Turnstile";
 import {
-  budgetOptions,
   inquiryTypes,
-  projectStages,
-  timelineOptions,
   validateContactSubmission,
   type ContactField,
   type ContactFieldErrors,
@@ -29,10 +26,10 @@ interface ContactFormProps {
 
 interface FieldProps {
   children: ReactNode;
+  description?: string;
   error?: string;
   label: string;
   name: ContactField;
-  optional?: boolean;
 }
 
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -50,18 +47,21 @@ function inquiryTypeFromLocation() {
     : "project";
 }
 
-function Field({ children, error, label, name, optional }: FieldProps) {
+function Field({ children, description, error, label, name }: FieldProps) {
   const errorId = `${name}-error`;
+  const descriptionId = `${name}-description`;
 
   return (
     <div className="space-y-2">
       <label htmlFor={name} className="block text-sm font-medium text-ink">
         {label}
-        {optional ? (
-          <span className="ml-1 font-normal text-muted">Optional</span>
-        ) : null}
       </label>
       {children}
+      {description ? (
+        <p id={descriptionId} className="text-sm leading-relaxed text-muted">
+          {description}
+        </p>
+      ) : null}
       {error ? (
         <p id={errorId} className="text-sm text-[#9b382d]" role="alert">
           {error}
@@ -80,9 +80,7 @@ export function ContactForm({ initialInquiryType }: ContactFormProps) {
     inquiryTypeFromLocation,
     () => initialInquiryType
   );
-  const [selectedInquiryType, setSelectedInquiryType] =
-    useState<InquiryType | null>(null);
-  const inquiryType = selectedInquiryType ?? urlInquiryType;
+  const inquiryType = urlInquiryType;
   const [fieldErrors, setFieldErrors] = useState<ContactFieldErrors>({});
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
@@ -118,13 +116,7 @@ export function ContactForm({ initialInquiryType }: ContactFormProps) {
       inquiryType,
       name: formData.get("name"),
       email: formData.get("email"),
-      organization: formData.get("organization"),
       summary: formData.get("summary"),
-      projectStage: formData.get("projectStage"),
-      platforms: formData.get("platforms"),
-      timeline: formData.get("timeline"),
-      budget: formData.get("budget"),
-      link: formData.get("link"),
       companyWebsite: formData.get("companyWebsite"),
       startedAt: startedAt.current,
       turnstileToken,
@@ -230,35 +222,8 @@ export function ContactForm({ initialInquiryType }: ContactFormProps) {
       noValidate
     >
       <div className="grid gap-6">
-        <Field
-          label="What can we help with?"
-          name="inquiryType"
-          error={fieldErrors.inquiryType}
-        >
-          <select
-            id="inquiryType"
-            name="inquiryType"
-            value={inquiryType}
-            onChange={(event) =>
-              setSelectedInquiryType(event.target.value as InquiryType)
-            }
-            className={controlClassName}
-            required
-            aria-invalid={Boolean(fieldErrors.inquiryType)}
-            aria-describedby={
-              fieldErrors.inquiryType ? "inquiryType-error" : undefined
-            }
-          >
-            {inquiryTypes.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </Field>
-
         <div className="grid gap-6 sm:grid-cols-2">
-          <Field label="Your name" name="name" error={fieldErrors.name}>
+          <Field label="Name" name="name" error={fieldErrors.name}>
             <input
               id="name"
               name="name"
@@ -288,32 +253,9 @@ export function ContactForm({ initialInquiryType }: ContactFormProps) {
         </div>
 
         <Field
-          label="Organization"
-          name="organization"
-          optional
-          error={fieldErrors.organization}
-        >
-          <input
-            id="organization"
-            name="organization"
-            type="text"
-            autoComplete="organization"
-            maxLength={120}
-            className={controlClassName}
-            aria-invalid={Boolean(fieldErrors.organization)}
-            aria-describedby={
-              fieldErrors.organization ? "organization-error" : undefined
-            }
-          />
-        </Field>
-
-        <Field
-          label={
-            inquiryType === "project"
-              ? "What are you building?"
-              : "What do you need?"
-          }
+          label="How can we help?"
           name="summary"
+          description="Share what you are working on, relevant timing, and any useful links."
           error={fieldErrors.summary}
         >
           <textarea
@@ -322,144 +264,13 @@ export function ContactForm({ initialInquiryType }: ContactFormProps) {
             rows={7}
             minLength={30}
             maxLength={4_000}
-            placeholder="A short, concrete overview is enough. Include who it is for and where things stand today."
+            placeholder="A short, direct note is enough."
             className={`${controlClassName} resize-y`}
             required
             aria-invalid={Boolean(fieldErrors.summary)}
-            aria-describedby={fieldErrors.summary ? "summary-error" : undefined}
-          />
-        </Field>
-
-        {inquiryType === "project" ? (
-          <>
-            <div className="grid gap-6 sm:grid-cols-2">
-              <Field
-                label="Current stage"
-                name="projectStage"
-                error={fieldErrors.projectStage}
-              >
-                <select
-                  id="projectStage"
-                  name="projectStage"
-                  defaultValue=""
-                  className={controlClassName}
-                  required
-                  aria-invalid={Boolean(fieldErrors.projectStage)}
-                  aria-describedby={
-                    fieldErrors.projectStage ? "projectStage-error" : undefined
-                  }
-                >
-                  <option value="" disabled>
-                    Select a stage
-                  </option>
-                  {projectStages.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              </Field>
-              <Field
-                label="Platforms or systems"
-                name="platforms"
-                optional
-                error={fieldErrors.platforms}
-              >
-                <input
-                  id="platforms"
-                  name="platforms"
-                  type="text"
-                  maxLength={200}
-                  placeholder="iOS, Android, web, backend…"
-                  className={controlClassName}
-                  aria-invalid={Boolean(fieldErrors.platforms)}
-                  aria-describedby={
-                    fieldErrors.platforms ? "platforms-error" : undefined
-                  }
-                />
-              </Field>
-            </div>
-
-            <div className="grid gap-6 sm:grid-cols-2">
-              <Field
-                label="Preferred timeline"
-                name="timeline"
-                optional
-                error={fieldErrors.timeline}
-              >
-                <select
-                  id="timeline"
-                  name="timeline"
-                  defaultValue=""
-                  className={controlClassName}
-                  aria-invalid={Boolean(fieldErrors.timeline)}
-                  aria-describedby={
-                    fieldErrors.timeline ? "timeline-error" : undefined
-                  }
-                >
-                  <option value="">No preference yet</option>
-                  {timelineOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              </Field>
-              <Field
-                label="Budget range"
-                name="budget"
-                optional
-                error={fieldErrors.budget}
-              >
-                <select
-                  id="budget"
-                  name="budget"
-                  defaultValue=""
-                  className={controlClassName}
-                  aria-invalid={Boolean(fieldErrors.budget)}
-                  aria-describedby={
-                    fieldErrors.budget ? "budget-error" : undefined
-                  }
-                >
-                  <option value="">Prefer not to say yet</option>
-                  {budgetOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              </Field>
-            </div>
-          </>
-        ) : (
-          <input type="hidden" name="projectStage" value="" />
-        )}
-
-        {inquiryType !== "project" ? (
-          <>
-            <input type="hidden" name="platforms" value="" />
-            <input type="hidden" name="timeline" value="" />
-            <input type="hidden" name="budget" value="" />
-          </>
-        ) : null}
-
-        <Field
-          label="Relevant link"
-          name="link"
-          optional
-          error={fieldErrors.link}
-        >
-          <input
-            id="link"
-            name="link"
-            type="url"
-            inputMode="url"
-            autoComplete="url"
-            maxLength={500}
-            placeholder="https://"
-            className={controlClassName}
-            aria-invalid={Boolean(fieldErrors.link)}
-            aria-describedby={fieldErrors.link ? "link-error" : undefined}
+            aria-describedby={`summary-description${
+              fieldErrors.summary ? " summary-error" : ""
+            }`}
           />
         </Field>
 
