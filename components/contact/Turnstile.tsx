@@ -103,9 +103,8 @@ export function Turnstile({ onTokenChange, siteKey }: TurnstileProps) {
   return (
     <>
       <Script
-        key={attempt}
-        id={`turnstile-script-${attempt}`}
-        src={`https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&attempt=${attempt}`}
+        id="turnstile-script"
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
         strategy="afterInteractive"
         onLoad={renderWidget}
         onError={() => setHasError(true)}
