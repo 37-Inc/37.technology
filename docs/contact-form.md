@@ -56,11 +56,10 @@ success response without sending or logging the submitted personal data.
 
 ## Abuse controls
 
-The endpoint validates same-origin JSON requests and strict field lengths,
-silently absorbs the honeypot field, rejects unrealistically fast or stale
-submissions, verifies Turnstile when configured, and applies a best-effort
-per-instance rate limit. Vercel Firewall rate limiting should be added before
-production launch for a durable edge-level limit across server instances. The
+The endpoint validates same-origin JSON requests and required fields, rejects
+unrealistically fast or stale submissions, verifies Turnstile when configured,
+and applies a best-effort per-instance rate limit. Vercel Firewall rate limiting
+should be added for a durable edge-level limit across server instances. The
 process-local fallback is defense in depth, not a production-grade distributed
 limit.
 

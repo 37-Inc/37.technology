@@ -6,7 +6,6 @@ import {
 import type { ContactSubmission } from "@/lib/contact";
 
 const submission: ContactSubmission = {
-  companyWebsite: "",
   email: "person@example.com",
   inquiryType: "project",
   name: "Pat <Example>\nBcc: someone@example.com",
