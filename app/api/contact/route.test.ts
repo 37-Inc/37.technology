@@ -13,7 +13,6 @@ let ipSuffix = 1;
 
 function payload(overrides: Record<string, unknown> = {}) {
   return {
-    companyWebsite: "",
     email: "person@example.com",
     inquiryType: "project",
     name: "Pat Example",
@@ -97,14 +96,6 @@ describe("POST /api/contact", () => {
     expect(response.status).toBe(200);
   });
 
-  it("silently absorbs honeypot submissions", async () => {
-    const response = await POST(
-      request(payload({ companyWebsite: "https://spam.example" }))
-    );
-    expect(response.status).toBe(200);
-    await expect(response.json()).resolves.toEqual({ accepted: true });
-  });
-
   it("asks fast submissions to wait rather than refresh", async () => {
     const response = await POST(request(payload({ startedAt: Date.now() })));
     expect(response.status).toBe(400);
@@ -124,7 +115,7 @@ describe("POST /api/contact", () => {
     expect(limited.status).toBe(429);
   });
 
-  it("verifies Turnstile and forwards a Resend idempotency key", async () => {
+  it("ignores stale autofill data and sends after Turnstile verification", async () => {
     vi.stubEnv("CONTACT_DELIVERY_MODE", "");
     vi.stubEnv("TURNSTILE_SECRET_KEY", "test-secret");
     vi.stubEnv("RESEND_API_KEY", "test-api-key");
@@ -142,7 +133,12 @@ describe("POST /api/contact", () => {
     sendMock.mockResolvedValue({ data: { id: "test-email" }, error: null });
 
     const response = await POST(
-      request(payload({ turnstileToken: "test-token" }))
+      request(
+        payload({
+          companyWebsite: "https://autofilled.example",
+          turnstileToken: "test-token",
+        })
+      )
     );
     expect(response.status).toBe(200);
     expect(sendMock).toHaveBeenCalledOnce();

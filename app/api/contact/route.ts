@@ -78,11 +78,6 @@ export async function POST(request: Request) {
   }
   const submission = validation.data;
 
-  // Give form-filling bots a convincing success response without sending mail.
-  if (submission.companyWebsite) {
-    return json({ accepted: true });
-  }
-
   const elapsed = Date.now() - submission.startedAt;
   if (!Number.isFinite(elapsed) || elapsed > MAX_FILL_TIME_MS) {
     return json({ error: "Please refresh the page and try again." }, 400);

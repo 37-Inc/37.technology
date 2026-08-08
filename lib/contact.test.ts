@@ -3,7 +3,6 @@ import { validateContactSubmission } from "@/lib/contact";
 
 function validSubmission(overrides: Record<string, unknown> = {}) {
   return {
-    companyWebsite: "",
     email: "person@example.com",
     inquiryType: "project",
     name: "Pat Example",

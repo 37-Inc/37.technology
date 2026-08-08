@@ -117,7 +117,6 @@ export function ContactForm({ initialInquiryType }: ContactFormProps) {
       name: formData.get("name"),
       email: formData.get("email"),
       summary: formData.get("summary"),
-      companyWebsite: formData.get("companyWebsite"),
       startedAt: startedAt.current,
       turnstileToken,
     };
@@ -198,11 +197,10 @@ export function ContactForm({ initialInquiryType }: ContactFormProps) {
           tabIndex={-1}
           className="mt-4 font-serif text-3xl tracking-tight text-ink outline-none"
         >
-          Your inquiry is in the right place.
+          Thanks for reaching out.
         </h2>
         <p className="mt-4 text-base leading-relaxed text-muted">
-          We will review what you shared and reply by email if the work looks
-          like a fit. There is no automated sales sequence behind this form.
+          We’ll review your message and get back to you by email.
         </p>
         <Link
           href="/"
@@ -271,20 +269,6 @@ export function ContactForm({ initialInquiryType }: ContactFormProps) {
             }`}
           />
         </Field>
-
-        <div
-          className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden"
-          aria-hidden="true"
-        >
-          <label htmlFor="companyWebsite">Company website</label>
-          <input
-            id="companyWebsite"
-            name="companyWebsite"
-            type="text"
-            tabIndex={-1}
-            autoComplete="off"
-          />
-        </div>
 
         <Turnstile
           key={turnstileAttempt}

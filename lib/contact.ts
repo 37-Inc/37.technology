@@ -9,7 +9,6 @@ export const contactTurnstileAction = "contact_submit";
 export type InquiryType = (typeof inquiryTypes)[number]["value"];
 
 export interface ContactSubmission {
-  companyWebsite: string;
   email: string;
   inquiryType: InquiryType;
   name: string;
@@ -20,7 +19,7 @@ export interface ContactSubmission {
 
 export type ContactField = Exclude<
   keyof ContactSubmission,
-  "companyWebsite" | "startedAt" | "turnstileToken"
+  "startedAt" | "turnstileToken"
 >;
 
 export type ContactFieldErrors = Partial<Record<ContactField, string>>;
@@ -48,7 +47,6 @@ export function validateContactSubmission(
 
   const raw = input as Record<string, unknown>;
   const data: ContactSubmission = {
-    companyWebsite: asTrimmedString(raw.companyWebsite),
     email: asTrimmedString(raw.email).toLowerCase(),
     inquiryType: asTrimmedString(raw.inquiryType) as InquiryType,
     name: asTrimmedString(raw.name),
