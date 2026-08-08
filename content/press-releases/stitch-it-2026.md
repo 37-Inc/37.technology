@@ -44,7 +44,7 @@ Thirty Seven, Inc. builds focused utility apps for iOS and Android, including St
 
 Cameron Ehrlich  
 Thirty Seven, Inc.  
-info@37.technology
+[Press inquiries](https://37.technology/contact?type=press)
 
 ---
 

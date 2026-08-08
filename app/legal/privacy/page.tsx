@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Prose } from "@/components/Prose";
 
 export const metadata: Metadata = {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <Prose title="Privacy Policy" intro="Effective date: July 5, 2026">
+    <Prose title="Privacy Policy" intro="Effective date: August 7, 2026">
       <p>
         Thirty Seven, Inc. keeps data collection intentionally minimal. This
         policy explains what we collect, how we use it, and your choices. It is
@@ -45,19 +46,36 @@ export default function PrivacyPage() {
 
       <h2>The Website</h2>
       <p>
-        We use Google Analytics to understand traffic trends on 37.technology:
-        pages viewed, referring site, browser and device type, and approximate
-        location. Google Analytics sets cookies and collects device identifiers
-        on Google&apos;s behalf; we review this data only in aggregate, and we
-        do not use it for advertising or to identify you personally. You can
-        block analytics with standard browser tooling (content blockers,
-        &ldquo;Do Not Track,&rdquo; or Google&apos;s{" "}
+        We use Google Analytics and PostHog to understand traffic and product
+        interest on 37.technology: pages viewed, referring site, browser and
+        device type, approximate location, contact-form interactions, and
+        clicks to our product listings. We do not send names, email addresses,
+        links, or message contents to either analytics provider. PostHog
+        session recording and automatic interaction capture are disabled, and
+        its browser identifier is kept only in memory for the current visit.
+        Google Analytics may set cookies and collect device identifiers on
+        Google&apos;s behalf. We review this data only in aggregate and do not use
+        it for advertising or to identify you personally. The site does not
+        initialize analytics when your browser sends a &ldquo;Do Not
+        Track&rdquo; signal. You can also limit analytics with a content
+        blocker or Google&apos;s{" "}
         <a href="https://tools.google.com/dlpage/gaoptout">
           opt-out browser add-on
         </a>
-        ) and the site works identically. If you email us, we receive the
-        information in your message (such as your email address and message
-        content) so we can respond.
+        . Blocking the Cloudflare verification script may prevent the inquiry
+        form from submitting; if that happens, contact info@37.technology
+        directly.
+      </p>
+      <p>
+        If you submit our inquiry form or email us, we receive the information
+        you provide, such as your name, email address, message, and any details
+        or links you include. We use it only to evaluate and respond
+        to the inquiry, manage a resulting working relationship, prevent abuse,
+        and maintain ordinary business records. Form messages are delivered by
+        Resend and protected against automated abuse by Cloudflare Turnstile.
+        Turnstile may process IP address and browser integrity signals, but we
+        do not use it for advertising. We retain inquiries only as long as
+        reasonably necessary for those purposes or to meet legal obligations.
       </p>
 
       <h2>Our Apps — General Practices</h2>
@@ -217,17 +235,28 @@ export default function PrivacyPage() {
             policies.google.com/privacy
           </a>
         </li>
+        <li>
+          <strong>PostHog, Inc.</strong> — privacy-limited website traffic and
+          interaction measurement on 37.technology. Form contents are never
+          included. <a href="https://posthog.com/privacy">posthog.com/privacy</a>
+        </li>
+        <li>
+          <strong>Resend, Inc.</strong> — delivery of website inquiries to our
+          business mailbox. <a href="https://resend.com/legal/privacy-policy">resend.com/legal/privacy-policy</a>
+        </li>
+        <li>
+          <strong>Cloudflare, Inc.</strong> — Turnstile bot detection for the
+          website inquiry form. <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a>
+        </li>
       </ul>
       <p>We do not sell personal information.</p>
 
       <h2>Your Rights and Choices</h2>
       <p>
         You can request access to, correction of, or deletion of personal
-        information by contacting
-        <a className="ml-1" href="mailto:info@37.technology">
-          info@37.technology
-        </a>
-        . Deleting a Fax It account that has received faxes deletes the content
+        information through our{" "}
+        <Link href="/contact?type=other">inquiry form</Link>. Deleting a Fax It
+        account that has received faxes deletes the content
         of those faxes; we cannot recover fax content after deletion has been
         processed.
       </p>
@@ -248,11 +277,8 @@ export default function PrivacyPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about this policy can be sent to
-        <a className="ml-1" href="mailto:info@37.technology">
-          info@37.technology
-        </a>
-        .
+        Questions about this policy can be sent through our{" "}
+        <Link href="/contact?type=other">inquiry form</Link>.
       </p>
     </Prose>
   );

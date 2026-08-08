@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { pressReleases } from "@/data/press-releases";
 import { siteConfig } from "@/data/site";
 
@@ -50,12 +51,14 @@ export default function NewsPage() {
 
       <p className="text-sm text-muted">
         Need press materials or interviews?{" "}
-        <a
-          href="mailto:info@37.technology"
+        <TrackedLink
+          href="/contact?type=press"
+          eventName="contact_cta_click"
+          eventProperties={{ placement: "news_footer" }}
           className="font-medium text-ink underline decoration-accent/60 underline-offset-4"
         >
-          Contact info@37.technology
-        </a>
+          Send a press inquiry
+        </TrackedLink>
       </p>
     </div>
   );
