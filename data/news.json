@@ -1,0 +1,51 @@
+[
+  {
+    "slug": "fax-it-comes-to-mac",
+    "title": "Fax It Comes to Mac",
+    "summary": "The pay-per-page fax app now has a native Mac experience for composing documents, sending pages, and following delivery status.",
+    "kind": "product-update",
+    "projectSlug": "faxit",
+    "publishedLabel": "August 11, 2026",
+    "publishAt": "2026-08-11T16:00:00.000Z",
+    "status": "scheduled"
+  },
+  {
+    "slug": "why-fax-it-keeps-pay-per-page-sending",
+    "title": "Why Fax It Keeps Pay-Per-Page Sending",
+    "summary": "An occasional fax should not require an ongoing monthly commitment. Fax It keeps a simpler option available.",
+    "kind": "product-note",
+    "projectSlug": "faxit",
+    "publishedLabel": "August 18, 2026",
+    "publishAt": "2026-08-18T16:00:00.000Z",
+    "status": "scheduled"
+  },
+  {
+    "slug": "what-we-mean-by-independent-software-company",
+    "title": "What We Mean by an Independent Software Company",
+    "summary": "Thirty Seven builds and operates its own portfolio, then brings that product experience to selected client work.",
+    "kind": "company-note",
+    "publishedLabel": "August 25, 2026",
+    "publishAt": "2026-08-25T16:00:00.000Z",
+    "status": "scheduled"
+  },
+  {
+    "slug": "reshoot-launch",
+    "title": "ReShoot Lets You \"Re-Shoot\" Any Video Using Your Phone's Motion Sensors",
+    "summary": "New iOS app turns landscape footage into polished portrait content without desktop re-editing.",
+    "kind": "press-release",
+    "projectSlug": "reshoot",
+    "publishedLabel": "February 2026",
+    "publishAt": "2026-02-01T17:00:00.000Z",
+    "status": "published"
+  },
+  {
+    "slug": "stitch-it-2026",
+    "title": "Stitch It! 2026 Product Update",
+    "summary": "Updated release with accurate stitching workflow, horizontal support, and correct platform links.",
+    "kind": "press-release",
+    "projectSlug": "stitch-it",
+    "publishedLabel": "February 2026",
+    "publishAt": "2026-02-01T17:00:00.000Z",
+    "status": "published"
+  }
+]

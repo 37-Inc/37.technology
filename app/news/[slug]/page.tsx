@@ -3,12 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { getPressReleaseBySlug, pressReleases } from "@/data/press-releases";
+import { JsonLd } from "@/components/landing/JsonLd";
+import { NewsMark } from "@/components/NewsMark";
+import { getNewsItemBySlug, newsItems, newsKindLabel } from "@/data/news";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
-import { getPressReleaseMarkdown } from "@/lib/press-releases";
+import { getNewsMarkdown } from "@/lib/news";
 
-interface PressReleasePageProps {
+interface NewsArticlePageProps {
   params: Promise<{ slug: string }>;
 }
 
@@ -16,62 +18,93 @@ export const dynamicParams = false;
 export const revalidate = false;
 
 export function generateStaticParams() {
-  return pressReleases.map((release) => ({ slug: release.slug }));
+  return newsItems.map((item) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({
   params,
-}: PressReleasePageProps): Promise<Metadata> {
+}: NewsArticlePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const release = getPressReleaseBySlug(slug);
+  const item = getNewsItemBySlug(slug);
 
-  if (!release) {
+  if (!item) {
     return {};
   }
 
-  const canonical = `${siteConfig.url}/news/${release.slug}`;
+  const canonical = `${siteConfig.url}/news/${item.slug}`;
 
   return {
-    title: `${release.title} | News`,
-    description: release.summary,
+    title: `${item.title} | News`,
+    description: item.summary,
     alternates: {
       canonical,
     },
     openGraph: {
-      title: release.title,
-      description: release.summary,
+      title: item.title,
+      description: item.summary,
       type: "article",
       url: canonical,
       siteName: siteConfig.name,
+      publishedTime: item.publishAt,
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: release.title,
-      description: release.summary,
+      title: item.title,
+      description: item.summary,
+      images: [siteConfig.ogImage],
     },
   };
 }
 
-export default async function PressReleasePage({ params }: PressReleasePageProps) {
+export default async function NewsArticlePage({ params }: NewsArticlePageProps) {
   const { slug } = await params;
-  const release = getPressReleaseBySlug(slug);
+  const item = getNewsItemBySlug(slug);
 
-  if (!release) {
+  if (!item) {
     notFound();
   }
 
   let markdown = "";
 
   try {
-    markdown = await getPressReleaseMarkdown(slug);
+    markdown = await getNewsMarkdown(slug);
   } catch {
     notFound();
   }
 
   const markdownBody = markdown.replace(/^# .+\n+/, "");
+  const canonical = `${siteConfig.url}/news/${item.slug}`;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: item.title,
+    description: item.summary,
+    datePublished: item.publishAt,
+    dateModified: item.publishAt,
+    image: siteConfig.ogImage,
+    mainEntityOfPage: canonical,
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
 
   return (
     <article className="space-y-8">
+      <JsonLd data={structuredData} />
       <div className="space-y-4">
         <Link
           href="/news"
@@ -79,13 +112,18 @@ export default async function PressReleasePage({ params }: PressReleasePageProps
         >
           Back to News
         </Link>
-        <p className="text-xs uppercase tracking-[0.3em] text-muted">
-          {release.publishedLabel}
-        </p>
-        <h1 className="max-w-4xl font-serif text-5xl tracking-tight text-ink">
-          {release.title}
-        </h1>
-        <p className="max-w-3xl text-lg text-muted">{release.summary}</p>
+        <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+          <NewsMark projectSlug={item.projectSlug} size="large" />
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-muted">
+              {newsKindLabel(item.kind)} / {item.publishedLabel}
+            </p>
+            <h1 className="mt-3 max-w-4xl font-serif text-4xl tracking-tight text-ink sm:text-5xl">
+              {item.title}
+            </h1>
+          </div>
+        </div>
+        <p className="max-w-3xl text-lg text-muted">{item.summary}</p>
       </div>
 
       <div className="rounded-3xl border border-hairline bg-surface p-6 shadow-sm sm:p-10">
