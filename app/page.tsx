@@ -2,7 +2,7 @@ import Link from "next/link";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { JsonLd } from "@/components/landing/JsonLd";
 import { ProjectCard } from "@/components/ProjectCard";
-import { pressReleases } from "@/data/press-releases";
+import { newsItems, newsKindLabel } from "@/data/news";
 import { orderedProjects } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 
@@ -35,7 +35,7 @@ const structuredData = {
 };
 
 export default function HomePage() {
-  const latestPressReleases = pressReleases.slice(0, 2);
+  const latestNewsItems = newsItems.slice(0, 2);
 
   return (
     <div className="space-y-16">
@@ -88,25 +88,25 @@ export default function HomePage() {
             href="/news"
             className="text-sm font-medium text-ink underline decoration-accent/60 underline-offset-4"
           >
-            View all press releases
+            View all news
           </Link>
         </div>
         <ul className="grid gap-6 sm:grid-cols-2">
-          {latestPressReleases.map((release) => (
-            <li key={release.slug}>
+          {latestNewsItems.map((item) => (
+            <li key={item.slug}>
               <article className="h-full rounded-3xl border border-hairline bg-surface p-6 shadow-sm">
                 <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
-                  {release.publishedLabel}
+                  {newsKindLabel(item.kind)} / {item.publishedLabel}
                 </p>
                 <h3 className="mt-2 font-serif text-2xl tracking-tight text-ink">
-                  {release.title}
+                  {item.title}
                 </h3>
-                <p className="mt-3 text-sm text-muted">{release.summary}</p>
+                <p className="mt-3 text-sm text-muted">{item.summary}</p>
                 <Link
-                  href={`/news/${release.slug}`}
+                  href={`/news/${item.slug}`}
                   className="mt-5 inline-flex items-center rounded-full border border-hairline bg-surface px-4 py-2 text-sm font-medium text-ink transition duration-150 ease-out hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d1b59a]"
                 >
-                  Read release
+                  {item.kind === "press-release" ? "Read release" : "Read article"}
                 </Link>
               </article>
             </li>

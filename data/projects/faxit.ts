@@ -3,23 +3,23 @@ import type { Project } from "./types";
 export const faxit: Project = {
   slug: "faxit",
   name: "Fax It",
-  category: "Pay-per-page fax app for iPhone",
+  category: "Pay-per-page fax app for iPhone, iPad, and Mac",
   oneLiner:
-    "Send a fax from your iPhone — no fax machine, no subscription, pay per page.",
+    "Pay per page to fax from iPhone, iPad, or Mac. Unused credits never expire.",
   description:
-    "Fax It sends faxes from your iPhone or iPad without a fax machine or a monthly plan. Scan documents with your camera or import PDFs and photos from iCloud Drive, Dropbox, or Google Drive, preview exactly what the recipient will get, and send to the US, Canada, and 50+ countries. You buy credits per page — they never expire, so an occasional fax costs cents, not a subscription.",
+    "Fax It sends faxes from iPhone, iPad, or Mac without a fax machine or a monthly sending plan. Scan documents with your camera on iPhone and iPad, or import PDFs and images, preview the pages, and send to the US, Canada, and 50+ countries. You buy credits per page - they never expire, so an occasional fax does not require a subscription.",
   problem: {
     heading: "You need to send one fax. You don't own a fax machine.",
     body: "Doctors' offices, government agencies, and law firms still ask for faxes, and email won't do. Hunting down a print shop wastes an afternoon, and most fax apps push a $10–30/month subscription to send a single form.",
   },
   solution: {
-    heading: "Fax it from your phone, pay for the pages, done.",
-    body: "Scan the document with your camera or pull it from your files, type the fax number, and preview the exact pages before they go out. Fax It charges per page with credits that never expire — no plan, no auto-renewal, no fax machine.",
+    heading: "Import the document, pay for the pages, done.",
+    body: "Scan the document with your camera or pull it from your files, type the fax number, and preview the exact pages before they go out. Sending uses page credits that never expire and does not require a subscription.",
   },
   features: [
     {
-      title: "Scan with your camera",
-      body: "Auto-scan paper documents straight into a fax, with adjustable image quality and contrast so they arrive legible.",
+      title: "Scan or import documents",
+      body: "Scan paper documents on iPhone and iPad, or import supported PDFs and images into a fax.",
     },
     {
       title: "Import from anywhere",
@@ -71,7 +71,7 @@ export const faxit: Project = {
       {
         alternative: "Online fax subscription services",
         drawback: "Monthly plans of $10–30 whether you fax a hundred pages or one, often with auto-renewal you have to remember to cancel.",
-        advantage: "Pay per page with credits that never expire. No plan to cancel because there is no plan.",
+        advantage: "Pay per page with credits that never expire. Sending does not require a monthly plan.",
       },
       {
         alternative: "Emailing the document instead",
@@ -83,7 +83,7 @@ export const faxit: Project = {
   faqs: [
     {
       question: "Is Fax It free?",
-      answer: "The app is free to download. Sending costs page credits you buy in-app — pay only for what you send, with no subscription and no recurring charges.",
+      answer: "The app is free to download. Sending uses page credits purchased in the app and does not require a subscription.",
     },
     {
       question: "Do the fax credits expire?",
@@ -119,9 +119,9 @@ export const faxit: Project = {
     "scan and fax app iPhone",
   ],
   seo: {
-    title: "Fax It — Send a Fax from iPhone, No Subscription",
+    title: "Fax It - Send a Fax from iPhone or Mac, Pay Per Page",
     description:
-      "Need to fax a form but don't own a fax machine? Fax It sends faxes from your iPhone to 50+ countries. Pay per page — credits never expire.",
+      "Send faxes from iPhone, iPad, or Mac to 50+ countries. Pay per page, keep unused credits, and skip a monthly sending subscription.",
   },
   applicationCategory: "BusinessApplication",
   theme: {
@@ -129,7 +129,7 @@ export const faxit: Project = {
     accentSoft: "#f2eefa",
     accentInk: "#46307e",
   },
-  tags: ["iOS", "Business", "Productivity"],
+  tags: ["iOS", "macOS", "Business", "Productivity"],
   hero: "/assets/projects/faxit.jpg",
   screenshots: [
     {
@@ -160,14 +160,14 @@ export const faxit: Project = {
   platforms: [
     {
       label: "App Store",
-      url: "https://apps.apple.com/us/app/fax-it/id1458261691",
+      url: "https://apps.apple.com/us/app/fax-it-send-fax-from-phone/id1458261691",
       kind: "app-store",
     },
   ],
   offer: { price: "0", description: "Free app; sending uses pay-per-page credits" },
-  operatingSystem: "iOS",
+  operatingSystem: "iOS, iPadOS, macOS",
   cta: {
     heading: "Send that fax and move on",
-    body: "Fax It is free on the App Store. Buy credits for just the pages you need — they never expire.",
+    body: "Fax It is available for iPhone, iPad, and Mac. Buy credits for just the pages you need - they never expire.",
   },
 };
