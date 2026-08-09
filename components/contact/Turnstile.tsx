@@ -4,6 +4,8 @@ import Script from "next/script";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { contactTurnstileAction } from "@/lib/contact";
 
+type TurnstileSize = "compact" | "flexible";
+
 interface TurnstileApi {
   remove(widgetId: string): void;
   render(
@@ -13,7 +15,7 @@ interface TurnstileApi {
       callback(token: string): void;
       "error-callback"(): void;
       "expired-callback"(): void;
-      size: "flexible";
+      size: TurnstileSize;
       sitekey: string;
       theme: "light";
     }
@@ -31,9 +33,16 @@ interface TurnstileProps {
   siteKey?: string;
 }
 
+const flexibleWidgetMinWidth = 300;
+
+export function turnstileSizeForWidth(width: number): TurnstileSize {
+  return width < flexibleWidgetMinWidth ? "compact" : "flexible";
+}
+
 export function Turnstile({ onTokenChange, siteKey }: TurnstileProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
+  const widgetSizeRef = useRef<TurnstileSize | null>(null);
   const [attempt, setAttempt] = useState(0);
   const [hasError, setHasError] = useState(false);
 
@@ -47,10 +56,12 @@ export function Turnstile({ onTokenChange, siteKey }: TurnstileProps) {
       return;
     }
 
+    const size = turnstileSizeForWidth(containerRef.current.clientWidth);
+    widgetSizeRef.current = size;
     widgetIdRef.current = window.turnstile.render(containerRef.current, {
       action: contactTurnstileAction,
       sitekey: siteKey,
-      size: "flexible",
+      size,
       theme: "light",
       callback: (token) => {
         setHasError(false);
@@ -64,8 +75,34 @@ export function Turnstile({ onTokenChange, siteKey }: TurnstileProps) {
     });
   }, [onTokenChange, siteKey]);
 
+  const removeWidget = useCallback(() => {
+    if (widgetIdRef.current && window.turnstile) {
+      window.turnstile.remove(widgetIdRef.current);
+    }
+    widgetIdRef.current = null;
+    widgetSizeRef.current = null;
+  }, []);
+
   useEffect(() => {
     renderWidget();
+
+    const container = containerRef.current;
+    const resizeObserver =
+      container && typeof ResizeObserver !== "undefined"
+        ? new ResizeObserver(([entry]) => {
+            const nextSize = turnstileSizeForWidth(entry.contentRect.width);
+            if (
+              widgetIdRef.current &&
+              widgetSizeRef.current !== nextSize
+            ) {
+              removeWidget();
+              onTokenChange("");
+              renderWidget();
+            }
+          })
+        : null;
+
+    if (container && resizeObserver) resizeObserver.observe(container);
 
     const timeout = window.setTimeout(() => {
       if (!widgetIdRef.current) setHasError(true);
@@ -73,18 +110,13 @@ export function Turnstile({ onTokenChange, siteKey }: TurnstileProps) {
 
     return () => {
       window.clearTimeout(timeout);
-      if (widgetIdRef.current && window.turnstile) {
-        window.turnstile.remove(widgetIdRef.current);
-        widgetIdRef.current = null;
-      }
+      resizeObserver?.disconnect();
+      removeWidget();
     };
-  }, [attempt, renderWidget]);
+  }, [attempt, onTokenChange, removeWidget, renderWidget]);
 
   function retry() {
-    if (widgetIdRef.current && window.turnstile) {
-      window.turnstile.remove(widgetIdRef.current);
-      widgetIdRef.current = null;
-    }
+    removeWidget();
     onTokenChange("");
     setHasError(false);
     setAttempt((value) => value + 1);
@@ -109,7 +141,11 @@ export function Turnstile({ onTokenChange, siteKey }: TurnstileProps) {
         onLoad={renderWidget}
         onError={() => setHasError(true)}
       />
-      <div className="min-w-0" ref={containerRef} aria-label="Bot verification" />
+      <div
+        className="flex w-full min-w-0 max-w-full justify-center overflow-hidden"
+        ref={containerRef}
+        aria-label="Bot verification"
+      />
       {hasError ? (
         <div
           className="rounded-2xl border border-[#9b382d]/25 bg-[#9b382d]/5 px-4 py-3 text-sm text-[#7d2d25]"
