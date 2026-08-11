@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...newsItems.map((item) => ({
       url: `${baseUrl}/news/${item.slug}`,
-      lastModified: new Date(item.publishAt),
+      lastModified: new Date(item.updatedAt ?? item.publishAt),
     })),
     {
       url: `${baseUrl}/legal/privacy`,

@@ -1,25 +1,51 @@
 import newsData from "./news.json";
 
 export type NewsKind =
+  | "archive"
   | "company-note"
   | "press-release"
   | "product-note"
   | "product-update";
 export type NewsStatus = "published" | "scheduled";
 
+export interface NewsFaq {
+  answer: string;
+  question: string;
+}
+
+export interface NewsHighlight {
+  label: string;
+  value: string;
+}
+
+export interface NewsSource {
+  label: string;
+  url: string;
+}
+
 export interface NewsItem {
+  eventAt?: string;
+  eventLabel?: string;
+  faqs?: NewsFaq[];
+  highlights?: NewsHighlight[];
   kind: NewsKind;
+  keywords?: string[];
   projectSlug?: string;
   publishedLabel: string;
   publishAt: string;
+  seoDescription?: string;
+  seoTitle?: string;
   slug: string;
+  sources?: NewsSource[];
   status: NewsStatus;
   summary: string;
   title: string;
+  updatedAt?: string;
+  updatedLabel?: string;
 }
 
 export const allNewsItems = (newsData as NewsItem[]).slice().sort((a, b) =>
-  b.publishAt.localeCompare(a.publishAt)
+  (b.eventAt ?? b.publishAt).localeCompare(a.eventAt ?? a.publishAt)
 );
 
 export const newsItems = allNewsItems.filter(
@@ -35,6 +61,8 @@ export const getNewsItemBySlug = (slug: string): NewsItem | undefined =>
 
 export function newsKindLabel(kind: NewsKind): string {
   switch (kind) {
+    case "archive":
+      return "From the archive";
     case "company-note":
       return "Company note";
     case "press-release":
@@ -44,4 +72,8 @@ export function newsKindLabel(kind: NewsKind): string {
     case "product-update":
       return "Product update";
   }
+}
+
+export function newsDisplayDate(item: NewsItem): string {
+  return item.eventLabel ?? item.publishedLabel;
 }

@@ -6,7 +6,7 @@
 
 *New iOS app turns landscape footage into polished portrait content without re-editing on desktop.*
 
-**San Francisco, February 2026** - Thirty Seven, Inc. announced the launch of ReShoot, a free iOS app that lets creators reframe existing videos and photos using iPhone motion sensors. Instead of static crops or desktop timelines, users move their phone to drive a virtual camera path and export social-ready framing.
+**Los Angeles, February 2026** - Thirty Seven, Inc. announced the launch of ReShoot, a free iOS app that lets creators reframe existing videos and photos using iPhone motion sensors. Instead of static crops or desktop timelines, users move their phone to drive a virtual camera path and export social-ready framing.
 
 ### The Problem
 
@@ -32,11 +32,11 @@ Creators regularly have usable footage in the wrong orientation. Landscape clips
 
 ReShoot is available as a free download on the App Store for iPhone with iOS 18 or later and iPad with iPadOS 18 or later.
 
-- App Store: [https://apps.apple.com/us/app/reshoot-video-reframe-crop/id6753581365](https://apps.apple.com/us/app/reshoot-video-reframe-crop/id6753581365)
+- [Download ReShoot on the App Store](https://apps.apple.com/us/app/reshoot-video-reframe-crop/id6753581365)
 
 ### About Thirty Seven, Inc.
 
-Thirty Seven, Inc. builds focused utility apps for iOS and Android, including Stitch It!, ReShoot, HowHigh, Fax It, and ColorCub.
+Thirty Seven, Inc. builds and operates focused software for iOS, Android, macOS, and the web, including Stitch It!, ReShoot, HowHigh, Fax It, ColorCub, and Ereps.
 
 ### Press Contact
 

@@ -146,12 +146,6 @@ export const colorcub: Project = {
   hero: "/assets/projects/colorcub.jpg",
   screenshots: [
     {
-      src: "/assets/projects/colorcub/screenshot-1.webp",
-      width: 442,
-      height: 960,
-      alt: "ColorCub app printing and sharing a finished flower coloring page from an iPhone",
-    },
-    {
       src: "/assets/projects/colorcub/screenshot-2.webp",
       width: 600,
       height: 800,
@@ -168,6 +162,12 @@ export const colorcub: Project = {
       width: 600,
       height: 800,
       alt: "ColorCub gallery of saved coloring pages on iPad",
+    },
+    {
+      src: "/assets/projects/colorcub/screenshot-1.webp",
+      width: 442,
+      height: 960,
+      alt: "ColorCub app printing and sharing a finished flower coloring page from an iPhone",
     },
   ],
   platforms: [

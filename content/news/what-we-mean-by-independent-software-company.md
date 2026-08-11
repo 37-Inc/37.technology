@@ -8,7 +8,7 @@ The portfolio is not a gallery of old client projects. It is a set of products w
 
 Today that includes software for rehabilitation, screenshot stitching, faxing, video reframing, color extraction, elevation, and gift discovery. Each product keeps its own visual identity and audience. Thirty Seven provides the operating home behind them.
 
-You can [explore all seven products](/#work).
+You can [explore the portfolio](/#work).
 
 ## Operating changes the work
 

@@ -1,23 +1,32 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import posthog from "posthog-js";
 import { setPostHogReady, useDoNotTrack } from "@/lib/analytics";
+import { shouldEnableBrowserAnalytics } from "@/lib/analytics-host";
+import { routeAnalyticsEvents } from "@/lib/analytics-routes";
 import { sanitizePostHogEvent } from "@/lib/posthog-privacy";
 
 const postHogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 const postHogHost =
   process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com";
+const allowLocalhost =
+  process.env.NEXT_PUBLIC_ANALYTICS_ALLOW_LOCALHOST === "true";
 
 let initialized = false;
 
 export function AnalyticsProvider() {
   const pathname = usePathname();
   const doNotTrack = useDoNotTrack();
+  const lastTrackedPath = useRef("");
 
   useEffect(() => {
-    if (!postHogKey || doNotTrack) {
+    if (
+      !postHogKey ||
+      doNotTrack ||
+      !shouldEnableBrowserAnalytics(window.location.hostname, allowLocalhost)
+    ) {
       setPostHogReady(false);
       return;
     }
@@ -42,9 +51,15 @@ export function AnalyticsProvider() {
       setPostHogReady(true);
     }
 
+    if (pathname === lastTrackedPath.current) return;
+
+    lastTrackedPath.current = pathname;
     posthog.capture("$pageview", {
       path: pathname,
     });
+    for (const event of routeAnalyticsEvents(pathname)) {
+      posthog.capture(event.name, event.properties);
+    }
   }, [doNotTrack, pathname]);
 
   return null;

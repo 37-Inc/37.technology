@@ -6,7 +6,7 @@
 
 *The long-standing screenshot utility from Thirty Seven, Inc. continues to focus on precise, manual control for clean results.*
 
-**San Francisco, February 2026** - Thirty Seven, Inc. shared a 2026 update for Stitch It!, its screenshot editing app for iOS and Android. Stitch It! helps people combine multiple screenshots into a single image with manual control over ordering, alignment, crop, and redaction.
+**Los Angeles, February 2026** - Thirty Seven, Inc. shared a 2026 update for Stitch It!, its screenshot editing app for iOS and Android. Stitch It! helps people combine multiple screenshots into a single image with manual control over ordering, alignment, crop, and redaction.
 
 ### What Stitch It! Does
 
@@ -32,13 +32,13 @@ Stitch It! is designed for people who need dependable screenshot assembly withou
 
 Stitch It! is free to download with optional in-app upgrades. Available on:
 
-- iOS: [https://apps.apple.com/us/app/stitch-it-long-screenshots/id554594252](https://apps.apple.com/us/app/stitch-it-long-screenshots/id554594252)
-- Android: [https://play.google.com/store/apps/details?id=com.luckybunnyllc.stitchit](https://play.google.com/store/apps/details?id=com.luckybunnyllc.stitchit)
-- Website: [https://www.stitchitapp.com/](https://www.stitchitapp.com/)
+- [Download Stitch It on the App Store](https://apps.apple.com/us/app/stitch-it-long-screenshots/id554594252)
+- [Get Stitch It on Google Play](https://play.google.com/store/apps/details?id=com.luckybunnyllc.stitchit)
+- [Visit the Stitch It website](https://www.stitchitapp.com/)
 
 ### About Thirty Seven, Inc.
 
-Thirty Seven, Inc. builds focused utility apps for iOS and Android, including Stitch It!, ReShoot, HowHigh, Fax It, and ColorCub.
+Thirty Seven, Inc. builds and operates focused software for iOS, Android, macOS, and the web, including Stitch It!, ReShoot, HowHigh, Fax It, ColorCub, and Ereps.
 
 ### Press Contact
 

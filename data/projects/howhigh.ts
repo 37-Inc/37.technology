@@ -139,22 +139,34 @@ export const howhigh: Project = {
   hero: "/assets/projects/howhigh.jpg",
   screenshots: [
     {
-      src: "/assets/projects/howhigh/screenshot-2.webp",
-      width: 444,
+      src: "/assets/projects/howhigh/screenshot-1.webp",
+      width: 442,
       height: 960,
-      alt: "HowHigh altimeter tab showing current altitude, a live elevation chart, and a session summary of gain, loss, and duration",
+      alt: "HowHigh altimeter showing elevation gain, sensor status, and the latest elevation session chart",
     },
     {
-      src: "/assets/projects/howhigh/screenshot-1.webp",
-      width: 444,
+      src: "/assets/projects/howhigh/screenshot-2.webp",
+      width: 442,
       height: 960,
-      alt: "HowHigh barometer tab with current air pressure, pressure trend, and a live pressure chart",
+      alt: "HowHigh barometer showing current pressure, sensor status, and the latest pressure session chart",
     },
     {
       src: "/assets/projects/howhigh/screenshot-3.webp",
-      width: 444,
+      width: 442,
       height: 960,
-      alt: "HowHigh settings with metric or imperial units, sea-level pressure calibration, and WeatherKit auto-calibration",
+      alt: "HowHigh Insights summarizing local sea-level pressure, recorded activity, and session highlights",
+    },
+    {
+      src: "/assets/projects/howhigh/screenshot-4.webp",
+      width: 442,
+      height: 960,
+      alt: "HowHigh session history with search, favorites, notes, and pressure and elevation measurements",
+    },
+    {
+      src: "/assets/projects/howhigh/screenshot-5.webp",
+      width: 442,
+      height: 960,
+      alt: "HowHigh settings for measurement units and automatic, manual, or nearby-station calibration",
     },
   ],
   platforms: [
