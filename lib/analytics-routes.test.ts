@@ -9,12 +9,16 @@ describe("route analytics events", () => {
   });
 
   it("tracks an article view by slug", () => {
-    expect(routeAnalyticsEvents("/news/a-useful-release")).toEqual([
+    expect(routeAnalyticsEvents("/news/stitch-it-since-2012")).toEqual([
       {
         name: "news_article_view",
-        properties: { slug: "a-useful-release" },
+        properties: { slug: "stitch-it-since-2012" },
       },
     ]);
+  });
+
+  it("rejects unknown or email-like article slugs", () => {
+    expect(routeAnalyticsEvents("/news/alice@example.com")).toEqual([]);
   });
 
   it("does not add route events to unrelated pages", () => {

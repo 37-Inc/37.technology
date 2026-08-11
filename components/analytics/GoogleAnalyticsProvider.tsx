@@ -4,8 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 import { useDoNotTrack } from "@/lib/analytics";
+import { shouldEnableBrowserAnalytics } from "@/lib/analytics-host";
 import { routeAnalyticsEvents } from "@/lib/analytics-routes";
 import { analyticsPageContext } from "@/lib/analytics-url";
+
+const allowLocalhost =
+  process.env.NEXT_PUBLIC_ANALYTICS_ALLOW_LOCALHOST === "true";
 
 interface GoogleAnalyticsProviderProps {
   measurementId: string;
@@ -24,6 +28,7 @@ export function GoogleAnalyticsProvider({
       doNotTrack ||
       !scriptReady ||
       !window.gtag ||
+      !shouldEnableBrowserAnalytics(window.location.hostname, allowLocalhost) ||
       pathname === lastTrackedPath.current
     ) {
       return;

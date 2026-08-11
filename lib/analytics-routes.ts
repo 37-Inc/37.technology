@@ -2,6 +2,7 @@ import type {
   AnalyticsEventName,
   AnalyticsProperties,
 } from "@/lib/analytics";
+import { getNewsItemBySlug } from "@/data/news";
 
 export interface RouteAnalyticsEvent {
   name: AnalyticsEventName;
@@ -18,10 +19,13 @@ export function routeAnalyticsEvents(
   const articleMatch = pathname.match(/^\/news\/([^/]+)$/);
   if (!articleMatch) return [];
 
+  const article = getNewsItemBySlug(articleMatch[1]);
+  if (!article) return [];
+
   return [
     {
       name: "news_article_view",
-      properties: { slug: articleMatch[1] },
+      properties: { slug: article.slug },
     },
   ];
 }

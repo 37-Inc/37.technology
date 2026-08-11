@@ -207,6 +207,7 @@ main {
 .home-orbit {
   --orbit-x: 0px;
   --orbit-y: 0px;
+
   position: relative;
   width: min(100%, 33rem);
   aspect-ratio: 1;

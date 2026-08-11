@@ -4,5 +4,6 @@ export function shouldEnableBrowserAnalytics(
   hostname: string,
   allowLocalhost = false
 ) {
-  return allowLocalhost || !localHostnames.has(hostname.toLowerCase());
+  const normalizedHostname = hostname.replace(/^\[|\]$/g, "").toLowerCase();
+  return allowLocalhost || !localHostnames.has(normalizedHostname);
 }

@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { shouldEnableBrowserAnalytics } from "@/lib/analytics-host";
 
 describe("browser analytics host policy", () => {
-  it.each(["localhost", "127.0.0.1", "::1"])(
+  it.each(["localhost", "127.0.0.1", "::1", "[::1]"])(
     "disables analytics on %s",
     (hostname) => {
       expect(shouldEnableBrowserAnalytics(hostname)).toBe(false);
