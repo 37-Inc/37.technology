@@ -3,171 +3,198 @@ import type { Project } from "./types";
 export const faxit: Project = {
   slug: "faxit",
   name: "Fax It",
-  category: "Pay-per-page fax app for iPhone, iPad, and Mac",
+  category: "Send-and-receive fax app for iPhone, iPad, and Mac",
   oneLiner:
-    "Pay per page to fax from iPhone, iPad, or Mac. Unused credits never expire.",
+    "Send with page credits, or choose a plan with your own fax number.",
   description:
-    "Fax It sends faxes from iPhone, iPad, or Mac without a fax machine or a monthly sending plan. Scan documents with your camera on iPhone and iPad, or import PDFs and images, preview the pages, and send to the US, Canada, and 50+ countries. You buy credits per page - they never expire, so an occasional fax does not require a subscription.",
+    "Fax It sends and receives faxes on iPhone, iPad, and Mac. Scan or import documents, check every page, and send to the US, Canada, and 50+ countries. Pay-per-page credits remain available for occasional sending, while optional Fax It Number plans add a dedicated US or Canadian number, an inbox, and plan-covered sending and receiving.",
   problem: {
-    heading: "You need to send one fax. You don't own a fax machine.",
-    body: "Doctors' offices, government agencies, and law firms still ask for faxes, and email won't do. Hunting down a print shop wastes an afternoon, and most fax apps push a $10–30/month subscription to send a single form.",
+    heading: "One outgoing fax - or a number for incoming ones.",
+    body: "A doctor's office, government agency, or business still needs a fax, but you do not own the machine. Sometimes the job is one outgoing form. Other times you need a number where documents and replies can reach you.",
   },
   solution: {
-    heading: "Import the document, pay for the pages, done.",
-    body: "Scan the document with your camera or pull it from your files, type the fax number, and preview the exact pages before they go out. Sending uses page credits that never expire and does not require a subscription.",
+    heading: "Pay by the page - or choose a plan.",
+    body: "Use credits that do not expire when you only need to send. When you need a dedicated number, choose a Fax It Number plan and receive faxes in the app alongside plan-covered sending.",
   },
   features: [
     {
-      title: "Scan or import documents",
-      body: "Scan paper documents on iPhone and iPad, or import supported PDFs and images into a fax.",
+      title: "Scan, import, and arrange",
+      body: "Scan paper on iPhone or iPad, or import supported PDFs and images. Add, remove, and reorder pages before sending.",
     },
     {
-      title: "Import from anywhere",
-      body: "Fax PDFs and photos from iCloud Drive, Google Drive, Dropbox, your photo library, or email and Messages attachments.",
+      title: "Native on Mac",
+      body: "Drag documents into the Mac app, build multi-document faxes, review the page count, and send from a native desktop workflow.",
+    },
+    {
+      title: "Your own fax number",
+      body: "An optional Fax It Number plan adds a dedicated US or Canadian number and an inbox for received faxes.",
+    },
+    {
+      title: "Flexible ways to pay",
+      body: "Use non-expiring page credits for occasional sending, or choose a monthly 200-page or Unlimited number plan for ongoing use.",
     },
     {
       title: "Fax 50+ countries",
       body: "Send to the US, Canada, and more than 50 international destinations with a built-in country-code picker.",
     },
     {
-      title: "Preview before sending",
-      body: "See exactly what the recipient will receive — every page, in order — before it goes out.",
-    },
-    {
-      title: "Delivery status",
-      body: "Watch each fax move to delivered, with the recipient, page count, cost, and date kept on record.",
-    },
-    {
-      title: "Credits that never expire",
-      body: "Buy as few or as many page credits as you need. No subscription, no monthly reset, no auto-renewal.",
+      title: "History across devices",
+      body: "Follow delivery status and review sent or received faxes from the signed-in account on iPhone or Mac.",
     },
   ],
   useCases: [
     {
-      title: "Fax a doctor's office",
-      body: "Send medical records, referral forms, or prescription paperwork to a clinic that only accepts fax.",
+      title: "The occasional outgoing fax",
+      body: "Buy page credits for one important document and keep the unused balance for later. Credits do not expire.",
     },
     {
-      title: "Government and tax forms",
-      body: "Fax signed forms to the IRS, DMV, courts, or other agencies that won't take email attachments.",
+      title: "A number for replies",
+      body: "Choose a dedicated US or Canadian number and receive incoming faxes in the app's Inbox.",
     },
     {
-      title: "Contracts and legal documents",
-      body: "Scan a signed contract or real estate form and fax it back in minutes, multi-page and previewed.",
+      title: "Medical and government paperwork",
+      body: "Send referrals, records, signed forms, or applications to an office that still requires fax.",
     },
     {
-      title: "The once-a-year fax",
-      body: "Keep leftover credits for next time — they don't expire, so the occasional fax never needs a plan.",
+      title: "Ongoing document exchange",
+      body: "Use a Fax It Number plan when regular sending and receiving fits better than buying pages one fax at a time.",
     },
   ],
   comparison: {
-    heading: "How people send a fax without a fax machine today",
+    heading: "Choose the fax setup that matches the job",
     rows: [
       {
         alternative: "Finding a fax machine or print shop",
-        drawback: "Driving somewhere, waiting in line, and paying per page anyway — with your documents passing through someone else's hands.",
-        advantage: "Scan and send from your phone in minutes, from wherever the document is.",
+        drawback:
+          "It means traveling, waiting, and handing an important document to another service.",
+        advantage:
+          "Scan or import the document and send it from iPhone, iPad, or Mac.",
       },
       {
-        alternative: "Online fax subscription services",
-        drawback: "Monthly plans of $10–30 whether you fax a hundred pages or one, often with auto-renewal you have to remember to cancel.",
-        advantage: "Pay per page with credits that never expire. Sending does not require a monthly plan.",
+        alternative: "A one-size subscription",
+        drawback:
+          "One billing model rarely fits both a single outgoing fax and someone who needs a permanent number.",
+        advantage:
+          "Use non-expiring page credits for occasional sending or choose a number plan for ongoing use.",
       },
       {
         alternative: "Emailing the document instead",
-        drawback: "Many medical offices, courts, and government agencies still require fax and won't accept email attachments.",
-        advantage: "A real fax transmission to a real fax number, with delivery status to confirm it arrived.",
+        drawback:
+          "Many medical offices, courts, agencies, and businesses still require a real fax transmission.",
+        advantage:
+          "Send to a fax number, follow delivery status, and receive replies in the app when you have a Fax It Number.",
       },
     ],
   },
   faqs: [
     {
       question: "Is Fax It free?",
-      answer: "The app is free to download. Sending uses page credits purchased in the app and does not require a subscription.",
+      answer:
+        "Fax It is free to download. Sending can use page credits purchased in the app, while receiving requires an optional monthly Fax It Number plan.",
     },
     {
-      question: "Do the fax credits expire?",
-      answer: "No. Credits never expire, so whatever you don't use today is still there for the next fax, whenever that is.",
+      question: "Can I send a fax without a subscription?",
+      answer:
+        "Yes. Pay-per-page sending remains available with credits that do not expire. A monthly plan is optional for people who want a dedicated number and included usage.",
     },
     {
-      question: "How do I send a fax from my iPhone?",
-      answer: "Scan the document with your camera or import it from Files, iCloud Drive, Dropbox, Google Drive, or Photos. Enter the recipient's fax number, preview the pages, and hit Send.",
+      question: "Can Fax It receive faxes?",
+      answer:
+        "Yes. A Fax It Number plan provides a dedicated US or Canadian fax number. Incoming faxes appear in the app's Inbox as documents you can open, save, or share.",
     },
     {
-      question: "Can I fax to a doctor's office or the IRS with it?",
-      answer: "Yes. Fax It sends to any fax number — medical offices, government agencies, courts, and businesses — and shows delivery status so you know it arrived.",
+      question: "Does Fax It work on Mac?",
+      answer:
+        "Yes. Fax It is available for iPhone, iPad, and Mac. Sent and received history follows the signed-in account between iPhone and Mac.",
     },
     {
       question: "Which countries can I fax to?",
-      answer: "The US, Canada, and more than 50 international countries, selected from a built-in country-code picker.",
+      answer:
+        "Fax It sends to the US, Canada, and more than 50 international destinations. Dedicated receiving numbers are available for supported US and Canadian App Store accounts.",
     },
     {
-      question: "What happens to my documents?",
-      answer: "You preview exactly what will be transmitted before sending, and each fax keeps a delivery record in the app. The full privacy policy is at 37.technology/legal/privacy.",
+      question: "What documents can I fax?",
+      answer:
+        "Fax It supports PDFs and common image formats, including multi-page and multi-document faxes. Preview the assembled pages before sending.",
     },
   ],
   keywords: [
+    "send and receive fax app",
     "send a fax from iPhone",
-    "fax without a fax machine",
-    "fax app no subscription",
+    "fax app for Mac",
+    "fax app with phone number",
     "pay per page fax app",
-    "one-time fax from phone",
-    "how to send a fax from my phone",
-    "fax to doctor's office from iPhone",
-    "fax government forms from phone",
+    "receive fax on iPhone",
+    "fax without a fax machine",
+    "dedicated fax number app",
     "international fax app",
     "scan and fax app iPhone",
   ],
   seo: {
-    title: "Fax It - Send a Fax from iPhone or Mac, Pay Per Page",
+    title: "Fax It - Send & Receive Faxes on iPhone, iPad, Mac",
     description:
-      "Send faxes from iPhone, iPad, or Mac to 50+ countries. Pay per page, keep unused credits, and skip a monthly sending subscription.",
+      "Send and receive faxes on iPhone, iPad, or Mac. Pay by the page with credits, or choose a plan with your own fax number and inbox.",
   },
   applicationCategory: "BusinessApplication",
   theme: {
-    accent: "#7448c8",
-    accentSoft: "#f2eefa",
-    accentInk: "#46307e",
+    accent: "#246fe5",
+    accentSoft: "#eef5ff",
+    accentInk: "#174b9f",
   },
-  tags: ["iOS", "macOS", "Business", "Productivity"],
+  tags: ["iOS", "iPadOS", "macOS", "Business", "Productivity"],
   hero: "/assets/projects/faxit.jpg",
   screenshots: [
     {
       src: "/assets/projects/faxit/screenshot-1.webp",
-      width: 392,
-      height: 696,
-      alt: "Fax It compose screen with a recipient fax number entered and an Add Page button — fax securely with no subscription",
+      width: 442,
+      height: 960,
+      alt: "Fax It storefront showing pay-by-page sending or a fax number plan on iPhone",
     },
     {
       src: "/assets/projects/faxit/screenshot-2.webp",
-      width: 392,
-      height: 696,
-      alt: "Country picker listing international dialing codes for faxing to 50+ countries, above the document scanner and file import options",
+      width: 442,
+      height: 960,
+      alt: "Fax It number picker for choosing a local or memorable fax number",
     },
     {
       src: "/assets/projects/faxit/screenshot-3.webp",
-      width: 392,
-      height: 696,
-      alt: "Delivery record for a 5-page fax to a medical group showing recipient, cost in credits, date, and a Success status",
+      width: 442,
+      height: 960,
+      alt: "Fax It inbox showing received faxes sent to a dedicated number",
     },
     {
       src: "/assets/projects/faxit/screenshot-4.webp",
-      width: 392,
-      height: 696,
-      alt: "Import source menu for adding fax pages from Gallery, Camera, Files, or Dropbox",
+      width: 442,
+      height: 960,
+      alt: "Fax It delivery history showing the status of sent faxes",
+    },
+    {
+      src: "/assets/projects/faxit/screenshot-5.webp",
+      width: 442,
+      height: 960,
+      alt: "Fax It received fax detail ready to open, review, and share",
+    },
+    {
+      src: "/assets/projects/faxit/screenshot-6.webp",
+      width: 442,
+      height: 960,
+      alt: "Fax It compose workflow with the selected documents ready to send",
     },
   ],
   platforms: [
     {
       label: "App Store",
-      url: "https://apps.apple.com/us/app/fax-it-send-fax-from-phone/id1458261691",
+      url: "https://apps.apple.com/us/app/fax-it-send-receive-fax/id1458261691",
       kind: "app-store",
     },
   ],
-  offer: { price: "0", description: "Free app; sending uses pay-per-page credits" },
+  offer: {
+    price: "0",
+    description: "Free download; sending uses page credits or an optional plan",
+  },
   operatingSystem: "iOS, iPadOS, macOS",
   cta: {
-    heading: "Send that fax and move on",
-    body: "Fax It is available for iPhone, iPad, and Mac. Buy credits for just the pages you need - they never expire.",
+    heading: "Send one fax - or keep your own number",
+    body: "Fax It is available for iPhone, iPad, and Mac. Pay by the page for occasional sending, or choose a Fax It Number plan.",
   },
 };

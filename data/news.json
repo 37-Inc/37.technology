@@ -1,8 +1,390 @@
 [
   {
+    "slug": "stitch-it-since-2012",
+    "title": "Stitch It, Since 2012",
+    "summary": "Stitch It began as a focused iPhone utility for turning separate screenshots into one readable image and has kept evolving ever since.",
+    "seoTitle": "Stitch It Screenshot App: Built Since 2012",
+    "seoDescription": "Stitch It launched in 2012 to combine screenshots into one image. See how the iPhone and Android screenshot stitcher has evolved.",
+    "keywords": [
+      "Stitch It app history",
+      "screenshot stitching app",
+      "combine screenshots iPhone",
+      "long screenshot app"
+    ],
+    "kind": "archive",
+    "projectSlug": "stitch-it",
+    "eventLabel": "October 16, 2012",
+    "eventAt": "2012-10-16T01:32:55.000Z",
+    "publishedLabel": "August 9, 2026",
+    "publishAt": "2026-08-09T22:00:00.000Z",
+    "updatedLabel": "August 9, 2026",
+    "updatedAt": "2026-08-09T22:00:00.000Z",
+    "status": "published",
+    "highlights": [
+      {
+        "label": "Original release",
+        "value": "2012"
+      },
+      {
+        "label": "Current platforms",
+        "value": "iOS + Android"
+      },
+      {
+        "label": "Core job",
+        "value": "Combine screenshots"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When was Stitch It first released?",
+        "answer": "Apple's App Store record dates Stitch It's original release to October 16, 2012."
+      },
+      {
+        "question": "What does Stitch It do?",
+        "answer": "Stitch It combines separate screenshots into one vertical or horizontal image with manual arranging, cropping, alignment, and redaction controls."
+      },
+      {
+        "question": "Does Stitch It stitch screenshots automatically?",
+        "answer": "No. Stitch It uses a manual workflow so the person making the image controls order, crop, alignment, and the final seam."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Stitch It on the App Store",
+        "url": "https://apps.apple.com/us/app/stitch-it-long-screenshots/id554594252"
+      },
+      {
+        "label": "Stitch It on Google Play",
+        "url": "https://play.google.com/store/apps/details?id=com.luckybunnyllc.stitchit"
+      },
+      {
+        "label": "Stitch It product page",
+        "url": "https://37.technology/stitch-it"
+      }
+    ]
+  },
+  {
+    "slug": "stitch-it-around-the-web",
+    "title": "Stitch It Around the Web",
+    "summary": "Independent writers and iPhone communities have documented Stitch It across languages, platforms, and more than a decade of screenshot workflows.",
+    "seoTitle": "Stitch It Press Coverage and Reviews: 2012–2021",
+    "seoDescription": "An archive of independent Stitch It coverage from Focus, appgefahren, Product Hunt, SmartWorld, BamKa, and iPhone communities.",
+    "keywords": [
+      "Stitch It review",
+      "Stitch It press coverage",
+      "screenshot stitching app review",
+      "long screenshot iPhone app"
+    ],
+    "kind": "archive",
+    "projectSlug": "stitch-it",
+    "eventLabel": "2012–2021",
+    "eventAt": "2021-01-30T08:00:00.000Z",
+    "publishedLabel": "August 9, 2026",
+    "publishAt": "2026-08-09T22:05:00.000Z",
+    "updatedLabel": "August 9, 2026",
+    "updatedAt": "2026-08-09T22:05:00.000Z",
+    "status": "published",
+    "highlights": [
+      {
+        "label": "Coverage span",
+        "value": "2012–2021"
+      },
+      {
+        "label": "Coverage languages",
+        "value": "Italian, German, Japanese"
+      },
+      {
+        "label": "Community mentions",
+        "value": "Product Hunt + Reddit"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Has Stitch It been covered by independent websites?",
+        "answer": "Yes. Independent articles about Stitch It appeared on Focus, appgefahren, SmartWorld, and BamKa between 2012 and 2021, alongside a 2015 Product Hunt listing."
+      },
+      {
+        "question": "Is the historical coverage still accurate?",
+        "answer": "The articles document the app at the time they were written. Pricing, screenshots, platform support, and some features have changed, so the current Stitch It product page and storefronts are the authoritative sources today."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Focus: Stitch It for sharing conversations (2012)",
+        "url": "https://www.focus.it/tecnologia/tecno-prodotti/condividi-con-gli-amici-le-tue-chat-piu-divertenti"
+      },
+      {
+        "label": "appgefahren: Long conversations in one screenshot (2014)",
+        "url": "https://www.appgefahren.de/stich-it-screenshots-von-nachrichten-108058.html"
+      },
+      {
+        "label": "Product Hunt: Stitch It launch listing (2015)",
+        "url": "https://www.producthunt.com/products/stitch-it"
+      },
+      {
+        "label": "SmartWorld: Stitch It arrives on Android (2016)",
+        "url": "https://www.smartworld.it/app/stitch-it-app-screenshot-416456.html"
+      },
+      {
+        "label": "BamKa: Creating long screenshots with Stitch It (2021)",
+        "url": "https://bamka.info/screenshot-merge-stitchit"
+      },
+      {
+        "label": "Reddit: scrolling screenshot recommendations (2019)",
+        "url": "https://www.reddit.com/r/iphonehelp/comments/bs6dbc/how_to_take_scrolling_screenshot_in_iphone/"
+      },
+      {
+        "label": "Reddit: lesser-known iOS app recommendations (2024)",
+        "url": "https://www.reddit.com/r/ios/comments/1db938w/share_your_lesser_known_or_niche_ios_apps/"
+      }
+    ]
+  },
+  {
+    "slug": "colorcub-arrives-on-the-app-store",
+    "title": "ColorCub Arrives on the App Store",
+    "summary": "ColorCub launched with a simple premise: describe a coloring-page idea, make it your own, and move easily between the screen and paper.",
+    "seoTitle": "ColorCub AI Coloring Pages App Launches",
+    "seoDescription": "ColorCub launched in July 2025 as an AI coloring page app for iPhone and iPad, with drawing, saving, sharing, and printing tools.",
+    "keywords": [
+      "ColorCub app",
+      "AI coloring pages app",
+      "custom coloring pages iPad",
+      "printable coloring page app"
+    ],
+    "kind": "archive",
+    "projectSlug": "colorcub",
+    "eventLabel": "July 21, 2025",
+    "eventAt": "2025-07-21T07:00:00.000Z",
+    "publishedLabel": "August 9, 2026",
+    "publishAt": "2026-08-09T22:10:00.000Z",
+    "updatedLabel": "August 9, 2026",
+    "updatedAt": "2026-08-09T22:10:00.000Z",
+    "status": "published",
+    "highlights": [
+      {
+        "label": "App Store release",
+        "value": "July 2025"
+      },
+      {
+        "label": "Designed for",
+        "value": "iPhone + iPad"
+      },
+      {
+        "label": "Creative loop",
+        "value": "Create, color, print"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When did ColorCub launch?",
+        "answer": "ColorCub launched on Apple's App Store on July 21, 2025."
+      },
+      {
+        "question": "What is ColorCub?",
+        "answer": "ColorCub is an iPhone and iPad app that creates custom coloring pages from spoken or typed ideas, then provides tools to color, save, share, or print them."
+      },
+      {
+        "question": "Can ColorCub pages be printed?",
+        "answer": "Yes. A finished or generated page can be saved and printed for coloring away from the screen."
+      }
+    ],
+    "sources": [
+      {
+        "label": "ColorCub on the App Store",
+        "url": "https://apps.apple.com/us/app/colorcub-ai-coloring-pages/id6745206164"
+      },
+      {
+        "label": "ColorCub product page",
+        "url": "https://37.technology/colorcub"
+      }
+    ]
+  },
+  {
+    "slug": "howhigh-from-the-archive",
+    "title": "HowHigh, From the Archive",
+    "summary": "HowHigh put the iPhone's barometer and elevation data into a focused utility built for hikes, changing weather, and everyday curiosity.",
+    "seoTitle": "HowHigh Barometer and Altimeter App Since 2014",
+    "seoDescription": "HowHigh launched in October 2014 as a barometer and altimeter app for iPhone. It continues to track elevation and pressure changes.",
+    "keywords": [
+      "HowHigh app",
+      "barometer app iPhone",
+      "altimeter app iPhone",
+      "track elevation gain iPhone"
+    ],
+    "kind": "archive",
+    "projectSlug": "howhigh",
+    "eventLabel": "October 1, 2014",
+    "eventAt": "2014-10-01T02:32:46.000Z",
+    "publishedLabel": "August 9, 2026",
+    "publishAt": "2026-08-09T22:15:00.000Z",
+    "updatedLabel": "August 9, 2026",
+    "updatedAt": "2026-08-09T22:15:00.000Z",
+    "status": "published",
+    "highlights": [
+      {
+        "label": "Original release",
+        "value": "2014"
+      },
+      {
+        "label": "Platform",
+        "value": "iPhone"
+      },
+      {
+        "label": "Signals",
+        "value": "Elevation + pressure"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When was HowHigh released?",
+        "answer": "Apple's App Store record dates HowHigh's release to October 1, 2014."
+      },
+      {
+        "question": "What does HowHigh measure?",
+        "answer": "HowHigh displays elevation and barometric pressure, records sessions, and charts how those readings change over time."
+      },
+      {
+        "question": "Who is HowHigh for?",
+        "answer": "HowHigh is useful for people who want to follow elevation gain, observe changing pressure, or answer everyday questions about altitude with their iPhone."
+      }
+    ],
+    "sources": [
+      {
+        "label": "HowHigh on the App Store",
+        "url": "https://apps.apple.com/us/app/barometer-altimeter-howhigh/id921339656"
+      },
+      {
+        "label": "HowHigh product page",
+        "url": "https://37.technology/howhigh"
+      }
+    ]
+  },
+  {
+    "slug": "fax-it-from-the-archive",
+    "title": "Fax It, From the Archive",
+    "summary": "Fax It began as a direct way to send a document from an iPhone. It now sends and receives across iPhone, iPad, and Mac with credits or optional plans.",
+    "seoTitle": "Fax It App: Send and Receive Faxes Since 2020",
+    "seoDescription": "Fax It launched in 2020 and now sends and receives faxes on iPhone, iPad, and Mac with pay-per-page credits or optional fax number plans.",
+    "keywords": [
+      "Fax It app",
+      "fax app iPhone",
+      "send and receive fax app",
+      "fax app Mac",
+      "pay per page fax app",
+      "fax number app"
+    ],
+    "kind": "archive",
+    "projectSlug": "faxit",
+    "eventLabel": "December 15, 2020",
+    "eventAt": "2020-12-15T08:00:00.000Z",
+    "publishedLabel": "August 9, 2026",
+    "publishAt": "2026-08-09T22:20:00.000Z",
+    "updatedLabel": "August 9, 2026",
+    "updatedAt": "2026-08-09T22:20:00.000Z",
+    "status": "published",
+    "highlights": [
+      {
+        "label": "App Store release",
+        "value": "December 2020"
+      },
+      {
+        "label": "Current platforms",
+        "value": "iPhone, iPad + Mac"
+      },
+      {
+        "label": "Flexible options",
+        "value": "Credits or a number plan"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When did Fax It launch?",
+        "answer": "Fax It launched on Apple's App Store on December 15, 2020."
+      },
+      {
+        "question": "Can Fax It send and receive faxes?",
+        "answer": "Yes. Fax It sends faxes from iPhone, iPad, and Mac. An optional Fax It Number plan adds a dedicated US or Canadian number and an inbox for received faxes."
+      },
+      {
+        "question": "What pricing options does Fax It offer?",
+        "answer": "Occasional sending can use page credits that do not expire. Optional monthly Fax It Number plans add receiving and include either a monthly page allowance or unlimited sending and receiving, subject to current App Store availability."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Fax It on the App Store",
+        "url": "https://apps.apple.com/us/app/fax-it-send-receive-fax/id1458261691"
+      },
+      {
+        "label": "Fax It product page",
+        "url": "https://37.technology/faxit"
+      }
+    ]
+  },
+  {
+    "slug": "ereps-joins-thirty-seven",
+    "title": "Ereps Joins Thirty Seven",
+    "summary": "Thirty Seven acquired the assets behind Ereps to steward a useful rehabilitation product and invest in a clearer, more dependable clinician workflow.",
+    "seoTitle": "Thirty Seven Acquires Ereps Rehabilitation Software",
+    "seoDescription": "Thirty Seven acquired the assets behind Ereps in July 2023 to operate and grow the rehabilitation exercise prescription software.",
+    "keywords": [
+      "Ereps acquisition",
+      "exercise prescription software",
+      "rehabilitation software",
+      "home exercise program software"
+    ],
+    "kind": "company-note",
+    "projectSlug": "ereps",
+    "eventLabel": "July 25, 2023",
+    "eventAt": "2023-07-25T00:15:38.000Z",
+    "publishedLabel": "August 9, 2026",
+    "publishAt": "2026-08-09T22:25:00.000Z",
+    "updatedLabel": "August 9, 2026",
+    "updatedAt": "2026-08-09T22:25:00.000Z",
+    "status": "published",
+    "highlights": [
+      {
+        "label": "Acquisition completed",
+        "value": "July 2023"
+      },
+      {
+        "label": "Product history",
+        "value": "Serving clinics since 2014"
+      },
+      {
+        "label": "Primary users",
+        "value": "Rehabilitation clinicians"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When did Thirty Seven acquire Ereps?",
+        "answer": "Thirty Seven completed the acquisition of the assets behind Ereps in July 2023."
+      },
+      {
+        "question": "What is Ereps?",
+        "answer": "Ereps is web-based exercise prescription software for physiotherapists, chiropractors, osteopaths, and other rehabilitation professionals."
+      },
+      {
+        "question": "Why did Thirty Seven acquire Ereps?",
+        "answer": "Thirty Seven saw potential in the rehabilitation software category and an opportunity to preserve, modernize, and grow a useful clinician-facing product."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ereps official website",
+        "url": "https://erepsonline.com/"
+      },
+      {
+        "label": "Ereps product page",
+        "url": "https://37.technology/ereps"
+      }
+    ]
+  },
+  {
     "slug": "fax-it-comes-to-mac",
     "title": "Fax It Comes to Mac",
-    "summary": "The pay-per-page fax app now has a native Mac experience for composing documents, sending pages, and following delivery status.",
+    "summary": "Fax It now has a native Mac experience for sending, receiving, reviewing, and sharing faxes, with pay-per-page credits or an optional number plan.",
     "kind": "product-update",
     "projectSlug": "faxit",
     "publishedLabel": "August 11, 2026",

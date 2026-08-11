@@ -9,6 +9,9 @@ export type AnalyticsEventName =
   | "contact_form_error"
   | "contact_form_start"
   | "generate_lead"
+  | "news_article_open"
+  | "news_article_view"
+  | "news_index_view"
   | "outbound_product_click"
   | "project_open";
 
@@ -31,6 +34,9 @@ const allowedProperties: Record<AnalyticsEventName, ReadonlySet<string>> = {
   contact_form_error: new Set(["reason"]),
   contact_form_start: new Set(),
   generate_lead: new Set(),
+  news_article_open: new Set(["placement", "slug"]),
+  news_article_view: new Set(["slug"]),
+  news_index_view: new Set(),
   outbound_product_click: new Set(["destination", "project"]),
   project_open: new Set(["placement", "project"]),
 };

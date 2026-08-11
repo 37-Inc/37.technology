@@ -105,7 +105,7 @@ function PortfolioMosaic() {
           Built + operated here
         </p>
         <span className="rounded-full border border-hairline bg-background/80 px-2.5 py-1 text-[0.65rem] font-medium text-muted">
-          Seven products
+          Our portfolio
         </span>
       </div>
       <div className="relative grid grid-cols-3 gap-2.5 sm:gap-3">

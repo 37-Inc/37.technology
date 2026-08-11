@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 import { useDoNotTrack } from "@/lib/analytics";
+import { routeAnalyticsEvents } from "@/lib/analytics-routes";
 import { analyticsPageContext } from "@/lib/analytics-url";
 
 interface GoogleAnalyticsProviderProps {
@@ -39,6 +40,12 @@ export function GoogleAnalyticsProvider({
       page_path: pathname,
       page_title: document.title,
     });
+    for (const event of routeAnalyticsEvents(pathname)) {
+      window.gtag("event", event.name, {
+        ...event.properties,
+        ...pageContext,
+      });
+    }
   }, [doNotTrack, pathname, scriptReady]);
 
   if (doNotTrack) return null;

@@ -10,7 +10,7 @@ export function ProblemSolution({ problem, solution }: ProblemSolutionProps) {
         <p className="text-sm uppercase tracking-[0.3em] text-muted">
           The problem
         </p>
-        <h2 className="mt-3 font-serif text-2xl tracking-tight text-ink">
+        <h2 className="mt-3 text-balance font-serif text-2xl tracking-tight text-ink">
           {problem.heading}
         </h2>
         <p className="mt-3 text-base leading-relaxed text-muted">
@@ -21,7 +21,7 @@ export function ProblemSolution({ problem, solution }: ProblemSolutionProps) {
         <p className="text-sm uppercase tracking-[0.3em] text-[var(--pa-ink)]">
           The fix
         </p>
-        <h2 className="mt-3 font-serif text-2xl tracking-tight text-ink">
+        <h2 className="mt-3 text-balance font-serif text-2xl tracking-tight text-ink">
           {solution.heading}
         </h2>
         <p className="mt-3 text-base leading-relaxed text-muted">
