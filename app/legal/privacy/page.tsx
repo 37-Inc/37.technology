@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <Prose title="Privacy Policy" intro="Effective date: August 7, 2026">
+    <Prose title="Privacy Policy" intro="Effective date: August 14, 2026">
       <p>
         Thirty Seven, Inc. keeps data collection intentionally minimal. This
         policy explains what we collect, how we use it, and your choices. It is
@@ -104,6 +104,29 @@ export default function PrivacyPage() {
         (RevenueCat, Inc.) receives a pseudonymous user identifier and standard
         subscription event metadata (purchase, renewal, cancellation, refund)
         so we can grant access to what you have paid for.
+      </p>
+
+      <h2>HowHigh</h2>
+      <p>
+        HowHigh keeps altitude, pressure, location, calibration, and recorded
+        session data on your device. It does not send sensor readings,
+        coordinates, weather-station identifiers, timestamps, session notes,
+        or other text you enter to us or to an analytics provider.
+      </p>
+      <p>
+        HowHigh uses PostHog for limited product analytics. It sends only
+        explicit events for opening the app, completing or skipping
+        onboarding, starting, completing, or discarding a recording, and
+        exporting a session. Event details are limited to broad categories
+        such as measurement mode, duration and sample-count ranges,
+        completion or interruption reason, calibration-source category, and
+        export format. A random anonymous installation identifier helps count
+        journeys, but HowHigh does not create a person profile, associate the
+        identifier with an account or personal identity, use it for tracking,
+        or reuse it after the identifier is reset. Automatic interaction
+        capture, screen recording, screenshots, error autocapture, and session
+        replay are disabled. You can turn this analytics collection off in
+        HowHigh under Settings &gt; Privacy.
       </p>
 
       <h2>ColorCub</h2>
@@ -237,8 +260,10 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>PostHog, Inc.</strong> — privacy-limited website traffic and
-          interaction measurement on 37.technology. Form contents are never
-          included. <a href="https://posthog.com/privacy">posthog.com/privacy</a>
+          interaction measurement on 37.technology and the limited anonymous
+          HowHigh product events described above. Form contents, sensor data,
+          coordinates, and session contents are never included. {" "}
+          <a href="https://posthog.com/privacy">posthog.com/privacy</a>
         </li>
         <li>
           <strong>Resend, Inc.</strong> — delivery of website inquiries to our
