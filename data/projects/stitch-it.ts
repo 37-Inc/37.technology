@@ -3,11 +3,11 @@ import type { Project } from "./types";
 export const stitchIt: Project = {
   slug: "stitch-it",
   name: "Stitch It",
-  category: "Screenshot stitching app for iPhone and Android",
+  category: "Screenshot stitching app for iPhone, iPad, and Android",
   oneLiner:
     "Combine screenshots into one long image — a whole conversation in a single picture.",
   description:
-    "Stitch It merges multiple screenshots into one seamless image. Import a batch, drag them into order, crop the overlapping edges, and export a single long screenshot of an entire text conversation, receipt, or webpage. It stitches vertically or horizontally, includes blur, pixelate, and solid-color redaction for private details, and exports PNG, JPG, or PDF — all processed on your device. On the App Store since 2012, and also available on Google Play.",
+    "Stitch It merges multiple screenshots into one seamless image. Import a batch, drag them into order, crop the overlapping edges, and export a single long screenshot of an entire text conversation, receipt, or webpage. The iPhone and iPad version stitches vertically or horizontally, with blur, pixelate, and solid-color redaction plus PNG, JPG, and PDF export. Android currently provides a vertical workflow with arrangement, cropping, redaction, and save/share controls. On the App Store since 2012, and also available on Google Play.",
   problem: {
     heading: "The conversation never fits on one screen",
     body: "A text thread, receipt, or webpage that matters is always longer than your display. So you take six screenshots and send them one by one — they arrive out of order, the context gets lost, and anything private is visible to whoever scrolls through.",
@@ -18,8 +18,12 @@ export const stitchIt: Project = {
   },
   features: [
     {
-      title: "Vertical and horizontal stitching",
-      body: "Stack screenshots top-to-bottom for chat threads and pages, or side-by-side for comparisons — most apps only do one.",
+      title: "Vertical stitching on every platform",
+      body: "Stack screenshots top-to-bottom for chat threads and pages. The Android app currently focuses on this vertical long-screenshot workflow.",
+    },
+    {
+      title: "Horizontal stitching on iPhone and iPad",
+      body: "Place screenshots side-by-side for comparisons on the Apple versions of Stitch It.",
     },
     {
       title: "Batch import and arrange",
@@ -30,16 +34,12 @@ export const stitchIt: Project = {
       body: "Trim the top and bottom of each screenshot so the seams disappear and the result reads as one continuous capture.",
     },
     {
-      title: "Redact private details",
-      body: "Blur, pixelate, or block out names, addresses, and account numbers before you share.",
+      title: "Platform-specific redaction tools",
+      body: "The iPhone and iPad version includes blur, pixelate, and solid-color overlay tools. Android provides a redaction workflow; exact controls vary by platform.",
     },
     {
-      title: "Export PNG, JPG, or PDF",
-      body: "Save in the format the recipient needs and share to any app.",
-    },
-    {
-      title: "On-device processing",
-      body: "Stitching happens entirely on your phone — your photos never leave it.",
+      title: "Platform-specific export and sharing",
+      body: "The Apple versions export PNG, JPG, or PDF. Android saves or shares the current vertical result.",
     },
   ],
   useCases: [
@@ -57,7 +57,7 @@ export const stitchIt: Project = {
     },
     {
       title: "Compare things side by side",
-      body: "Stitch horizontally to put two prices, designs, or listings next to each other in one image.",
+      body: "On iPhone and iPad, stitch horizontally to put two prices, designs, or listings next to each other in one image.",
     },
   ],
   comparison: {
@@ -103,7 +103,7 @@ export const stitchIt: Project = {
     },
     {
       question: "Does Stitch It work on Android?",
-      answer: "Yes. Stitch It is available on the App Store for iPhone and iPad and on Google Play for Android.",
+      answer: "Yes. Stitch It is available on the App Store for iPhone and iPad and on Google Play for Android. Android currently focuses on vertical long screenshots with arrange, crop, redact, save, and share controls.",
     },
   ],
   keywords: [
@@ -121,7 +121,7 @@ export const stitchIt: Project = {
   seo: {
     title: "Stitch It — Combine Screenshots into One Long Image",
     description:
-      "A conversation never fits one screen. Stitch It merges screenshots into a single long image — align, redact private details, share. iOS and Android.",
+      "A conversation never fits one screen. Stitch It merges screenshots into a single long image — align, redact private details, and share. iPhone and iPad also support horizontal stitching; Android currently focuses on vertical results.",
   },
   applicationCategory: "UtilitiesApplication",
   theme: {
@@ -149,7 +149,7 @@ export const stitchIt: Project = {
       src: "/assets/projects/stitch-it/screenshot-3.webp",
       width: 442,
       height: 960,
-      alt: "Horizontal stitching in Stitch It placing two product screenshots side by side",
+      alt: "Horizontal stitching on iPhone in Stitch It placing two product screenshots side by side",
     },
     {
       src: "/assets/projects/stitch-it/screenshot-4.webp",
@@ -166,7 +166,7 @@ export const stitchIt: Project = {
     },
     {
       label: "App Store",
-      url: "https://itunes.apple.com/us/app/stitch-it!-edit-share-screenshots!/id554594252?mt=8",
+      url: "https://apps.apple.com/us/app/stitch-it-long-screenshots/id554594252",
       kind: "app-store",
     },
     {
@@ -176,9 +176,9 @@ export const stitchIt: Project = {
     },
   ],
   offer: { price: "0", description: "Free download; optional Pro upgrade" },
-  operatingSystem: "iOS, Android",
+  operatingSystem: "iOS, iPadOS, Android",
   cta: {
     heading: "Turn scattered screenshots into one image",
-    body: "Free to download on iPhone, iPad, and Android. Stitch your first conversation in under a minute.",
+    body: "Free to download on iPhone, iPad, and Android. Vertical stitching is available on every platform; horizontal stitching is currently on iPhone and iPad.",
   },
 };

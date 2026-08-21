@@ -2,11 +2,11 @@
 
 **FOR IMMEDIATE RELEASE**
 
-## Stitch It! Expands Manual Screenshot Stitching With Vertical and Horizontal Workflows
+## Stitch It! Continues Manual Screenshot Stitching With Platform-Specific Workflows
 
 *The long-standing screenshot utility from Thirty Seven, Inc. continues to focus on precise, manual control for clean results.*
 
-**Los Angeles, February 2026** - Thirty Seven, Inc. shared a 2026 update for Stitch It!, its screenshot editing app for iOS and Android. Stitch It! helps people combine multiple screenshots into a single image with manual control over ordering, alignment, crop, and redaction.
+**Los Angeles, February 2026** - Thirty Seven, Inc. shared a 2026 update for Stitch It!, its screenshot editing app for iOS and Android. Stitch It! helps people combine multiple screenshots into a single image with manual control over ordering, alignment, crop, and redaction. The iPhone and iPad versions support vertical and horizontal workflows; Android currently focuses on vertical long screenshots.
 
 ### What Stitch It! Does
 
@@ -15,9 +15,10 @@ Stitch It! is designed for people who need dependable screenshot assembly withou
 ### Key Features
 
 - Manual stitching workflow for precise control.
-- Vertical and horizontal stitching modes.
+- Vertical stitching on iPhone, iPad, and Android.
+- Horizontal stitching on iPhone and iPad.
 - Drag-to-reorder arrangement before export.
-- Redaction tools to hide names, faces, and sensitive details.
+- Platform-specific redaction tools to hide names, faces, and sensitive details.
 - Crop and trim controls for cleaner output.
 - One-time Pro upgrade option for advanced usage.
 
