@@ -17,8 +17,8 @@
     "eventAt": "2012-10-16T01:32:55.000Z",
     "publishedLabel": "August 9, 2026",
     "publishAt": "2026-08-09T22:00:00.000Z",
-    "updatedLabel": "August 9, 2026",
-    "updatedAt": "2026-08-09T22:00:00.000Z",
+    "updatedLabel": "August 26, 2026",
+    "updatedAt": "2026-08-26T21:00:00.000Z",
     "status": "published",
     "highlights": [
       {
@@ -41,7 +41,7 @@
       },
       {
         "question": "What does Stitch It do?",
-        "answer": "Stitch It combines separate screenshots into one vertical image on iPhone, iPad, and Android. The iPhone and iPad versions also support horizontal stitching, with platform-specific arranging, cropping, alignment, and redaction controls."
+        "answer": "Stitch It combines separate screenshots into one vertical or horizontal image on iPhone, iPad, and Android, with manual arranging, directional cropping, alignment, and solid-color redaction controls."
       },
       {
         "question": "Does Stitch It stitch screenshots automatically?",
@@ -423,7 +423,7 @@
   {
     "slug": "stitch-it-2026",
     "title": "Stitch It! 2026 Product Update",
-    "summary": "Updated release with platform-specific stitching workflows and correct platform links.",
+    "summary": "Updated release with vertical and horizontal stitching on iPhone, iPad, and Android, plus correct platform links.",
     "kind": "press-release",
     "projectSlug": "stitch-it",
     "publishedLabel": "February 2026",

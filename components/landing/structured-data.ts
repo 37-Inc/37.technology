@@ -31,6 +31,9 @@ export function buildSoftwareApplicationLd(
     image: `${siteConfig.url}${project.hero}`,
     applicationCategory: project.applicationCategory,
     featureList: project.features.map((feature) => feature.title),
+    screenshot: (project.screenshots ?? []).map(
+      (screenshot) => `${siteConfig.url}${screenshot.src}`
+    ),
     publisher: PUBLISHER,
   };
 

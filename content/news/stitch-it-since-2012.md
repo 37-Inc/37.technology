@@ -17,7 +17,7 @@ Early coverage described a simple sequence: select a group of screenshots, put t
 The current app has grown around the same focused job:
 
 - Combine screenshots vertically on iPhone, iPad, and Android.
-- Stitch horizontally on iPhone and iPad.
+- Stitch vertically or horizontally on iPhone, iPad, and Android.
 - Arrange a batch of images before editing.
 - Crop and align each seam by hand.
 - Redact names, faces, and sensitive details.
