@@ -11,6 +11,13 @@ export function buildSoftwareApplicationLd(
   project: Project
 ): Record<string, unknown> {
   const canonical = `${siteConfig.url}/${project.slug}`;
+  const platformUrls = project.platforms.map((platform) => platform.url);
+  const downloadUrls = project.platforms
+    .filter(
+      (platform) =>
+        platform.kind === "app-store" || platform.kind === "google-play"
+    )
+    .map((platform) => platform.url);
 
   const data: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -23,6 +30,10 @@ export function buildSoftwareApplicationLd(
     url: canonical,
     image: `${siteConfig.url}${project.hero}`,
     applicationCategory: project.applicationCategory,
+    featureList: project.features.map((feature) => feature.title),
+    screenshot: (project.screenshots ?? []).map(
+      (screenshot) => `${siteConfig.url}${screenshot.src}`
+    ),
     publisher: PUBLISHER,
   };
 
@@ -39,6 +50,14 @@ export function buildSoftwareApplicationLd(
         ? { description: project.offer.description }
         : {}),
     };
+  }
+
+  if (platformUrls.length > 0) {
+    data.sameAs = platformUrls;
+  }
+
+  if (downloadUrls.length > 0) {
+    data.downloadUrl = downloadUrls;
   }
 
   return data;

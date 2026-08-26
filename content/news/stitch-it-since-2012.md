@@ -16,12 +16,13 @@ Early coverage described a simple sequence: select a group of screenshots, put t
 
 The current app has grown around the same focused job:
 
-- Combine screenshots vertically or horizontally.
+- Combine screenshots vertically on iPhone, iPad, and Android.
+- Stitch vertically or horizontally on iPhone, iPad, and Android.
 - Arrange a batch of images before editing.
 - Crop and align each seam by hand.
 - Redact names, faces, and sensitive details.
-- Export the result as PNG, JPG, or PDF.
-- Work on iPhone, iPad, or Android.
+- Export PNG, JPG, or PDF on iPhone and iPad; Android has platform-specific save/share options.
+- Work on iPhone, iPad, or Android with platform-specific workflows.
 
 The interface and platform support have changed over the years, but the product has stayed intentionally narrow. It is a tool for making one clear image from several screenshots, without turning the task into a general-purpose image-editing project.
 

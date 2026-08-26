@@ -3,23 +3,23 @@ import type { Project } from "./types";
 export const stitchIt: Project = {
   slug: "stitch-it",
   name: "Stitch It",
-  category: "Screenshot stitching app for iPhone and Android",
+  category: "Screenshot stitching app for iPhone, iPad, and Android",
   oneLiner:
-    "Combine screenshots into one long image — a whole conversation in a single picture.",
+    "Combine screenshots vertically or horizontally into one clean image.",
   description:
-    "Stitch It merges multiple screenshots into one seamless image. Import a batch, drag them into order, crop the overlapping edges, and export a single long screenshot of an entire text conversation, receipt, or webpage. It stitches vertically or horizontally, includes blur, pixelate, and solid-color redaction for private details, and exports PNG, JPG, or PDF — all processed on your device. On the App Store since 2012, and also available on Google Play.",
+    "Stitch It merges multiple screenshots into one seamless image on iPhone, iPad, and Android. Import a batch, drag them into order, choose a vertical or horizontal layout, crop the overlapping edges, cover private details with straight-line or freeform solid-color redaction, and export PNG, JPG, or PDF. On the App Store since 2012, and also available on Google Play.",
   problem: {
     heading: "The conversation never fits on one screen",
     body: "A text thread, receipt, or webpage that matters is always longer than your display. So you take six screenshots and send them one by one — they arrive out of order, the context gets lost, and anything private is visible to whoever scrolls through.",
   },
   solution: {
     heading: "One image that tells the whole story",
-    body: "Stitch It combines your screenshots into a single continuous image. Import them all at once, arrange with drag-and-drop, crop away the overlap, and blur out anything private. Export one clean PNG, JPG, or PDF and share it anywhere.",
+    body: "Stitch It combines your screenshots into a single continuous image. Import them all at once, arrange with drag-and-drop, crop away the overlap, and cover anything private. Export one clean PNG, JPG, or PDF and share it anywhere.",
   },
   features: [
     {
       title: "Vertical and horizontal stitching",
-      body: "Stack screenshots top-to-bottom for chat threads and pages, or side-by-side for comparisons — most apps only do one.",
+      body: "Stack screenshots top-to-bottom for conversations and pages, or place them side-by-side for comparisons on iPhone, iPad, and Android.",
     },
     {
       title: "Batch import and arrange",
@@ -27,19 +27,15 @@ export const stitchIt: Project = {
     },
     {
       title: "Crop and align edges",
-      body: "Trim the top and bottom of each screenshot so the seams disappear and the result reads as one continuous capture.",
+      body: "Trim top and bottom edges for vertical stitches or left and right edges for horizontal stitches, with an alignment preview for each seam.",
     },
     {
-      title: "Redact private details",
-      body: "Blur, pixelate, or block out names, addresses, and account numbers before you share.",
+      title: "Solid-color redaction tools",
+      body: "Cover names, addresses, account numbers, and other private details with straight-line or freeform marks before sharing.",
     },
     {
-      title: "Export PNG, JPG, or PDF",
-      body: "Save in the format the recipient needs and share to any app.",
-    },
-    {
-      title: "On-device processing",
-      body: "Stitching happens entirely on your phone — your photos never leave it.",
+      title: "PNG, JPG, or PDF export",
+      body: "Save the finished vertical or horizontal stitch in the format the recipient needs, then share it to another app.",
     },
   ],
   useCases: [
@@ -57,7 +53,7 @@ export const stitchIt: Project = {
     },
     {
       title: "Compare things side by side",
-      body: "Stitch horizontally to put two prices, designs, or listings next to each other in one image.",
+      body: "Stitch horizontally to put prices, designs, listings, or product screens next to each other in one image.",
     },
   ],
   comparison: {
@@ -95,7 +91,7 @@ export const stitchIt: Project = {
     },
     {
       question: "Can I hide private information before sharing?",
-      answer: "Yes. Built-in redaction tools let you blur, pixelate, or cover names, phone numbers, addresses, and account details before you export.",
+      answer: "Yes. Built-in straight-line and freeform solid-color tools let you cover names, phone numbers, addresses, and account details before you export.",
     },
     {
       question: "Are my screenshots uploaded anywhere?",
@@ -103,7 +99,7 @@ export const stitchIt: Project = {
     },
     {
       question: "Does Stitch It work on Android?",
-      answer: "Yes. Stitch It is available on the App Store for iPhone and iPad and on Google Play for Android.",
+      answer: "Yes. Stitch It for Android supports vertical and horizontal stitching with arrangement, directional cropping, solid-color redaction, PNG/JPG/PDF output, and save/share controls.",
     },
   ],
   keywords: [
@@ -115,13 +111,14 @@ export const stitchIt: Project = {
     "share a whole text conversation",
     "screenshot stitching app",
     "combine screenshots android",
+    "horizontal screenshot stitcher android",
     "redact screenshot",
     "save text conversation as image",
   ],
   seo: {
-    title: "Stitch It — Combine Screenshots into One Long Image",
+    title: "Stitch It — Vertical & Horizontal Screenshot Stitching",
     description:
-      "A conversation never fits one screen. Stitch It merges screenshots into a single long image — align, redact private details, share. iOS and Android.",
+      "Combine screenshots vertically or horizontally on iPhone, iPad, and Android. Arrange, crop, redact private details, and export one clean result.",
   },
   applicationCategory: "UtilitiesApplication",
   theme: {
@@ -149,13 +146,25 @@ export const stitchIt: Project = {
       src: "/assets/projects/stitch-it/screenshot-3.webp",
       width: 442,
       height: 960,
-      alt: "Horizontal stitching in Stitch It placing two product screenshots side by side",
+      alt: "Horizontal stitching on iPhone in Stitch It placing two product screenshots side by side",
     },
     {
       src: "/assets/projects/stitch-it/screenshot-4.webp",
       width: 442,
       height: 960,
       alt: "Redacting private details in a text conversation with Stitch It's markup tools",
+    },
+    {
+      src: "/assets/projects/stitch-it/android-horizontal-result.webp",
+      width: 540,
+      height: 960,
+      alt: "Android horizontal stitched result in Stitch It with three product screenshots placed side by side",
+    },
+    {
+      src: "/assets/projects/stitch-it/android-horizontal-arrange.webp",
+      width: 540,
+      height: 960,
+      alt: "Android Arrange screen in Stitch It with product screenshots ordered side by side for horizontal stitching",
     },
   ],
   platforms: [
@@ -166,7 +175,7 @@ export const stitchIt: Project = {
     },
     {
       label: "App Store",
-      url: "https://itunes.apple.com/us/app/stitch-it!-edit-share-screenshots!/id554594252?mt=8",
+      url: "https://apps.apple.com/us/app/stitch-it-long-screenshots/id554594252",
       kind: "app-store",
     },
     {
@@ -176,9 +185,9 @@ export const stitchIt: Project = {
     },
   ],
   offer: { price: "0", description: "Free download; optional Pro upgrade" },
-  operatingSystem: "iOS, Android",
+  operatingSystem: "iOS, iPadOS, Android",
   cta: {
     heading: "Turn scattered screenshots into one image",
-    body: "Free to download on iPhone, iPad, and Android. Stitch your first conversation in under a minute.",
+    body: "Free to download on iPhone, iPad, and Android, with vertical or horizontal stitching on every platform.",
   },
 };
