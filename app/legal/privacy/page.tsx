@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <Prose title="Privacy Policy" intro="Effective date: August 14, 2026">
+    <Prose title="Privacy Policy" intro="Effective date: September 2, 2026">
       <p>
         Thirty Seven, Inc. keeps data collection intentionally minimal. This
         policy explains what we collect, how we use it, and your choices. It is
@@ -26,7 +26,10 @@ export default function PrivacyPage() {
       <p>
         This policy applies to the 37.technology website and to the apps and
         services published by Thirty Seven, Inc., including Stitch It, Fax It,
-        ColorCub, ReShoot, HowHigh, and Goose Gifts. Where an app has practices
+        ColorCub, ReShoot, HowHigh, Goose Gifts, and Quick Key (acquired
+        September 2026; this policy replaces the Quick Key policy previously
+        published by Design by Educators / Validated Learning Company). Where
+        an app has practices
         beyond the general ones below, they are described in the app-specific
         sections of this policy.
       </p>
@@ -39,8 +42,13 @@ export default function PrivacyPage() {
           reaches our servers.
         </li>
         <li>
-          All payments are processed by Apple or Google — we never see your
-          payment-card details.
+          Payments are processed by Apple, Google, or (for Quick Key) Braintree
+          and PayPal — we never see your payment-card details.
+        </li>
+        <li>
+          Quick Key handles student data on behalf of teachers and schools. We
+          use it only to provide the grading service, never for advertising,
+          and never sell it.
         </li>
       </ul>
 
@@ -221,6 +229,101 @@ export default function PrivacyPage() {
         apply the rights described below to it.
       </p>
 
+      <h2>Quick Key</h2>
+      <p>
+        Quick Key lets teachers grade paper bubble-sheet assessments by scanning
+        them with a phone. Because it stores class rosters and scores, it
+        processes more data than our other apps, including data about
+        students, most of whom are minors. This section describes those
+        practices; the general practices above apply as well.
+      </p>
+      <h3>Teacher accounts</h3>
+      <p>
+        When you create a Quick Key account we collect your name, email
+        address, and password (stored hashed), and optionally your school
+        name, ZIP code or country, role, subject, grade level, language, and a
+        profile photo. If you sign in through Google, Edmodo, or Clever, we
+        receive your name, email address, and account identifier from that
+        provider. For paid plans we store a Braintree customer identifier and
+        your plan and renewal status; your card or PayPal details are held by
+        Braintree and PayPal, not by us. We record sign-in timestamps and IP
+        addresses for security.
+      </p>
+      <h3>Student data</h3>
+      <p>
+        Teachers and schools add students to Quick Key by typing them in,
+        importing a file, or syncing a roster from a student information
+        system such as Clever or PowerSchool. For each student we may store a
+        first and last name, a school-assigned student ID or roster
+        identifier, an optional email address, class enrollments, and the
+        answers and scores from assessments the teacher grades with Quick Key,
+        including the scanned image of each answer sheet. Students do not
+        create accounts, and Quick Key does not communicate with students
+        directly.
+      </p>
+      <p>
+        We process student data only as a service provider to the teacher or
+        school that entered it, solely to provide, secure, and support the
+        grading service. We do not use student data for advertising, sell it,
+        build profiles of students, or use it to train automated systems.
+        Teachers control this data: they can edit, export, or delete students,
+        classes, and assessments at any time, and deleting them removes the
+        associated scores and sheet images from the service. Data is deleted
+        when the teacher deletes it or closes the account, subject to a short
+        backup-retention period.
+      </p>
+      <h3>Schools, districts, and student-privacy laws</h3>
+      <p>
+        Where a school or district uses Quick Key, we act on the school&apos;s
+        behalf as a &ldquo;school official&rdquo; with a legitimate educational
+        interest under the U.S. Family Educational Rights and Privacy Act
+        (FERPA), and we rely on the school&apos;s consent under the
+        Children&apos;s Online Privacy Protection Act (COPPA) for any student
+        under 13 whose information the school or teacher enters. We do not
+        knowingly collect information from children directly. For customers in
+        the United Kingdom and European Union, the school or teacher is the
+        controller of student data and Thirty Seven, Inc. acts as their
+        processor under the UK and EU GDPR; teachers are controllers of their
+        own account data. Site-license customers who need a data-processing
+        agreement can request one through our inquiry form. Parents and
+        guardians who wish to review or delete a student&apos;s information
+        should contact the teacher or school, who can act on the request in
+        the product; we will assist the school with any such request.
+      </p>
+      <h3>Integrations you choose</h3>
+      <p>
+        If a teacher connects Quick Key to a third-party service — Clever,
+        PowerSchool, Edmodo, Google, or a publisher integration — we exchange
+        only the roster, assignment, or score data needed for that
+        integration, at the teacher&apos;s direction. Those services are
+        governed by their own privacy policies.
+      </p>
+      <h3>Support and email</h3>
+      <p>
+        Quick Key uses Intercom for in-app support and product messages, which
+        receives your name, email address, and basic account and usage
+        metadata so we can respond to you. Transactional email (receipts,
+        password resets, exports) is delivered by SendGrid. Student data is not
+        sent to Intercom or SendGrid except where you include it in a support
+        message yourself.
+      </p>
+      <h3>Infrastructure and diagnostics</h3>
+      <p>
+        Quick Key runs on Render and Amazon Web Services (database, search,
+        file storage, and content delivery), with caching on Heroku. Scanned
+        answer sheets and profile photos are stored on Amazon S3. We use
+        Airbrake and New Relic for error and performance monitoring; these
+        receive technical diagnostics such as request identifiers, stack
+        traces, and IP addresses, retained for up to twelve (12) months.
+      </p>
+      <h3>Quick Key payments</h3>
+      <p>
+        Quick Key subscriptions purchased on the web are processed by Braintree
+        (a PayPal service) or PayPal; purchases made inside the iOS or Android
+        app are processed by Apple or Google. We receive subscription status
+        and a customer identifier, never full payment-card numbers.
+      </p>
+
       <h2>Service Providers</h2>
       <p>
         We share limited data with processors only as necessary to operate our
@@ -250,6 +353,49 @@ export default function PrivacyPage() {
           <a href="https://signalwire.com/legal/privacy-policy">
             signalwire.com/legal/privacy-policy
           </a>
+        </li>
+        <li>
+          <strong>Braintree (PayPal, Inc.)</strong> and <strong>PayPal</strong>{" "}
+          — payment processing for Quick Key web subscriptions; receives your
+          payment details directly.{" "}
+          <a href="https://www.braintreepayments.com/legal/braintree-privacy-policy">
+            braintreepayments.com/legal/braintree-privacy-policy
+          </a>
+        </li>
+        <li>
+          <strong>Amazon Web Services, Inc.</strong> — database, search, file
+          storage, and content delivery for Quick Key.{" "}
+          <a href="https://aws.amazon.com/privacy/">aws.amazon.com/privacy</a>
+        </li>
+        <li>
+          <strong>Render Services, Inc.</strong> and{" "}
+          <strong>Heroku (Salesforce, Inc.)</strong> — application hosting and
+          caching for Quick Key.{" "}
+          <a href="https://render.com/privacy">render.com/privacy</a>
+        </li>
+        <li>
+          <strong>Intercom, Inc.</strong> — in-app support and product
+          messaging for Quick Key teachers.{" "}
+          <a href="https://www.intercom.com/legal/privacy">
+            intercom.com/legal/privacy
+          </a>
+        </li>
+        <li>
+          <strong>SendGrid (Twilio Inc.)</strong> — transactional email for
+          Quick Key.{" "}
+          <a href="https://www.twilio.com/en-us/legal/privacy">
+            twilio.com/legal/privacy
+          </a>
+        </li>
+        <li>
+          <strong>Airbrake (LogicMonitor)</strong> and{" "}
+          <strong>New Relic, Inc.</strong> — error and performance monitoring
+          for Quick Key.
+        </li>
+        <li>
+          <strong>Clever, Inc.</strong>, <strong>PowerSchool</strong>,{" "}
+          <strong>Edmodo</strong>, and <strong>Google</strong> — roster and
+          sign-in integrations that a teacher chooses to connect to Quick Key.
         </li>
         <li>
           <strong>Google Analytics</strong> — website traffic measurement on
@@ -283,15 +429,21 @@ export default function PrivacyPage() {
         <Link href="/contact?type=other">inquiry form</Link>. Deleting a Fax It
         account that has received faxes deletes the content
         of those faxes; we cannot recover fax content after deletion has been
-        processed.
+        processed. Quick Key teachers can delete students, classes,
+        assessments, and their account from within the product; requests
+        about a student&apos;s data should go to the student&apos;s teacher or
+        school, and we will assist them.
       </p>
 
       <h2>Children</h2>
       <p>
         Our website and apps are not directed to children under 13, and we do
-        not knowingly collect personal information from children. ColorCub is
-        designed to be used by families together; prompts are not linked to a
-        child&apos;s identity.
+        not knowingly collect personal information from children directly.
+        ColorCub is designed to be used by families together; prompts are not
+        linked to a child&apos;s identity. Quick Key stores information about
+        students, including children under 13, only when a teacher or school
+        enters it, and only for that school&apos;s educational purposes, as
+        described in the Quick Key section above.
       </p>
 
       <h2>Changes to This Policy</h2>
