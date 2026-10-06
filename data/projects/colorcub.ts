@@ -35,7 +35,7 @@ export const colorcub: Project = {
     },
     {
       title: "Ad-free for everyone",
-      body: "Free and Pro users get the same focused experience without ads or pop-ups.",
+      body: "Create and color without ads or pop-ups during an active trial or subscription.",
     },
     {
       title: "Saved pages work offline",
@@ -49,7 +49,7 @@ export const colorcub: Project = {
     },
     {
       title: "Car rides and flights",
-      body: "Create and save a few pages before you leave; they stay colorable offline, with no ads to wander into.",
+      body: "Create and save a few pages before you leave. Active subscribers can color saved pages offline; saved artwork remains viewable and exportable after expiry.",
     },
     {
       title: "Print-outs for the kitchen table",
@@ -75,7 +75,7 @@ export const colorcub: Project = {
         drawback:
           "A finite catalog — the specific scene your family wants to color usually isn't in it.",
         advantage:
-          "Create three custom pages free; Pro unlocks unlimited generation.",
+          "Create custom pages from your own ideas during an active trial or subscription.",
       },
       {
         alternative: "General AI image tools",
@@ -88,14 +88,14 @@ export const colorcub: Project = {
   },
   faqs: [
     {
-      question: "Is ColorCub free?",
+      question: "How does the ColorCub trial work?",
       answer:
-        "Yes. Create three custom pages free. Pro unlocks unlimited generation. Drawing, saving, sharing, and printing remain available without Pro.",
+        "ColorCub is free to download. Creating pages and coloring in the app require an active subscription. Eligible customers can start a 3-day free trial, then the subscription renews at the price shown in the app unless cancelled at least 24 hours before the trial ends. Saved artwork remains available to view and export after expiry.",
     },
     {
       question: "Does ColorCub have ads?",
       answer:
-        "No. ColorCub is ad-free for free and Pro users.",
+        "No. ColorCub does not show ads.",
     },
     {
       question: "Can I print the coloring pages?",
@@ -110,7 +110,7 @@ export const colorcub: Project = {
     {
       question: "Does ColorCub work offline?",
       answer:
-        "Saved pages remain available offline, so you can create and save a few before a car ride or flight.",
+        "Creating pages requires an internet connection. Active subscribers can color saved pages offline. Saved artwork stays viewable and exportable after a subscription expires.",
     },
     {
       question: "What devices does ColorCub run on?",
@@ -133,7 +133,7 @@ export const colorcub: Project = {
   seo: {
     title: "ColorCub — AI Coloring Pages for Families",
     description:
-      "Turn any typed or spoken idea into a printable coloring page, then color it together. Three custom pages free, no ads, for iPhone and iPad.",
+      "Make custom coloring pages for iPhone and iPad. Create and color with a subscription, with a 3-day trial for eligible customers. No ads.",
   },
   applicationCategory: "EntertainmentApplication",
   theme: {
@@ -177,10 +177,10 @@ export const colorcub: Project = {
       kind: "app-store",
     },
   ],
-  offer: { price: "0", description: "Free download with optional premium features" },
+  offer: { price: "0", description: "Free download; active subscription required for creation and coloring; 3-day trial for eligible customers" },
   operatingSystem: "iOS",
   cta: {
     heading: "Color the page you imagined",
-    body: "Create three custom pages free on iPhone and iPad. Describe an idea, color it together, or print it.",
+    body: "Start a 3-day trial if eligible. Describe an idea, color it together, or print it. An active subscription is required for creation and coloring.",
   },
 };
