@@ -23,6 +23,7 @@ export function AnalyticsProvider() {
 
   useEffect(() => {
     if (
+      process.env.NEXT_PUBLIC_DEPLOYMENT_ENV === "preview" ||
       !postHogKey ||
       doNotTrack ||
       !shouldEnableBrowserAnalytics(window.location.hostname, allowLocalhost)

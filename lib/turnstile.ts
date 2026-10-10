@@ -1,22 +1,26 @@
 import { contactTurnstileAction } from "@/lib/contact";
 
 interface VerifyTurnstileOptions {
+  allowUnconfigured?: boolean;
   expectedHostname: string;
   ip: string;
+  secretKey?: string;
   timeoutMs?: number;
   token: string;
 }
 
 export async function verifyTurnstile({
+  allowUnconfigured = process.env.NODE_ENV !== "production",
   expectedHostname,
   ip,
+  secretKey = process.env.TURNSTILE_SECRET_KEY,
   timeoutMs = 5_000,
   token,
 }: VerifyTurnstileOptions) {
-  const secret = process.env.TURNSTILE_SECRET_KEY;
+  const secret = secretKey;
 
   if (!secret) {
-    return process.env.NODE_ENV !== "production";
+    return allowUnconfigured;
   }
   if (!token) return false;
 
