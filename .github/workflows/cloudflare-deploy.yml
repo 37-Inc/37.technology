@@ -1,0 +1,77 @@
+name: Cloudflare checks and deployment
+
+on:
+  push:
+    branches: [main, codex/cloudflare-preview]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        options: [preview, production]
+        default: preview
+  workflow_call:
+    inputs:
+      environment:
+        type: string
+        default: preview
+      commit:
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-${{ inputs.environment || (github.ref == 'refs/heads/main' && vars.CLOUDFLARE_PRODUCTION_ENABLED == 'true' && 'production') || 'preview' }}
+  cancel-in-progress: false
+
+jobs:
+  check-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_PUBLIC_DEPLOYMENT_ENV: ${{ inputs.environment || (github.ref == 'refs/heads/main' && vars.CLOUDFLARE_PRODUCTION_ENABLED == 'true' && 'production') || 'preview' }}
+      NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.NEXT_PUBLIC_POSTHOG_KEY }}
+      NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.NEXT_PUBLIC_POSTHOG_HOST }}
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.commit || github.sha }}
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      - run: npm run build
+      - run: npm run build:cloudflare
+      - name: Check free-tier Worker bundle
+        run: npx wrangler deploy --env="" --dry-run --outdir .cloudflare-build/worker
+      - name: Deploy to Cloudflare
+        if: github.event_name != 'pull_request' && vars.CLOUDFLARE_PREVIEW_ENABLED == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_DEPLOY_TOKEN }}
+          PRODUCTION_ENABLED: ${{ vars.CLOUDFLARE_PRODUCTION_ENABLED }}
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo 'Missing Cloudflare deployment secret'; exit 1; }
+          test -n "$NEXT_PUBLIC_TURNSTILE_SITE_KEY" || { echo 'Missing public Turnstile configuration'; exit 1; }
+          if [ "$NEXT_PUBLIC_DEPLOYMENT_ENV" = production ]; then
+            test "$GITHUB_REF" = refs/heads/main && test "$PRODUCTION_ENABLED" = true || exit 1
+            npm run deploy:cloudflare -- --env production
+          elif [ "$NEXT_PUBLIC_DEPLOYMENT_ENV" = preview ]; then
+            npm run deploy:cloudflare -- --env=""
+          else
+            exit 1
+          fi
+      - name: Check deployed site
+        if: github.event_name != 'pull_request' && vars.CLOUDFLARE_PREVIEW_ENABLED == 'true'
+        run: |
+          if [ "$NEXT_PUBLIC_DEPLOYMENT_ENV" = production ]; then
+            node scripts/smoke-cloudflare.mjs https://thirty-seven-website.thirty-seven-inc.workers.dev production
+          else
+            node scripts/smoke-cloudflare.mjs https://thirty-seven-website-preview.thirty-seven-inc.workers.dev preview
+          fi
