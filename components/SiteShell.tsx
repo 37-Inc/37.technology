@@ -29,7 +29,7 @@ export function SiteShell({ children }: SiteShellProps) {
         Skip to content
       </a>
       <header className="border-b border-hairline bg-surface/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3 sm:gap-6 sm:py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:gap-6 sm:px-6 sm:py-4">
           <Link
             href="/"
             aria-label="Thirty Seven home"
@@ -63,7 +63,7 @@ export function SiteShell({ children }: SiteShellProps) {
           </nav>
         </div>
       </header>
-      <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-6 py-10 sm:py-16">
+      <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-5 py-10 sm:px-6 sm:py-16">
         {children}
       </main>
       <Footer />

@@ -18,6 +18,11 @@ export function buildSoftwareApplicationLd(
         platform.kind === "app-store" || platform.kind === "google-play"
     )
     .map((platform) => platform.url);
+  const screenshots = [
+    project.heroMedia,
+    ...(project.screenshots ?? []),
+    project.spotlight?.media,
+  ].filter((screenshot) => screenshot !== undefined);
 
   const data: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -30,8 +35,11 @@ export function buildSoftwareApplicationLd(
     url: canonical,
     image: `${siteConfig.url}${project.hero}`,
     applicationCategory: project.applicationCategory,
-    featureList: project.features.map((feature) => feature.title),
-    screenshot: (project.screenshots ?? []).map(
+    featureList: [
+      ...project.features.map((feature) => feature.title),
+      ...(project.spotlight ? [project.spotlight.heading] : []),
+    ],
+    screenshot: screenshots.map(
       (screenshot) => `${siteConfig.url}${screenshot.src}`
     ),
     publisher: PUBLISHER,
