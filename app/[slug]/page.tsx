@@ -9,6 +9,7 @@ import { FinalCta } from "@/components/landing/FinalCta";
 import { JsonLd } from "@/components/landing/JsonLd";
 import { LandingHero } from "@/components/landing/LandingHero";
 import { ProblemSolution } from "@/components/landing/ProblemSolution";
+import { ProjectSpotlight } from "@/components/landing/ProjectSpotlight";
 import { ScreenshotStrip } from "@/components/landing/ScreenshotStrip";
 import { UseCaseList } from "@/components/landing/UseCaseList";
 import {
@@ -105,6 +106,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <ProblemSolution problem={project.problem} solution={project.solution} />
       <FeatureGrid features={project.features} />
       <ScreenshotStrip name={project.name} screenshots={project.screenshots} />
+      <ProjectSpotlight spotlight={project.spotlight} />
       <UseCaseList useCases={project.useCases} />
       <ComparisonTable name={project.name} comparison={project.comparison} />
       <FaqList faqs={project.faqs} />

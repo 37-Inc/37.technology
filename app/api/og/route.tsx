@@ -1,20 +1,22 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import type { NextRequest } from "next/server";
 import { getProjectBySlug } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 const beige = "#f5efe7";
 const ink = "#211f1a";
 
-const inter = fetch(
-  new URL("https://fonts.gstatic.com/s/inter/v12/UcCO3Fwr0aOS9URCmHU.ttf")
-).then((res) => res.arrayBuffer());
+const inter = readFile(
+  join(process.cwd(), "public/assets/brand/fonts/inter-latin-400-normal.woff")
+);
 
-const fraunces = fetch(
-  new URL("https://fonts.gstatic.com/s/fraunces/v30/NGS2v5kzI8H5UviizK0.ttf")
-).then((res) => res.arrayBuffer());
+const fraunces = readFile(
+  join(process.cwd(), "public/assets/brand/fonts/fraunces-latin-600-normal.woff")
+);
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -76,6 +78,9 @@ export async function GET(req: NextRequest) {
     {
       width: 1200,
       height: 630,
+      headers: {
+        "Cache-Control": "public, max-age=86400, s-maxage=86400",
+      },
       fonts: [
         {
           name: "Inter",

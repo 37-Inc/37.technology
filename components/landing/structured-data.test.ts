@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { faxit } from "@/data/projects/faxit";
 import { stitchIt } from "@/data/projects/stitch-it";
 import { buildSoftwareApplicationLd } from "./structured-data";
 
@@ -21,5 +22,29 @@ describe("software application JSON-LD", () => {
       "https://play.google.com/store/apps/details?id=com.luckybunnyllc.stitchit",
     ]);
     expect(data.sameAs).toContain("https://www.stitchitapp.com/");
+  });
+
+  it("describes Fax It without turning optional receiving into a requirement", () => {
+    const data = buildSoftwareApplicationLd(faxit);
+
+    expect(data.operatingSystem).toBe("iOS, iPadOS, macOS");
+    expect(data.featureList).toContain("Send without a subscription");
+    expect(data.featureList).toContain("One account across Apple devices");
+    expect(data.featureList).toContain(
+      "Bring Fax It into a local automation workflow."
+    );
+    expect(data.screenshot).toContain(
+      "https://37.technology/assets/projects/faxit/hero-platforms.webp"
+    );
+    expect(data.screenshot).toContain(
+      "https://37.technology/assets/projects/faxit/mac-automation.webp"
+    );
+    expect(data.downloadUrl).toEqual([
+      "https://apps.apple.com/us/app/fax-it-send-receive-fax/id1458261691",
+    ]);
+    expect(data.offers).toMatchObject({
+      price: "0",
+      priceCurrency: "USD",
+    });
   });
 });

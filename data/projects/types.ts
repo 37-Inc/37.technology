@@ -51,6 +51,19 @@ export interface Screenshot {
   height: number;
 }
 
+export interface ProjectProofPoint {
+  title: string;
+  body: string;
+}
+
+export interface ProjectSpotlight {
+  eyebrow: string;
+  heading: string;
+  body: string;
+  points: string[];
+  media: Screenshot;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -80,7 +93,13 @@ export interface Project {
   featured?: boolean;
   /** App icon path under /public */
   hero: string;
+  /** Optional editorial image used beside the primary conversion copy */
+  heroMedia?: Screenshot;
+  /** Short, factual reasons to choose the product */
+  proofPoints?: ProjectProofPoint[];
   screenshots?: Screenshot[];
+  /** Optional long-form capability callout */
+  spotlight?: ProjectSpotlight;
   platforms: PlatformLink[];
   /** Machine-readable JSON-LD offer; price is "0" for free products */
   offer?: { price: string; description?: string };
