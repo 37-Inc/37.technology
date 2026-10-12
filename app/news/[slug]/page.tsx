@@ -42,6 +42,9 @@ export async function generateMetadata({
   const canonical = `${siteConfig.url}/news/${item.slug}`;
   const title = item.seoTitle ?? item.title;
   const description = item.seoDescription ?? item.summary;
+  const shareImage = item.shareImage
+    ? `${siteConfig.url}${item.shareImage.src}`
+    : siteConfig.ogImage;
 
   return {
     title: { absolute: title },
@@ -60,9 +63,10 @@ export async function generateMetadata({
       modifiedTime: item.updatedAt ?? item.publishAt,
       images: [
         {
-          url: siteConfig.ogImage,
-          width: 1200,
-          height: 630,
+          url: shareImage,
+          width: item.shareImage?.width ?? 1200,
+          height: item.shareImage?.height ?? 630,
+          alt: item.shareImage?.alt ?? item.title,
         },
       ],
     },
@@ -70,7 +74,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [siteConfig.ogImage],
+      images: [shareImage],
     },
   };
 }
@@ -105,7 +109,9 @@ export default async function NewsArticlePage({ params }: NewsArticlePageProps) 
     datePublished: item.publishAt,
     dateModified: item.updatedAt ?? item.publishAt,
     inLanguage: "en-US",
-    image: siteConfig.ogImage,
+    image: item.shareImage
+      ? `${siteConfig.url}${item.shareImage.src}`
+      : siteConfig.ogImage,
     mainEntityOfPage: canonical,
     ...(item.eventAt
       ? {
@@ -201,7 +207,14 @@ export default async function NewsArticlePage({ params }: NewsArticlePageProps) 
           className="absolute -right-24 -top-28 size-72 rounded-full border-[52px] opacity-[0.08]"
           style={{ borderColor: accent }}
         />
-        <div className="relative grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_18rem]">
+        <div
+          className={cn(
+            "relative grid items-center gap-10",
+            item.heroMedia
+              ? "lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]"
+              : "lg:grid-cols-[minmax(0,1fr)_18rem]"
+          )}
+        >
           <div>
             <Link
               href="/news"
@@ -231,23 +244,37 @@ export default async function NewsArticlePage({ params }: NewsArticlePageProps) 
             ) : null}
           </div>
 
-          <div className="relative hidden min-h-72 items-center justify-center lg:flex">
-            {screenshot ? (
-              <div className="relative h-72 w-40 overflow-hidden rounded-[2rem] border-[7px] border-[#20262d] bg-white shadow-2xl">
-                <Image
-                  src={screenshot.src}
-                  alt={`${project?.name ?? item.title} app today`}
-                  fill
-                  sizes="160px"
-                  className="object-contain object-top"
-                />
-              </div>
-            ) : (
-              <div className="scale-[1.8]">
-                <NewsMark projectSlug={item.projectSlug} size="large" />
-              </div>
-            )}
-          </div>
+          {item.heroMedia ? (
+            <div className="overflow-hidden rounded-2xl border border-hairline bg-surface shadow-xl">
+              <Image
+                src={item.heroMedia.src}
+                alt={item.heroMedia.alt}
+                width={item.heroMedia.width}
+                height={item.heroMedia.height}
+                priority
+                unoptimized
+                className="h-auto w-full"
+              />
+            </div>
+          ) : (
+            <div className="relative hidden min-h-72 items-center justify-center lg:flex">
+              {screenshot ? (
+                <div className="relative h-72 w-40 overflow-hidden rounded-[2rem] border-[7px] border-[#20262d] bg-white shadow-2xl">
+                  <Image
+                    src={screenshot.src}
+                    alt={`${project?.name ?? item.title} app today`}
+                    fill
+                    sizes="160px"
+                    className="object-contain object-top"
+                  />
+                </div>
+              ) : (
+                <div className="scale-[1.8]">
+                  <NewsMark projectSlug={item.projectSlug} size="large" />
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </header>
 

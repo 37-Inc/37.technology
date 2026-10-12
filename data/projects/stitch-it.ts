@@ -3,39 +3,43 @@ import type { Project } from "./types";
 export const stitchIt: Project = {
   slug: "stitch-it",
   name: "Stitch It",
-  category: "Screenshot stitching app for iPhone, iPad, and Android",
+  category: "Screenshot stitching app for iPhone, iPad, Mac, and Android",
   oneLiner:
-    "Combine screenshots vertically or horizontally into one clean image.",
+    "Combine screenshots and images vertically or horizontally into one clean result.",
   description:
-    "Stitch It merges multiple screenshots into one seamless image on iPhone, iPad, and Android. Import a batch, drag them into order, choose a vertical or horizontal layout, crop the overlapping edges, cover private details with straight-line or freeform solid-color redaction, and export PNG, JPG, or PDF. On the App Store since 2012, and also available on Google Play.",
+    "Combine screenshots and other images on iPhone, iPad, Mac, and Android. Arrange them manually, choose a vertical or horizontal layout, crop overlaps, cover private details, and export PNG, JPEG, or PDF. The native Mac app adds a live preview, precise pixel trimming, and editable projects you can reopen on your Mac.",
   problem: {
     heading: "The conversation never fits on one screen",
     body: "A text thread, receipt, or webpage that matters is always longer than your display. So you take six screenshots and send them one by one — they arrive out of order, the context gets lost, and anything private is visible to whoever scrolls through.",
   },
   solution: {
     heading: "One image that tells the whole story",
-    body: "Stitch It combines your screenshots into a single continuous image. Import them all at once, arrange with drag-and-drop, crop away the overlap, and cover anything private. Export one clean PNG, JPG, or PDF and share it anywhere.",
+    body: "Stitch It combines your screenshots into a single continuous image. Import them, put them in order, crop away the overlap, and cover anything private. Export one clean PNG, JPEG, or PDF. On Mac, save that exported file before sharing it with another app.",
   },
   features: [
     {
       title: "Vertical and horizontal stitching",
-      body: "Stack screenshots top-to-bottom for conversations and pages, or place them side-by-side for comparisons on iPhone, iPad, and Android.",
+      body: "Stack images top-to-bottom for conversations and pages, or place them side-by-side for comparisons on iPhone, iPad, Mac, and Android.",
     },
     {
       title: "Batch import and arrange",
-      body: "Load dozens of screenshots at once and drag them into the right order.",
+      body: "Import screenshots and put them in order. On Mac, choose PNG or JPEG files, import from Photos, or paste from the clipboard.",
     },
     {
       title: "Crop and align edges",
-      body: "Trim top and bottom edges for vertical stitches or left and right edges for horizontal stitches, with an alignment preview for each seam.",
+      body: "Trim the overlapping edges yourself. On Mac, use exact pixel controls and a live preview of the complete stitch; alignment is manual.",
     },
     {
       title: "Solid-color redaction tools",
-      body: "Cover names, addresses, account numbers, and other private details with straight-line or freeform marks before sharing.",
+      body: "Cover names, addresses, account numbers, and other private details with solid-color marks. On Mac, use rectangles or a freehand brush with color, brush-width, undo, and redo controls.",
     },
     {
       title: "PNG, JPG, or PDF export",
-      body: "Save the finished vertical or horizontal stitch in the format the recipient needs, then share it to another app.",
+      body: "Export the finished stitch as PNG, JPEG, or PDF. On Mac, save an exported file; iPhone, iPad, and Android also have their own save/share controls.",
+    },
+    {
+      title: "Editable projects on Mac",
+      body: "Save your images, order, trims, and marks in a project you can reopen on Mac. Projects retain original images, so share an exported image or PDF when private details must stay hidden.",
     },
   ],
   useCases: [
@@ -78,24 +82,24 @@ export const stitchIt: Project = {
   },
   faqs: [
     {
-      question: "How do I combine screenshots into one image on iPhone?",
-      answer: "Import your screenshots into Stitch It, drag them into order, crop the overlapping edges, and tap Stitch It. You get one long image you can save or share anywhere.",
+      question: "How do I combine screenshots into one image?",
+      answer: "Import your screenshots into Stitch It, put them in order, choose vertical or horizontal stitching, and crop overlapping edges manually. Export the result as an image or PDF. On Mac, the live preview shows the complete stitch as you edit.",
     },
     {
       question: "Is Stitch It free?",
-      answer: "Yes — the app is free to use with a small watermark on exports. A Pro upgrade removes the watermark, unlocks unlimited images per stitch, and removes ads.",
+      answer: "Yes. Stitch It for Mac is free with up to three images per project and a small export watermark. Pro lifts the image cap and removes the watermark. There are no Mac ads in either tier; mobile features and Pro options vary by platform.",
     },
     {
-      question: "Can I share a whole text conversation as one image?",
-      answer: "Yes. Screenshot the conversation as you scroll, then stitch the captures vertically into one continuous image of the entire thread.",
+      question: "Which Macs support Stitch It?",
+      answer: "The native Mac app supports Apple Silicon and Intel Macs running macOS 14 or later. Apple Pro purchases can be restored across iPhone, iPad, and Mac using the same Apple Account, with no separate Stitch It login. Android purchases are separate.",
     },
     {
       question: "Can I hide private information before sharing?",
-      answer: "Yes. Built-in straight-line and freeform solid-color tools let you cover names, phone numbers, addresses, and account details before you export.",
+      answer: "Yes. Use solid-color redaction before exporting. Mac supports rectangles and a freehand brush; iPhone, iPad, and Android have their own redaction controls. Mac does not offer blur or pixelation tools.",
     },
     {
       question: "Are my screenshots uploaded anywhere?",
-      answer: "No. All stitching and redaction happens on your device — your photos never leave your phone.",
+      answer: "Stitching and redaction are processed on your device. On Mac, editable projects retain the original images; share an exported image or PDF when private details must remain hidden. Mac projects do not currently open for editing in the iPhone or iPad app.",
     },
     {
       question: "Does Stitch It work on Android?",
@@ -112,13 +116,16 @@ export const stitchIt: Project = {
     "screenshot stitching app",
     "combine screenshots android",
     "horizontal screenshot stitcher android",
+    "combine screenshots on Mac",
+    "Mac screenshot stitching app",
+    "native Mac image stitcher",
     "redact screenshot",
     "save text conversation as image",
   ],
   seo: {
-    title: "Stitch It — Vertical & Horizontal Screenshot Stitching",
+    title: "Stitch It: Screenshot Stitching for iPhone, Mac & Android",
     description:
-      "Combine screenshots vertically or horizontally on iPhone, iPad, and Android. Arrange, crop, redact private details, and export one clean result.",
+      "Combine screenshots on iPhone, iPad, Mac, or Android. Stitch vertically or horizontally, crop, redact private details, and export PNG, JPEG, or PDF.",
   },
   applicationCategory: "UtilitiesApplication",
   theme: {
@@ -126,9 +133,33 @@ export const stitchIt: Project = {
     accentSoft: "#eef4e2",
     accentInk: "#3d5a1f",
   },
-  tags: ["iOS", "Android", "Utilities"],
+  tags: ["iOS", "macOS", "Android", "Utilities"],
   featured: true,
   hero: "/assets/projects/stitch-it.jpg",
+  heroMedia: {
+    src: "/assets/projects/stitch-it/mac-one-clean-result.webp",
+    width: 1286,
+    height: 804,
+    alt: "Three conversation screenshots combined in the native Stitch It Mac editor, from its approved Mac App Store artwork",
+  },
+  spotlight: {
+    eyebrow: "Native on Mac",
+    heading: "More room to see the whole result.",
+    body: "Stitch It for Mac brings image importing, precise trimming, solid-color redaction, and a live preview into a native SwiftUI and AppKit workspace.",
+    points: [
+      "Apple Silicon and Intel Macs running macOS 14 or later",
+      "PNG/JPEG files, Photos, and clipboard import",
+      "Save an editable project to reopen on your Mac",
+      "Export JPEG, PNG, or PDF; share an export, not a project containing original images",
+      "Restore Apple Pro purchases with the same Apple Account; no extra login",
+    ],
+    media: {
+      src: "/assets/projects/stitch-it/mac-horizontal.webp",
+      width: 1286,
+      height: 804,
+      alt: "Horizontal image stitching and live preview in Stitch It for Mac, shown in approved Mac App Store artwork",
+    },
+  },
   screenshots: [
     {
       src: "/assets/projects/stitch-it/screenshot-1.webp",
@@ -166,6 +197,18 @@ export const stitchIt: Project = {
       height: 960,
       alt: "Android Arrange screen in Stitch It with product screenshots ordered side by side for horizontal stitching",
     },
+    {
+      src: "/assets/projects/stitch-it/mac-one-clean-result.webp",
+      width: 1286,
+      height: 804,
+      alt: "Mac App Store artwork showing three images combined in Stitch It's native Mac editor",
+    },
+    {
+      src: "/assets/projects/stitch-it/mac-horizontal.webp",
+      width: 1286,
+      height: 804,
+      alt: "Mac App Store artwork showing horizontal stitching in the native Stitch It Mac app",
+    },
   ],
   platforms: [
     {
@@ -174,8 +217,13 @@ export const stitchIt: Project = {
       kind: "website",
     },
     {
-      label: "App Store",
+      label: "iPhone & iPad",
       url: "https://apps.apple.com/us/app/stitch-it-long-screenshots/id554594252",
+      kind: "app-store",
+    },
+    {
+      label: "Mac App Store",
+      url: "https://apps.apple.com/us/app/stitch-it-long-screenshots/id554594252?platform=mac",
       kind: "app-store",
     },
     {
@@ -185,9 +233,9 @@ export const stitchIt: Project = {
     },
   ],
   offer: { price: "0", description: "Free download; optional Pro upgrade" },
-  operatingSystem: "iOS, iPadOS, Android",
+  operatingSystem: "iOS, iPadOS, macOS, Android",
   cta: {
     heading: "Turn scattered screenshots into one image",
-    body: "Free to download on iPhone, iPad, and Android, with vertical or horizontal stitching on every platform.",
+    body: "Free to download on iPhone, iPad, Mac, and Android. Choose your platform; workflows and Pro options vary.",
   },
 };

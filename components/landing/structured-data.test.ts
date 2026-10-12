@@ -7,7 +7,7 @@ describe("software application JSON-LD", () => {
   it("keeps Stitch It features and store links platform-accurate", () => {
     const data = buildSoftwareApplicationLd(stitchIt);
 
-    expect(data.operatingSystem).toBe("iOS, iPadOS, Android");
+    expect(data.operatingSystem).toBe("iOS, iPadOS, macOS, Android");
     expect(data.featureList).toContain("Vertical and horizontal stitching");
     expect(data.featureList).toContain("Solid-color redaction tools");
     expect(data.featureList).toContain("PNG, JPG, or PDF export");
@@ -17,8 +17,12 @@ describe("software application JSON-LD", () => {
     expect(data.screenshot).toContain(
       "https://37.technology/assets/projects/stitch-it/android-horizontal-arrange.webp"
     );
+    expect(data.screenshot).toContain(
+      "https://37.technology/assets/projects/stitch-it/mac-one-clean-result.webp"
+    );
     expect(data.downloadUrl).toEqual([
       "https://apps.apple.com/us/app/stitch-it-long-screenshots/id554594252",
+      "https://apps.apple.com/us/app/stitch-it-long-screenshots/id554594252?platform=mac",
       "https://play.google.com/store/apps/details?id=com.luckybunnyllc.stitchit",
     ]);
     expect(data.sameAs).toContain("https://www.stitchitapp.com/");
