@@ -113,8 +113,10 @@ just send-provider acknowledgements. Production Worker URL:
 https://thirty-seven-website.thirty-seven-inc.workers.dev.
 
 A fresh complete BIND export and Vercel project/domain metadata are retained in
-ignored `.cloudflare-build/evidence/`, including
-`37.technology-before-cutover-20261011.txt`. The original rollback records are
+ignored `.cloudflare-build/evidence/` and copied outside the worktree to
+`/Users/cameronehrlich/.codex/deployment-evidence/37.technology/2026-10-11/`, including
+`37.technology-before-cutover-20261011.txt`. The post-cutover export was compared
+with the original: all 16 unrelated DNS records are unchanged. The original rollback records are
 DNS-only apex A `216.198.79.1` and www CNAME
 `b155d2c06ece26db.vercel-dns-017.com`, both automatic TTL. Preserve these artifacts
 outside the worktree before cleanup. Leave all mail, verification, downloads, and
@@ -129,6 +131,22 @@ Keep the Vercel project and original DNS snapshot available during stabilization
 For rollback, restore those DNS records, disable Cloudflare production automation,
 and verify Vercel again. Deleting Vercel or changing repository visibility is a
 separate owner-approved step after cutover is proven.
+
+On October 11 the owner also conditionally authorized Vercel retirement after
+stability checks. The Git connection was removed only from project `37-technology`
+(`prj_M4KIl1d7r78Rif6JcUtURbGQ7JUg`) in team `37-inc`; its settings, environment
+variables, and existing production deployment remain available for rollback.
+There are no deploy hooks. Reconnect `37-Inc/37.technology` to resume automatic
+Vercel builds if rollback is needed. No other Vercel projects were disconnected.
+
+Public production CI passed against apex and www after the switch. Direct HTTPS
+checks verified all 11 published articles and 37 linked image/icon assets. The
+local Mac nevertheless retained a negative DNS cache from the brief removal of
+the old apex record, preventing a final browser submission at the apex. Do not
+delete the retained Vercel project until that final public-host contact check and
+analytics/navigation verification are complete. A browser success on workers.dev
+does not by itself prove the public-host submission. Keep this distinction in the
+Roadmap cutover and retirement tasks.
 
 References: [Workers pricing](https://developers.cloudflare.com/workers/platform/pricing/),
 [Workers limits](https://developers.cloudflare.com/workers/platform/limits/),
