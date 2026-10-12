@@ -29,6 +29,13 @@
   "env": {
     "production": {
       "name": "thirty-seven-website",
+      "routes": [
+        {
+          "pattern": "37.technology",
+          "custom_domain": true,
+          "zone_id": "0342ffbd2e2ed35161e07a3c442c4ad0",
+        },
+      ],
       "workers_dev": true,
       "preview_urls": false,
       "vars": {
