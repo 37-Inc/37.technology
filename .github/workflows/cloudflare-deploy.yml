@@ -72,6 +72,7 @@ jobs:
         run: |
           if [ "$NEXT_PUBLIC_DEPLOYMENT_ENV" = production ]; then
             node scripts/smoke-cloudflare.mjs https://thirty-seven-website.thirty-seven-inc.workers.dev production
+            node scripts/smoke-cloudflare.mjs https://37.technology production
           else
             node scripts/smoke-cloudflare.mjs https://thirty-seven-website-preview.thirty-seven-inc.workers.dev preview
           fi

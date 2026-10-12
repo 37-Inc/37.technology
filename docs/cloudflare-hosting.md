@@ -4,8 +4,12 @@
 
 Only account `37.technology` (`7f05a1dcb6e16f9c239564a0293bbe74`) is configured.
 Do not use inherited Cloudflare environment variables: the workstation's default
-API token currently belongs to eReps. Local deployments use the existing Thirty
-Seven Wrangler OAuth login with `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ZONE_ID` unset.
+API token currently belongs to eReps. The dedicated deploy token is stored in
+macOS Keychain under service `37.technology/cloudflare/deploy-token`, account
+`cameronehrlich`, and GitHub secret `CLOUDFLARE_DEPLOY_TOKEN`. It has Workers Scripts
+Edit + Account Settings Read for this account only. Inject it privately for local
+deploys, or use the existing Thirty Seven Wrangler OAuth login with inherited
+`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ZONE_ID` unset. Do not print credentials.
 
 Cloudflare Workers Free serves static assets without request/bandwidth charges.
 Dynamic requests have a 100,000/day quota and 10 ms CPU limit; waiting for Resend
@@ -50,7 +54,8 @@ in build/public configuration or commit local `.env.local`/`.dev.vars` files.
 The workflow `.github/workflows/cloudflare-deploy.yml` runs tests, lint,
 typecheck, Vercel-compatible build, static export, Worker bundle check, deploy,
 and live smoke. PRs run checks but never deploy. Pushes to the migration branch
-and `main` update the stable preview while production is disabled.
+update the stable preview. Pushes to `main` deploy production. Production smoke
+checks both the Worker URL and public apex, including the www redirect.
 
 Repository secrets:
 
@@ -63,7 +68,10 @@ Repository secrets:
 Repository variables:
 
 - `CLOUDFLARE_PREVIEW_ENABLED=true` enables preview automation.
-- `CLOUDFLARE_PRODUCTION_ENABLED=false` keeps production disabled until approved.
+- `CLOUDFLARE_PRODUCTION_ENABLED=true` enables approved production deployment.
+
+Both variables are now true. The preview variable is also the workflow's global
+deployment gate; disabling it stops production deployments too.
 
 The scheduled-news workflow explicitly calls the reusable deployment workflow
 after its content commit. This avoids relying on a bot push to trigger another
@@ -84,15 +92,33 @@ redirect using a Cloudflare redirect rule so normal static assets bypass the
 Worker. Verify apex/www HTTPS, legal redirects, sitemap, robots, canonical/schema,
 sharing images, all screenshots, analytics, and an actual delivered inquiry.
 
-The 2026-10-10 read-only check confirmed an active Thirty Seven Cloudflare zone
-and Cloudflare nameservers (`jakub` and `jill`). Production still resolves to
-Vercel: apex `216.198.79.1`, www CNAME
-`b155d2c06ece26db.vercel-dns-017.com`. Wrangler OAuth can read the zone identity
-but cannot list DNS records. A complete dashboard BIND export was therefore
-saved locally at `.cloudflare-build/evidence/37.technology-before-cutover.txt`
-(ignored, not committed). The dashboard confirms apex and www are DNS-only,
-with automatic TTL. Refresh that export immediately before cutover and leave
-all mail, verification, downloads, and unrelated subdomain records unchanged.
+On October 11, 2026 (Pacific time), the owner approved production cutover. PR #30
+merged as `9bb31935706dd6b8a53a2e3509ced92d5160fa96`. Cloudflare production
+deployment run `38205201917`, attempt 2, passed. The first attempt found the old
+externally managed apex A record; after its backed-up removal, the Worker custom
+domain was attached and the deployment rerun succeeded.
+
+The apex is the managed custom domain of Worker `thirty-seven-website`, explicitly
+pinned to zone `0342ffbd2e2ed35161e07a3c442c4ad0` in `wrangler.jsonc`. The www
+record is proxied A `192.0.2.0`, an originless redirect placeholder. Cloudflare
+Redirect Rule `Thirty Seven www to apex` matches only `www.37.technology`, returns
+308 to `concat("https://37.technology", http.request.uri.path)`, and preserves the
+query string. The dedicated deploy token does not have general DNS permissions;
+the owner-authenticated Cloudflare dashboard was used for these DNS changes.
+
+Real preview and production Worker inquiries passed Turnstile and reached the
+`cam@37.technology` inbox through `info@37.technology`, with test references
+`37-CF-PREVIEW-20261011` and `37-CF-PROD-20261011`. These are inbox receipts, not
+just send-provider acknowledgements. Production Worker URL:
+https://thirty-seven-website.thirty-seven-inc.workers.dev.
+
+A fresh complete BIND export and Vercel project/domain metadata are retained in
+ignored `.cloudflare-build/evidence/`, including
+`37.technology-before-cutover-20261011.txt`. The original rollback records are
+DNS-only apex A `216.198.79.1` and www CNAME
+`b155d2c06ece26db.vercel-dns-017.com`, both automatic TTL. Preserve these artifacts
+outside the worktree before cleanup. Leave all mail, verification, downloads, and
+unrelated subdomain records unchanged.
 
 Rollback removes only the production Worker's custom-domain attachment and
 the new www redirect rule, then restores the original DNS-only apex A and www

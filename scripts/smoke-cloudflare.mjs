@@ -6,6 +6,7 @@ assert(
   "Usage: node scripts/smoke-cloudflare.mjs URL preview|production",
 );
 const origin = new URL(base).origin;
+const publicProduction = origin === "https://37.technology";
 for (const path of [
   "/",
   "/faxit",
@@ -17,6 +18,8 @@ for (const path of [
 ]) {
   const response = await fetch(origin + path);
   assert.equal(response.status, 200, path);
+  if (publicProduction)
+    assert.equal(response.headers.get("server"), "cloudflare", path);
   if (mode === "preview")
     assert.match(response.headers.get("x-robots-tag") ?? "", /noindex/, path);
   else
@@ -39,6 +42,18 @@ for (const path of [
         ? /Disallow: \/\s*$/
         : /Sitemap: https:\/\/37\.technology\/sitemap\.xml/,
     );
+}
+if (publicProduction) {
+  const www = await fetch("https://www.37.technology/faxit?source=smoke", {
+    redirect: "manual",
+  });
+  assert.equal(www.status, 308, "www redirect");
+  assert.equal(www.headers.get("server"), "cloudflare", "www provider");
+  assert.equal(
+    www.headers.get("location"),
+    "https://37.technology/faxit?source=smoke",
+    "www preserves path and query",
+  );
 }
 for (const slug of ["", "faxit", "stitch-it"]) {
   const response = await fetch(
