@@ -15,6 +15,9 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.publish.outputs.changed }}
+      commit: ${{ steps.commit.outputs.commit }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -42,6 +45,7 @@ jobs:
           npm run build
 
       - if: steps.publish.outputs.changed == 'true'
+        id: commit
         run: |
           git config user.name "Thirty Seven News Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -50,3 +54,13 @@ jobs:
             --author="$(git log -1 --format='%an <%ae>')" \
             -m "Publish scheduled Thirty Seven news"
           git push origin HEAD:main
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  deploy-cloudflare:
+    needs: publish
+    if: needs.publish.outputs.changed == 'true' && vars.CLOUDFLARE_PREVIEW_ENABLED == 'true'
+    uses: ./.github/workflows/cloudflare-deploy.yml
+    with:
+      environment: ${{ vars.CLOUDFLARE_PRODUCTION_ENABLED == 'true' && 'production' || 'preview' }}
+      commit: ${{ needs.publish.outputs.commit }}
+    secrets: inherit

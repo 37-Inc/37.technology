@@ -80,6 +80,7 @@ Next.js 16 App Router. Public pages are static and data-driven; the protected in
 - `app/legal/privacy` and `app/legal/terms` — single consolidated documents covering the site and every app; old app-specific URLs redirect via `next.config.ts`.
 - Contact: `components/contact/ContactForm.tsx` posts to `app/api/contact/route.ts`; Resend and Turnstile secrets must remain server-only.
 - Analytics: `lib/analytics.ts` sends one sanitized event contract to GA4 and optional PostHog. Never include form contents or personal data.
+- Cloudflare: `npm run build:cloudflare` exports public pages and sharing images to an ignored staging directory. `worker/cloudflare.ts` uses the shared contact handler with encrypted Worker secrets. See `docs/cloudflare-hosting.md`; production DNS and deployment activation remain owner-approved gates.
 
 ## Conventions & Patterns
 

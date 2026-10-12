@@ -7,7 +7,7 @@ The marketing site for [Thirty Seven, Inc.](https://37.technology) — a problem
 - TypeScript with strict mode
 - Tailwind CSS 4 with CSS variables for the warm neutral theme
 - `next/font` for Inter (UI) and Fraunces (display)
-- Edge-based Open Graph image generation (`/api/og`)
+- Open Graph images using bundled fonts (`/api/og`)
 - Google Analytics 4 and PostHog through one typed event dispatcher
 - Resend delivery and Cloudflare Turnstile protection for project inquiries
 
@@ -57,7 +57,7 @@ Google Analytics 4 is enabled in production via `siteConfig.gaMeasurementId` in 
 The embedded form posts to `app/api/contact/route.ts`, which validates, abuse-checks, and delivers the inquiry through Resend. Provider keys are server-only. See [`docs/contact-form.md`](docs/contact-form.md) and [`.env.example`](.env.example) for configuration and local mock-mode review.
 
 ## Deployment
-Vercel deploys automatically: PRs get preview deployments and merges to `main` go to production. Static pages remain on the Vercel CDN; only `/api/contact` invokes a function.
+Vercel currently serves production: PRs get preview deployments and merges to `main` go to production. A free-tier Cloudflare preview and automated GitHub deployment path are documented in [`docs/cloudflare-hosting.md`](docs/cloudflare-hosting.md). No DNS cutover occurs during preview preparation.
 
 ## Task tracking
 Follow-up work is tracked in the owner's roadmap, not in this repo. The `.beads/` workspace is local-only and gitignored — do not commit it.

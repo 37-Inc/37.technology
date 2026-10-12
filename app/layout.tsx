@@ -18,14 +18,15 @@ const fraunces = Fraunces({
   variable: "--font-serif",
 });
 
-const isProductionDeployment = process.env.VERCEL_ENV
-  ? process.env.VERCEL_ENV === "production"
+const deploymentEnvironment =
+  process.env.NEXT_PUBLIC_DEPLOYMENT_ENV ?? process.env.VERCEL_ENV;
+const isProductionDeployment = deploymentEnvironment
+  ? deploymentEnvironment === "production"
   : process.env.NODE_ENV === "production";
 const gaMeasurementId = isProductionDeployment
   ? (process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? siteConfig.gaMeasurementId)
   : "";
-const googleSiteVerification =
-  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
