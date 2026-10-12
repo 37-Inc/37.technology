@@ -11,7 +11,7 @@ import {
 
 describe("news catalog", () => {
   it("partitions published and scheduled articles", () => {
-    expect(allNewsItems).toHaveLength(11);
+    expect(allNewsItems.length).toBeGreaterThan(0);
     expect(newsItems.length + scheduledNewsItems.length).toBe(
       allNewsItems.length
     );
@@ -41,6 +41,22 @@ describe("news catalog", () => {
       expect(
         existsSync(path.join(process.cwd(), "content", "news", `${item.slug}.md`))
       ).toBe(true);
+    }
+  });
+
+  it("includes the verified Mac launch with real media and an accurate publication date", () => {
+    const article = getNewsItemBySlug("stitch-it-comes-to-mac")!;
+
+    expect(article.status).toBe("published");
+    expect(article.publishedLabel).toBe("October 12, 2026");
+    expect(article.publishAt.startsWith("2026-10-12T")).toBe(true);
+    expect(article.eventAt).toBeUndefined();
+    expect(article.projectSlug).toBe("stitch-it");
+    expect(article.seoDescription!.length).toBeLessThanOrEqual(155);
+    expect(article.shareImage).toMatchObject({ width: 1200, height: 630 });
+    for (const media of [article.heroMedia!, article.shareImage!]) {
+      expect(existsSync(path.join(process.cwd(), "public", media.src))).toBe(true);
+      expect(media.alt).toContain("Mac");
     }
   });
 

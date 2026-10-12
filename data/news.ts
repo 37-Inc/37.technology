@@ -1,4 +1,5 @@
 import newsData from "./news.json";
+import type { Screenshot } from "./projects/types";
 
 export type NewsKind =
   | "archive"
@@ -28,6 +29,7 @@ export interface NewsItem {
   eventLabel?: string;
   faqs?: NewsFaq[];
   highlights?: NewsHighlight[];
+  heroMedia?: Screenshot;
   kind: NewsKind;
   keywords?: string[];
   projectSlug?: string;
@@ -35,6 +37,7 @@ export interface NewsItem {
   publishAt: string;
   seoDescription?: string;
   seoTitle?: string;
+  shareImage?: Screenshot;
   slug: string;
   sources?: NewsSource[];
   status: NewsStatus;

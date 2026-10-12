@@ -429,5 +429,78 @@
     "publishedLabel": "February 2026",
     "publishAt": "2026-02-01T17:00:00.000Z",
     "status": "published"
+  },
+  {
+    "slug": "stitch-it-comes-to-mac",
+    "title": "Stitch It Comes to Mac",
+    "summary": "A native Mac workspace for combining screenshots and images, with a live preview, precise trimming, solid-color redaction, and JPEG, PNG, or PDF export.",
+    "seoTitle": "Stitch It Comes to Mac: Native Screenshot Stitching",
+    "seoDescription": "Stitch screenshots and images on Mac with live preview, precise trimming, solid-color redaction, and JPEG, PNG, or PDF export. Now on the Mac App Store.",
+    "keywords": [
+      "Stitch It for Mac",
+      "combine screenshots on Mac",
+      "native Mac screenshot stitcher",
+      "stitch images horizontally",
+      "redact screenshots on Mac"
+    ],
+    "kind": "product-update",
+    "projectSlug": "stitch-it",
+    "publishedLabel": "October 12, 2026",
+    "publishAt": "2026-10-12T21:04:55.810Z",
+    "status": "published",
+    "heroMedia": {
+      "src": "/assets/projects/stitch-it/mac-one-clean-result.webp",
+      "width": 1286,
+      "height": 804,
+      "alt": "Approved Mac App Store artwork showing three screenshots combined in the native Stitch It Mac workspace"
+    },
+    "shareImage": {
+      "src": "/assets/news/stitch-it-comes-to-mac-share.png",
+      "width": 1200,
+      "height": 630,
+      "alt": "Stitch It Comes to Mac, with the approved native Mac workspace image"
+    },
+    "highlights": [
+      {
+        "label": "Native on Mac",
+        "value": "macOS 14+"
+      },
+      {
+        "label": "Layouts",
+        "value": "Vertical + horizontal"
+      },
+      {
+        "label": "Export formats",
+        "value": "JPEG, PNG + PDF"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Which Macs support Stitch It?",
+        "answer": "Stitch It for Mac supports Apple Silicon and Intel Macs running macOS 14 or later. It is a native SwiftUI and AppKit app."
+      },
+      {
+        "question": "Is Stitch It for Mac free?",
+        "answer": "Yes. The free Mac app supports up to three images per project with a small export watermark. Pro lifts the image cap and removes the watermark. There are no ads on Mac in either tier."
+      },
+      {
+        "question": "Does Pro work across Apple devices?",
+        "answer": "Apple Pro purchases can be restored on iPhone, iPad, and Mac using the same Apple Account, without a separate Stitch It login. Android is a separate purchase platform."
+      },
+      {
+        "question": "Can I edit Mac projects on iPhone or iPad?",
+        "answer": "Not currently. Editable projects reopen on Mac and contain original images. Share an exported JPEG, PNG, or PDF when you want to send the result or keep redacted details private."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Stitch It on the Mac App Store",
+        "url": "https://apps.apple.com/us/app/stitch-it-long-screenshots/id554594252?platform=mac"
+      },
+      {
+        "label": "Stitch It product page",
+        "url": "https://37.technology/stitch-it"
+      }
+    ]
   }
 ]
