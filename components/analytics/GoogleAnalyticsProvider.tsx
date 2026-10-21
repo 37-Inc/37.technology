@@ -6,7 +6,11 @@ import Script from "next/script";
 import { useDoNotTrack } from "@/lib/analytics";
 import { shouldEnableBrowserAnalytics } from "@/lib/analytics-host";
 import { routeAnalyticsEvents } from "@/lib/analytics-routes";
-import { analyticsPageContext } from "@/lib/analytics-url";
+import {
+  analyticsPageContext,
+  isReferralInvitationPath,
+  REFERRAL_INVITE_PATHS,
+} from "@/lib/analytics-url";
 
 const allowLocalhost =
   process.env.NEXT_PUBLIC_ANALYTICS_ALLOW_LOCALHOST === "true";
@@ -26,6 +30,7 @@ export function GoogleAnalyticsProvider({
   useEffect(() => {
     if (
       doNotTrack ||
+      isReferralInvitationPath(pathname) ||
       !scriptReady ||
       !window.gtag ||
       !shouldEnableBrowserAnalytics(window.location.hostname, allowLocalhost) ||
@@ -53,7 +58,7 @@ export function GoogleAnalyticsProvider({
     }
   }, [doNotTrack, pathname, scriptReady]);
 
-  if (doNotTrack) return null;
+  if (doNotTrack || isReferralInvitationPath(pathname)) return null;
 
   const serializedId = JSON.stringify(measurementId);
   return (
@@ -63,6 +68,15 @@ export function GoogleAnalyticsProvider({
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
+            // Keep this document quiet after an invitation, including late automatic events.
+            var referralAnalyticsDisabled = false;
+            Object.defineProperty(window, ${JSON.stringify(`ga-disable-${measurementId}`)}, {
+              configurable: true,
+              get: function () {
+                referralAnalyticsDisabled = referralAnalyticsDisabled || ${JSON.stringify(REFERRAL_INVITE_PATHS)}.indexOf(window.location.pathname.replace(/\\/$/, '')) !== -1;
+                return referralAnalyticsDisabled;
+              }
+            });
             window.dataLayer = window.dataLayer || [];
             function gtag(){window.dataLayer.push(arguments);}
             window.gtag = gtag;

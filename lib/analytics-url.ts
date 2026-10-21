@@ -1,3 +1,9 @@
+export const REFERRAL_INVITE_PATHS = ["/faxit/invite", "/faxit/stage-invite"];
+
+export function isReferralInvitationPath(pathname: string) {
+  return REFERRAL_INVITE_PATHS.includes(pathname.replace(/\/$/, ""));
+}
+
 export function withoutQuery(value: unknown) {
   if (typeof value !== "string") return value;
   if (!value) return value;

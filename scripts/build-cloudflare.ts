@@ -71,6 +71,10 @@ export default config;
   Cache-Control: public, max-age=31536000, immutable
 /assets/og/*
   Cache-Control: public, max-age=86400
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600, must-revalidate
+  X-Content-Type-Options: nosniff
 ${mode === "preview" ? "/*\n  X-Robots-Tag: noindex, nofollow\n" : ""}`,
   );
   if (mode === "preview") {
