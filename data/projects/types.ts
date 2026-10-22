@@ -64,6 +64,19 @@ export interface ProjectSpotlight {
   media: Screenshot;
 }
 
+export interface ProjectOptions {
+  heading: string;
+  intro: string;
+  items: {
+    title: string;
+    status: "available" | "upcoming";
+    body: string;
+    details: string[];
+  }[];
+  note: string;
+  links: { label: string; href: string }[];
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -97,6 +110,8 @@ export interface Project {
   heroMedia?: Screenshot;
   /** Short, factual reasons to choose the product */
   proofPoints?: ProjectProofPoint[];
+  /** Visible funding choices; upcoming options must not become shipped features in JSON-LD. */
+  options?: ProjectOptions;
   screenshots?: Screenshot[];
   /** Optional long-form capability callout */
   spotlight?: ProjectSpotlight;

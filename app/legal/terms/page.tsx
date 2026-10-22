@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <Prose title="Terms of Service" intro="Effective date: July 5, 2026">
+    <Prose title="Terms of Service" intro="Effective date: October 22, 2026">
       <p>
         These are the terms of service for all products published by Thirty
         Seven, Inc., including Stitch It, Fax It, ColorCub, ReShoot, HowHigh,
@@ -45,17 +45,39 @@ export default function TermsPage() {
       <h2>Fax It</h2>
       <h3>Credits</h3>
       <p>
-        Outbound faxes are billed against a credit balance purchased through
-        Apple&apos;s in-app purchase system. Page counts are calculated per
-        transmission and deducted once a fax is successfully accepted by our
-        telephony provider.
+        Sending uses account credits or usage included in your subscription.
+        Credits can be purchased through Apple&apos;s in-app purchase system.
+        US and Canadian destinations use one credit per page; other supported
+        destinations use two. A cover page counts as a page. Unused prepaid
+        credits do not expire. Check the destination, page count, and current
+        in-app price or plan terms before sending.
+      </p>
+      <h3>Optional earned-credit offers</h3>
+      <p>
+        Referral and rewarded-ad features are being tested and are not yet
+        available in the public app. When offered in a supported version, the
+        app shows the reward and eligibility before you participate. Rewards
+        may differ by offer or participant; a pending grant is not yet an
+        available credit. Confirmed earned credits join the same account
+        balance and have the same sending value as purchased credits.
+      </p>
+      <p>
+        Sharing an invitation alone does not earn credits. A signed-in,
+        non-anonymous account must claim the invitation; an account can accept
+        one incoming invitation and cannot claim its own code. Optional
+        rewarded ads are for eligible iPhone and iPad accounts, not Mac. Ad
+        inventory is not guaranteed, and completion must be verified before
+        the reward is granted. Neither earning nor receiving a referral
+        requires notification permission. These offers do not provide a free
+        receiving number or require you to watch ads to use purchased credits.
       </p>
       <h3>Fax It Number subscription</h3>
       <p>
-        Fax It Number subscriptions are currently offered only in the United
-        States and Canada, and only to users whose Apple ID storefront is set
-        to a country where the service is available; we may add or remove
-        regions at our discretion. Each plan (&ldquo;Fax It Number&rdquo; and
+        Fax It Number subscriptions provide an available US or Canadian fax
+        number, not a local number in every country. Purchase availability
+        and pricing depend on your App Store storefront; the number&apos;s
+        country is not a restriction to US or Canadian customers. Each plan
+        (&ldquo;Fax It Number&rdquo; and
         &ldquo;Fax It Number Unlimited&rdquo;) grants use of a single phone
         number we provision on your behalf, with the page allowance shown on
         the in-app subscription screen. Pages beyond the allowance are billed

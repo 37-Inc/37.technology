@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <Prose title="Privacy Policy" intro="Effective date: September 2, 2026">
+    <Prose title="Privacy Policy" intro="Effective date: October 22, 2026">
       <p>
         Thirty Seven, Inc. keeps data collection intentionally minimal. This
         policy explains what we collect, how we use it, and your choices. It is
@@ -200,6 +200,65 @@ export default function PrivacyPage() {
         on the basis of our legitimate interests in operating and securing the
         service.
       </p>
+      <h3>Referrals and earned credits</h3>
+      <p>
+        Optional referral and rewarded-ad features are being tested and are
+        not yet available in the public app. The following practices apply
+        when you use those features in a supported version.
+      </p>
+      <p>
+        Referrals use a public invitation code, not your name or email address
+        in the link. If you sign in and claim an invitation, we record the
+        participating account identifiers, code, accepted offer, timestamps,
+        and credit-grant status to apply the offer, prevent duplicate claims,
+        and recover delayed grants. RevenueCat processes the credits against
+        your account balance. We do not upload your address book or show the
+        inviter your email, fax documents, or fax activity. Sharing an
+        invitation uses the sharing service you choose; its own privacy
+        practices also apply.
+      </p>
+      <h3>Rewarded ads and privacy choices</h3>
+      <p>
+        Where optional rewarded ads are enabled on iPhone or iPad, Google
+        AdMob and its User Messaging Platform handle ad delivery and consent
+        choices. Google may process IP address and approximate location,
+        device or advertising identifiers, ad views and interactions, and
+        diagnostic or performance information for advertising, measurement,
+        and fraud prevention. Fax document content and fax phone numbers are
+        not supplied to the ad SDK. Native Mac does not show rewarded video
+        ads.
+      </p>
+      <p>
+        Before requesting an ad, the app updates consent information and
+        presents Google&apos;s consent form where required. Where Google
+        requires an ongoing privacy control, the credit screen provides
+        &ldquo;Ad Privacy Choices.&rdquo; Apple&apos;s tracking permission
+        is a separate system choice that you can manage in device Settings.
+        Buying credits and using an existing balance do not require watching
+        an ad.
+      </p>
+      <p>
+        To verify an ad reward, we send Google your pseudonymous Fax It
+        account identifier and a unique watch identifier. Google returns a
+        signed verification callback to our backend; we retain its
+        transaction, reward, time, and grant status and use RevenueCat to
+        credit the same account. These records support duplicate prevention,
+        balance updates, delayed-grant recovery, and support. They are not
+        anonymous records. Account deletion removes active invitation codes
+        and your account identifier from shared referral claims, and deletes
+        associated ad-reward records through our deletion process. Claim and
+        grant records needed to settle the other participant&apos;s reward
+        may remain, subject to the retention exceptions below; their already
+        granted credits are not removed.
+      </p>
+      <h3>Fax It notifications</h3>
+      <p>
+        If you allow notifications, we associate your device&apos;s push
+        token with your signed-in account to send fax-status or referral-credit
+        notifications. Apple and Firebase process delivery.
+        You can decline or change notification permission in system Settings;
+        allowing notifications is not a requirement for earning credits.
+      </p>
       <h3>Sensitive information and HIPAA</h3>
       <p>
         Faxes may by their nature contain sensitive personal data such as
@@ -335,6 +394,12 @@ export default function PrivacyPage() {
           cloud infrastructure for accounts, app data, and operational logs.
         </li>
         <li>
+          <strong>Google AdMob / User Messaging Platform</strong> — optional
+          Fax It mobile rewarded-ad delivery, consent choices, measurement,
+          and reward verification as described above.{" "}
+          <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>
+        </li>
+        <li>
           <strong>Apple, Inc.</strong> and <strong>Google Play</strong> — all
           in-app purchases and subscriptions.{" "}
           <a href="https://www.apple.com/legal/privacy/">
@@ -343,7 +408,8 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>RevenueCat, Inc.</strong> — subscription entitlement
-          tracking; receives no payment-card data.{" "}
+          tracking and Fax It credit balances and grants; receives no
+          payment-card data.{" "}
           <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>
         </li>
         <li>
