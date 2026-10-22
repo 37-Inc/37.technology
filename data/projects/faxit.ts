@@ -7,7 +7,7 @@ export const faxit: Project = {
   oneLiner:
     "Fax for less. Simple sending and receiving. iPhone, iPad & Mac.",
   description:
-    "Send without a required subscription using pay-per-page credits that do not expire. Add an optional US or Canadian fax number when you need to receive faxes.",
+    "Send a fax from iPhone, iPad, or Mac with non-expiring credits and no required sending subscription. Add an optional US or Canadian fax number when you need to receive.",
   problem: {
     heading: "An occasional fax should not become another subscription.",
     body: "You have a form, application, or signed document that still has to reach a fax number. You need a clear way to send it, confirm delivery, and move on - without maintaining a fax machine or paying every month just to send.",
@@ -15,6 +15,44 @@ export const faxit: Project = {
   solution: {
     heading: "Pay by the page. Add a number only when you need one.",
     body: "Buy page credits for sending and keep any unused balance for later. If you need replies or ongoing inbound faxing, an optional Fax It Number plan adds a dedicated US or Canadian number and an inbox.",
+  },
+  options: {
+    heading: "Ways to fax",
+    intro: "Buy credits for an occasional fax, or get a number with an optional ad-free plan.",
+    items: [
+      {
+        title: "Pay as you go",
+        status: "available",
+        body: "Buy credits in the app for the fax you need to send. No sending subscription required.",
+        details: [
+          "Unused credits do not expire.",
+          "Use the same balance on iPhone, iPad, and Mac.",
+        ],
+      },
+      {
+        title: "Earn free fax credits",
+        status: "upcoming",
+        body: "Two optional earning methods are in testing. Neither is available in the public app yet.",
+        details: [
+          "On iPhone or iPad: watch an eligible ad when available. No rewarded video on Mac.",
+          "On iPhone, iPad, or Mac: invite a friend who signs in and claims your invitation.",
+        ],
+      },
+      {
+        title: "Ad-free number plans",
+        status: "available",
+        body: "Choose an optional monthly plan for a dedicated US or Canadian fax number and an inbox.",
+        details: [
+          "Choose a monthly allowance or an unlimited plan, as shown in the app.",
+          "Receiving requires an active number subscription.",
+        ],
+      },
+    ],
+    note: "One credit sends one page to a US or Canadian destination; other supported destinations use two credits per page. A cover page counts as a page. See the app for current prices and plan terms.",
+    links: [
+      { label: "Why we keep pay-per-page sending", href: "/news/why-fax-it-keeps-pay-per-page-sending" },
+      { label: "Meet Fax It for Mac", href: "/news/fax-it-comes-to-mac" },
+    ],
   },
   features: [
     {
@@ -88,6 +126,21 @@ export const faxit: Project = {
   },
   faqs: [
     {
+      question: "Can I send a fax for free with Fax It?",
+      answer:
+        "Fax It is free to download. Sending in the current public app uses paid credits or a plan's included usage. Optional free credits from rewarded ads or referrals are being tested and are not publicly available yet. Receiving requires a paid number subscription.",
+    },
+    {
+      question: "How will earning free fax credits work?",
+      answer:
+        "The upcoming options are an eligible rewarded ad on iPhone or iPad, or an invitation that a friend signs in and claims. Sharing a link alone will not earn credits. The app will show the offer, eligibility, and grant status; amounts may vary and pending credits are not yet granted. Mac will support referrals, not rewarded video ads.",
+    },
+    {
+      question: "How many credits does a fax use?",
+      answer:
+        "Sending to a US or Canadian destination uses one credit per page. Other supported international destinations use two credits per page. Cover pages count. Purchased and future earned credits have the same sending value; a credit does not always equal an international page.",
+    },
+    {
       question: "Do I need a subscription to send a fax?",
       answer:
         "No. Pay-per-page sending is available with credits purchased in the app. A monthly plan is optional and is intended for people who want a dedicated receiving number and plan-covered usage.",
@@ -131,9 +184,9 @@ export const faxit: Project = {
     "dedicated fax number app",
   ],
   seo: {
-    title: "Fax It App: Send & Receive on iPhone, iPad & Mac",
+    title: "Fax It: Send & Receive Faxes on iPhone, iPad & Mac",
     description:
-      "Send without a subscription using non-expiring page credits, or add a US/Canadian fax number. Native on iPhone, iPad, and Mac.",
+      "Free download for iPhone, iPad and Mac. Send faxes with non-expiring paid credits, no sending subscription, or add an optional US/Canadian fax number.",
   },
   applicationCategory: "BusinessApplication",
   theme: {
