@@ -7,6 +7,7 @@ import { setPostHogReady, useDoNotTrack } from "@/lib/analytics";
 import { shouldEnableBrowserAnalytics } from "@/lib/analytics-host";
 import { routeAnalyticsEvents } from "@/lib/analytics-routes";
 import { sanitizePostHogEvent } from "@/lib/posthog-privacy";
+import { isReferralInvitationPath } from "@/lib/analytics-url";
 
 const postHogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 const postHogHost =
@@ -24,6 +25,7 @@ export function AnalyticsProvider() {
   useEffect(() => {
     if (
       process.env.NEXT_PUBLIC_DEPLOYMENT_ENV === "preview" ||
+      isReferralInvitationPath(pathname) ||
       !postHogKey ||
       doNotTrack ||
       !shouldEnableBrowserAnalytics(window.location.hostname, allowLocalhost)
@@ -49,8 +51,8 @@ export function AnalyticsProvider() {
         save_referrer: false,
       });
       initialized = true;
-      setPostHogReady(true);
     }
+    setPostHogReady(true);
 
     if (pathname === lastTrackedPath.current) return;
 

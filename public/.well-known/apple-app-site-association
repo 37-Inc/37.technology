@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["842K77RHSG.technology.37.Fax"],
+        "components": [{ "/": "/faxit/invite" }]
+      }
+    ]
+  }
+}

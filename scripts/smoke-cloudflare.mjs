@@ -7,6 +7,39 @@ assert(
 );
 const origin = new URL(base).origin;
 const publicProduction = origin === "https://37.technology";
+const associationURL = `${origin}/.well-known/apple-app-site-association`;
+for (const method of ["GET", "HEAD"]) {
+  const response = await fetch(associationURL, { method, redirect: "manual" });
+  assert.equal(response.status, 200, `AASA ${method}`);
+  assert.equal(response.headers.get("location"), null, "AASA must not redirect");
+  assert.match(
+    response.headers.get("content-type") ?? "",
+    /^application\/json(?:;|$)/,
+    "AASA JSON content type",
+  );
+  assert.equal(
+    response.headers.get("cache-control"),
+    "public, max-age=3600, must-revalidate",
+    "AASA cache policy",
+  );
+  assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  if (method === "HEAD") {
+    assert.equal(await response.text(), "", "AASA HEAD has no body");
+  } else {
+    const association = await response.json();
+    const faxItDetails = association.applinks.details.filter(
+      (detail) =>
+        detail.appIDs?.includes("842K77RHSG.technology.37.Fax") ||
+        detail.appID === "842K77RHSG.technology.37.Fax",
+    );
+    assert.deepEqual(faxItDetails, [
+      {
+        appIDs: ["842K77RHSG.technology.37.Fax"],
+        components: [{ "/": "/faxit/invite" }],
+      },
+    ]);
+  }
+}
 for (const path of [
   "/",
   "/faxit",

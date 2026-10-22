@@ -5,6 +5,17 @@ import {
 } from "@/lib/posthog-privacy";
 
 describe("PostHog privacy boundary", () => {
+  it("removes referral queries from automatically populated URL properties", () => {
+    const invitation = "https://37.technology/faxit/invite?code=ABCD7K9M&offer=v1";
+    const result = sanitizePostHogProperties({
+      $current_url: invitation,
+      $initial_current_url: invitation,
+      $session_entry_url: invitation,
+      $referrer: invitation,
+    });
+    expect(JSON.stringify(result)).not.toContain("ABCD7K9M");
+    expect(Object.values(result)).toEqual(Array(4).fill("https://37.technology/faxit/invite"));
+  });
   it("removes current, initial, and session campaign properties", () => {
     expect(
       sanitizePostHogProperties({
