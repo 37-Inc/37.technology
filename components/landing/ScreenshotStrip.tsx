@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Screenshot } from "@/data/projects";
 import { SectionHeading } from "./SectionHeading";
 
@@ -29,11 +30,12 @@ export function ScreenshotStrip({ name, screenshots }: ScreenshotStripProps) {
             key={screenshot.src}
             className="shrink-0 overflow-hidden rounded-3xl border border-hairline bg-surface shadow-sm"
           >
-            <img
+            <Image
               src={screenshot.src}
               alt={screenshot.alt}
               width={screenshot.width}
               height={screenshot.height}
+              unoptimized
               loading="lazy"
               decoding="async"
               className="h-[480px] max-h-[480px] w-auto object-cover"

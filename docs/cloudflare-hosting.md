@@ -1,5 +1,23 @@
 # Cloudflare Hosting
 
+## Current Production
+
+The public site runs on Cloudflare Worker `thirty-seven-website`; the separate
+`thirty-seven-website-preview` remains the noindex preview. Public contact,
+analytics and navigation checks passed on October 12, 2026, after which the
+owner-approved retirement of the old `37-technology` Vercel project completed.
+That project returned 404 after deletion; the other Vercel projects were retained.
+
+Current recovery is a previous known-good Cloudflare Worker version or a tested
+Git revision rebuilt and deployed through the existing workflow. Do not restore
+the historical Vercel DNS targets below: the deleted project is no longer a
+working rollback target. Preserve mail and unrelated records. The cutover section
+below is a historical receipt, not an instruction to repeat the migration.
+
+Build locally and in CI with Node.js 24 LTS from `.nvmrc`. Both workflows use
+the same pinned runtime; dependency, lint, type, export and Worker checks run
+before a production deployment.
+
 ## Target and Cost Boundary
 
 Only account `37.technology` (`7f05a1dcb6e16f9c239564a0293bbe74`) is configured.

@@ -4,6 +4,7 @@ The marketing site for [Thirty Seven, Inc.](https://37.technology) — a problem
 
 ## Stack
 - Next.js 16 (App Router, SSG plus one server route)
+- Node.js 24 LTS (the exact CI version is recorded in `.nvmrc`)
 - TypeScript with strict mode
 - Tailwind CSS 4 with CSS variables for the warm neutral theme
 - `next/font` for Inter (UI) and Fraunces (display)
@@ -13,7 +14,8 @@ The marketing site for [Thirty Seven, Inc.](https://37.technology) — a problem
 
 ## Local development
 ```bash
-npm install
+nvm use
+npm ci
 npm run dev
 ```
 Visit `http://localhost:3000` to preview the site.
@@ -22,9 +24,24 @@ Visit `http://localhost:3000` to preview the site.
 ```bash
 npm test
 npm run lint
+npx tsc --noEmit
 npm run build
+npm run build:cloudflare
+npm audit
 ```
-The Vitest suite exercises the inquiry validation and delivery boundary. `npm run build` runs a production bundle to ensure every route compiles and the static pages render without type errors.
+The Vitest suite exercises the inquiry validation and delivery boundary. Lint fails on warnings as well as errors. `npm run build` checks the Next.js routes; `npm run build:cloudflare` also checks the deployed static export. CI runs an audit of the complete dependency tree.
+
+ESLint stays on its newest 9.x release while Next's React/import/accessibility
+plugins exclude ESLint 10. This currently produces an upstream npm deprecation
+notice for ESLint 9; lint itself must still pass without warnings. TypeScript
+stays on its newest supported 6.0.x release while
+`typescript-eslint` requires TypeScript below 6.1. Do not bypass those peer
+constraints with `--force` or `--legacy-peer-deps`.
+
+Dependency install scripts are explicitly reviewed in `package.json`:
+native build helpers are approved at exact versions, and the optional `core-js`
+donation message is denied. Review new or changed scripts before updating those
+approvals; do not blanket-approve future versions.
 
 ## Editing the portfolio
 Each project lives in its own file under [`data/projects/`](data/projects/) (e.g. `data/projects/reshoot.ts`), aggregated by `data/projects/index.ts`. The schema is defined in [`data/projects/types.ts`](data/projects/types.ts) and drives both the homepage grid and the landing page template at `app/[slug]/page.tsx` — no layout edits required to add or change a project.
@@ -45,10 +62,10 @@ Assets live in [`public/assets/projects`](public/assets/projects) — icons at �
 - Landing pages emit SoftwareApplication/WebApplication, BreadcrumbList, and FAQPage JSON-LD (`components/landing/structured-data.ts`); the homepage emits Organization/WebSite
 - `/api/og?slug=<project>` creates branded OG/Twitter cards
 - `app/sitemap.ts` and `app/robots.ts` keep search engines informed automatically
-- `37.technology` is the primary domain; `www` 308-redirects to it (configured in Vercel), matching all canonical URLs
+- `37.technology` is the primary domain; `www` 308-redirects to it in Cloudflare, matching all canonical URLs
 
 ## Legal pages
-One consolidated privacy policy (`/legal/privacy`) and terms of service (`/legal/terms`) cover the website and every app — these are the URLs App Store Connect listings point at. The old app-specific URLs (`/legal/privacy/faxit`, `/legal/terms/faxit`) permanently redirect to them via `next.config.ts`; remove the redirects only after every store listing has shipped a version pointing at the consolidated pages.
+One consolidated privacy policy (`/legal/privacy`) and terms of service (`/legal/terms`) cover the website and every app — these are the canonical URLs for store listings and new links. Keep permanent redirects from the old app-specific URLs (`/legal/privacy/faxit`, `/legal/terms/faxit`) for installed apps, bookmarks, and external links, even after store metadata is migrated. `next.config.ts` handles local Next.js routing; `worker/cloudflare.ts` handles the production aliases, including trailing slashes and query strings.
 
 ## Analytics
 Google Analytics 4 is enabled in production via `siteConfig.gaMeasurementId` in [`data/site.ts`](data/site.ts) (currently the `37.technology` web stream in the Thirty Seven, Inc. GA account). PostHog is enabled only when `NEXT_PUBLIC_POSTHOG_KEY` is configured. [`lib/analytics.ts`](lib/analytics.ts) is the shared event contract; never send inquiry contents or other personal data through it. Search Console is verified via the GA tag; `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` remains available for meta-tag verification.
@@ -57,7 +74,12 @@ Google Analytics 4 is enabled in production via `siteConfig.gaMeasurementId` in 
 The embedded form posts to `app/api/contact/route.ts`, which validates, abuse-checks, and delivers the inquiry through Resend. Provider keys are server-only. See [`docs/contact-form.md`](docs/contact-form.md) and [`.env.example`](.env.example) for configuration and local mock-mode review.
 
 ## Deployment
-Vercel currently serves production: PRs get preview deployments and merges to `main` go to production. A free-tier Cloudflare preview and automated GitHub deployment path are documented in [`docs/cloudflare-hosting.md`](docs/cloudflare-hosting.md). No DNS cutover occurs during preview preparation.
+Cloudflare Workers serves production. Pull requests run the full checks without
+deploying; merges to `main` deploy production through GitHub Actions. The separate
+stable preview, scheduled-news deployments, contact secrets, and rollback process
+are documented in [`docs/cloudflare-hosting.md`](docs/cloudflare-hosting.md).
+Vercel is retired for this site. Images are served as committed static assets;
+using `next/image` with `unoptimized` does not add a paid image service.
 
 ## Task tracking
 Follow-up work is tracked in the owner's roadmap, not in this repo. The `.beads/` workspace is local-only and gitignored — do not commit it.

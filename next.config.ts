@@ -3,9 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
-      // Old app-specific legal pages, folded into the general documents.
-      // Remove once App Store Connect URLs point at /legal/privacy and
-      // /legal/terms for every app (tracked in beads).
+      // Keep legacy links working even after store listings use the shared policies.
       {
         source: "/legal/privacy/faxit",
         destination: "/legal/privacy",

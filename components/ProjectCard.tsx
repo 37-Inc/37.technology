@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
 import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
@@ -23,9 +24,12 @@ export function ProjectCard({ project, priority }: ProjectCardProps) {
       >
         <div className="flex items-start gap-4">
           <div className="relative h-12 w-12 flex-none overflow-hidden rounded-2xl border border-hairline bg-background">
-            <img
+            <Image
               src={project.hero}
               alt={`${project.name} icon`}
+              width={48}
+              height={48}
+              unoptimized
               loading={priority ? "eager" : "lazy"}
               className="h-full w-full object-cover"
             />

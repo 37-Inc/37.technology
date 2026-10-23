@@ -76,15 +76,24 @@ describe("Cloudflare routing", () => {
     ).toBe("/assets/og/homepage.png");
   });
 
-  it("preserves legal redirects and query strings", async () => {
-    const response = await handleWorkerRequest(
-      new Request(`https://${hostname}/legal/privacy/faxit/?source=store`),
-      environment(),
-    );
-    expect(response.status).toBe(308);
-    expect(response.headers.get("Location")).toBe(
-      `https://${hostname}/legal/privacy?source=store`,
-    );
+  it.each(["privacy", "terms"])("retains the legacy %s alias in both environments", async (policy) => {
+    for (const mode of ["preview", "production"] as const) {
+      for (const suffix of ["", "/"]) {
+        for (const method of ["GET", "HEAD"]) {
+          const env = environment({ DEPLOYMENT_ENV: mode });
+          const response = await handleWorkerRequest(
+            new Request(`https://${hostname}/legal/${policy}/faxit${suffix}?source=store`, { method }),
+            env,
+          );
+          expect(response.status).toBe(308);
+          expect(response.headers.get("Location")).toBe(
+            `https://${hostname}/legal/${policy}?source=store`,
+          );
+          expect(response.headers.has("X-Robots-Tag")).toBe(mode === "preview");
+          expect(env.ASSETS.fetch).not.toHaveBeenCalled();
+        }
+      }
+    }
   });
 
   it("redirects www to the canonical host", async () => {
