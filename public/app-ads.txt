@@ -203,3 +203,52 @@ xandr.com, 17779, RESELLER
 xandr.com, 7353, RESELLER
 zetaglobal.net, 525, RESELLER
 zmaticoo.com, 5135195, RESELLER
+
+# Additional existing Stitch It authorizations (preserved)
+adcolony.com, 496220845654deec, RESELLER, 1ad675c9de6b5176
+adcolony.com, 5d8cbf6671c93a42, RESELLER, 1ad675c9de6b5176
+admanmedia.com, 552, RESELLER
+appnexus.com, 12061, RESELLER, f5ab79cb980f11d1
+appnexus.com, 13099, RESELLER
+bidmachine.io, 36, RESELLER
+bidmachine.io, 60, RESELLER
+bidmachine.io, 74, RESELLER
+bidmachine.io, 77, RESELLER
+contextweb.com, 558622, RESELLER, 89ff185a4c4e857c
+contextweb.com, 561998, RESELLER, 89ff185a4c4e857c
+conversantmedia.com, 100246, RESELLER, 03113cd04947736d
+conversantmedia.com, 39823, RESELLER, 03113cd04947736d
+facebook.com, 1443031009299651, RESELLER, c3e20eee3f780d68
+gothamads.com, 987, RESELLER, d9c86e5dec870222
+indexexchange.com, 191086, RESELLER
+lijit.com, 411121, RESELLER, fafdf38b16bf6b2b #SOVRN
+media.net, 8CUP91B51, DIRECT
+mobilefuse.com, 2281, RESELLER, 71e88b065d69c021
+onetag.com, 7b9b48d851cd102-OB, DIRECT
+onetag.com, 7b9b48d851cd102, DIRECT
+openx.com, 540031703, RESELLER, 6a698e2ec38604c6
+opera.com,pub4444433466368,RESELLER,55a0c5fd61378de3
+pokkt.com, 5886, RESELLER, c45702d9311e25fd
+pubmatic.com, 158100, RESELLER, 5d62403b186f2ace
+pubmatic.com, 159856, DIRECT, 5d62403b186f2ace
+pubmatic.com, 161593, RESELLER, 5d62403b186f2ace
+pubnative.net, 1007170, RESELLER, d641df8625486a7b
+rubiconproject.com, 11006, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 13132, Reseller, 0bfd66d529a55807
+rubiconproject.com, 16928, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 18364, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 23644, RESELLER, 0bfd66d529a55807
+smaato.com, 1100053684, RESELLER, 07bcf65f187117b4
+smartadserver.com, 3117, RESELLER
+smartadserver.com, 4111, RESELLER
+smartadserver.com, 4194, DIRECT
+thebrave.io, 52353142, RESELLER, c25b2154543746ac
+verve.com, 15290, RESELLER, 0c8f5958fc2d6270
+video.unrulymedia.com, 3881266972, RESELLER
+xad.com, 241, RESELLER, 81cbf0a75a5e0e9a
+yahoo.com, 55771, RESELLER, e1a5b5b6e3255540
+yahoo.com, 58905, RESELLER, e1a5b5b6e3255540
+yahoo.com, 59781, RESELLER, e1a5b5b6e3255540
+rubiconproject.com, 22884, DIRECT, 0bfd66d529a55807
+rubiconproject.com, 22884, RESELLER, 0bfd66d529a55807
+openx.com, 562174952, RESELLER, 6a698e2ec38604c6
