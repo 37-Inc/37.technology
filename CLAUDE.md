@@ -60,6 +60,11 @@ This protocol applies when ending a Beads implementation workflow. It is subordi
 
 ## Build & Test
 
+Use Node.js 24 LTS from `.nvmrc` in local builds and both GitHub workflows.
+Lint must pass without warnings; CI also runs `npm audit --audit-level=low`.
+Keep the documented ESLint/TypeScript compatibility limits in README.md; never
+force unsupported peer dependencies just to hide an upstream deprecation.
+
 ```bash
 npm install
 npm run lint    # ESLint
