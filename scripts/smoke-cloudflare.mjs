@@ -99,14 +99,20 @@ for (const slug of ["", "faxit", "stitch-it"]) {
   assert.equal(png.readUInt32BE(16), 1200);
   assert.equal(png.readUInt32BE(20), 630);
 }
-const redirect = await fetch(`${origin}/legal/privacy/faxit`, {
-  redirect: "manual",
-});
-assert.equal(redirect.status, 308);
-assert.equal(
-  new URL(redirect.headers.get("location"), origin).pathname,
-  "/legal/privacy",
-);
+for (const policy of ["privacy", "terms"]) {
+  for (const suffix of ["", "/"]) {
+    for (const method of ["GET", "HEAD"]) {
+      const path = `/legal/${policy}/faxit${suffix}?source=legacy-redirect-check`;
+      const redirect = await fetch(origin + path, { method, redirect: "manual" });
+      assert.equal(redirect.status, 308, `${method} ${path}`);
+      assert.equal(
+        redirect.headers.get("location"),
+        `${origin}/legal/${policy}?source=legacy-redirect-check`,
+        "Legacy legal aliases retain the host and query without chaining",
+      );
+    }
+  }
+}
 const missing = await fetch(`${origin}/this-page-does-not-exist`);
 assert.equal(missing.status, 404);
 const blocked = await fetch(`${origin}/api/contact`, {

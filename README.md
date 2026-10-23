@@ -65,7 +65,7 @@ Assets live in [`public/assets/projects`](public/assets/projects) — icons at �
 - `37.technology` is the primary domain; `www` 308-redirects to it in Cloudflare, matching all canonical URLs
 
 ## Legal pages
-One consolidated privacy policy (`/legal/privacy`) and terms of service (`/legal/terms`) cover the website and every app — these are the URLs App Store Connect listings point at. The old app-specific URLs (`/legal/privacy/faxit`, `/legal/terms/faxit`) permanently redirect to them via `next.config.ts`; remove the redirects only after every store listing has shipped a version pointing at the consolidated pages.
+One consolidated privacy policy (`/legal/privacy`) and terms of service (`/legal/terms`) cover the website and every app — these are the canonical URLs for store listings and new links. Keep permanent redirects from the old app-specific URLs (`/legal/privacy/faxit`, `/legal/terms/faxit`) for installed apps, bookmarks, and external links, even after store metadata is migrated. `next.config.ts` handles local Next.js routing; `worker/cloudflare.ts` handles the production aliases, including trailing slashes and query strings.
 
 ## Analytics
 Google Analytics 4 is enabled in production via `siteConfig.gaMeasurementId` in [`data/site.ts`](data/site.ts) (currently the `37.technology` web stream in the Thirty Seven, Inc. GA account). PostHog is enabled only when `NEXT_PUBLIC_POSTHOG_KEY` is configured. [`lib/analytics.ts`](lib/analytics.ts) is the shared event contract; never send inquiry contents or other personal data through it. Search Console is verified via the GA tag; `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` remains available for meta-tag verification.
