@@ -13,13 +13,14 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <Prose title="Privacy Policy" intro="Effective date: October 22, 2026">
+    <Prose title="Privacy Policy" intro="Effective date: October 23, 2026">
       <p>
         Thirty Seven, Inc. keeps data collection intentionally minimal. This
         policy explains what we collect, how we use it, and your choices. It is
         the single privacy policy for everything we publish — this website and
         all of our apps — and it supersedes any earlier app-specific policies
-        previously posted on this site.
+        previously posted on this site or our app websites, including
+        stitchitapp.com.
       </p>
 
       <h2>Scope</h2>
@@ -112,6 +113,52 @@ export default function PrivacyPage() {
         (RevenueCat, Inc.) receives a pseudonymous user identifier and standard
         subscription event metadata (purchase, renewal, cancellation, refund)
         so we can grant access to what you have paid for.
+      </p>
+
+      <h2>Mobile Advertising — Stitch It and Fax It</h2>
+      <p>
+        Ad-supported mobile versions of Stitch It and supported Fax It ad
+        features use Google AdMob for ad delivery and Google&apos;s User
+        Messaging Platform for consent choices. AppLovin and Unity Ads may
+        participate through AdMob mediation when enabled for the app, platform,
+        version, and ad format. The partners used also depend on availability
+        and your privacy choices.
+      </p>
+      <p>
+        These advertising providers and their demand partners may process IP
+        address and approximate location, device and advertising identifiers,
+        app and device information, ad views and interactions, consent signals,
+        and diagnostic or performance data. They use this information to select
+        and deliver ads, personalize ads where permitted, measure performance,
+        and prevent fraud. Screenshot images, fax documents, and fax phone
+        numbers are not supplied to the advertising SDKs.
+      </p>
+      <p>
+        Google&apos;s consent form presents the applicable regional choices
+        before ads are requested where required. You can revisit available
+        choices through the app&apos;s advertising privacy controls, including
+        &ldquo;Ad Privacy Choices&rdquo; in Fax It. Apple&apos;s tracking
+        permission and Android&apos;s advertising privacy settings are separate
+        device controls. You can also review each provider&apos;s privacy policy
+        and choices through the links under Service Providers below.
+      </p>
+
+      <h2>Stitch It</h2>
+      <p>
+        Stitch It processes the images you import, arrange, crop, redact, and
+        export on your device. Its ad-supported iPhone, iPad, and Android
+        versions show banner or interstitial ads using the providers described
+        above. Stitch It Pro removes these ads. The native Mac app does not show
+        ads.
+      </p>
+      <p>
+        The stitchitapp.com website uses Google Analytics and PostHog for page
+        views and store-link clicks. These tools receive page URLs and titles,
+        referrers, browser and device information, and details of the store
+        links clicked, and may use cookies or browser storage. Session
+        recording and automatic interaction capture are disabled. You can
+        limit website analytics with browser privacy settings or a content
+        blocker.
       </p>
 
       <h2>HowHigh</h2>
@@ -220,13 +267,11 @@ export default function PrivacyPage() {
       <h3>Rewarded ads and privacy choices</h3>
       <p>
         Where optional rewarded ads are enabled on iPhone or iPad, Google
-        AdMob and its User Messaging Platform handle ad delivery and consent
-        choices. Google may process IP address and approximate location,
-        device or advertising identifiers, ad views and interactions, and
-        diagnostic or performance information for advertising, measurement,
-        and fraud prevention. Fax document content and fax phone numbers are
-        not supplied to the ad SDK. Native Mac does not show rewarded video
-        ads.
+        AdMob, enabled mediation partners such as AppLovin and Unity Ads, and
+        Google&apos;s User Messaging Platform handle ad delivery and consent
+        choices as described in Mobile Advertising above. Supported ad-enabled
+        mobile versions may also show banner ads. Subscribers remain ad-free.
+        Native Mac does not show rewarded video ads.
       </p>
       <p>
         Before requesting an ad, the app updates consent information and
@@ -385,8 +430,8 @@ export default function PrivacyPage() {
 
       <h2>Service Providers</h2>
       <p>
-        We share limited data with processors only as necessary to operate our
-        products:
+        We use the following service providers and advertising partners for
+        the purposes described in this policy:
       </p>
       <ul>
         <li>
@@ -394,10 +439,26 @@ export default function PrivacyPage() {
           cloud infrastructure for accounts, app data, and operational logs.
         </li>
         <li>
-          <strong>Google AdMob / User Messaging Platform</strong> — optional
-          Fax It mobile rewarded-ad delivery, consent choices, measurement,
-          and reward verification as described above.{" "}
+          <strong>Google AdMob / User Messaging Platform</strong> — Stitch It
+          and supported Fax It mobile ad delivery, mediation, consent choices,
+          measurement, and Fax It reward verification as described above.{" "}
           <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>
+        </li>
+        <li>
+          <strong>AppLovin</strong> — mobile advertising demand through AdMob
+          mediation where enabled, including ad delivery, personalization where
+          permitted, measurement, and fraud prevention.{" "}
+          <a href="https://legal.applovin.com/privacy/">
+            legal.applovin.com/privacy
+          </a>
+        </li>
+        <li>
+          <strong>Unity Ads (Unity Technologies)</strong> — mobile advertising
+          demand through AdMob mediation where enabled, including ad delivery,
+          personalization where permitted, measurement, and fraud prevention.{" "}
+          <a href="https://unity.com/legal/privacy-policy">
+            unity.com/legal/privacy-policy
+          </a>
         </li>
         <li>
           <strong>Apple, Inc.</strong> and <strong>Google Play</strong> — all
@@ -465,15 +526,15 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>Google Analytics</strong> — website traffic measurement on
-          37.technology.{" "}
+          37.technology and stitchitapp.com.{" "}
           <a href="https://policies.google.com/privacy">
             policies.google.com/privacy
           </a>
         </li>
         <li>
           <strong>PostHog, Inc.</strong> — privacy-limited website traffic and
-          interaction measurement on 37.technology and the limited anonymous
-          HowHigh product events described above. Form contents, sensor data,
+          interaction measurement on 37.technology and stitchitapp.com, and the
+          limited anonymous HowHigh product events described above. Form contents, sensor data,
           coordinates, and session contents are never included. {" "}
           <a href="https://posthog.com/privacy">posthog.com/privacy</a>
         </li>
