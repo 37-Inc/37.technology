@@ -64,13 +64,8 @@ const structuredData = {
 };
 
 const projectGridClasses = [
-  "md:col-span-7",
-  "md:col-span-5",
-  "md:col-span-4",
-  "md:col-span-4",
-  "md:col-span-4",
-  "md:col-span-6",
-  "md:col-span-6",
+  "lg:col-span-7",
+  "lg:col-span-5",
 ];
 
 const operatingPrinciples = [
@@ -150,7 +145,7 @@ export default function HomePage() {
           </div>
           <p className="max-w-2xl text-base leading-relaxed text-muted lg:justify-self-end lg:text-lg">
             A focused portfolio across communication, creativity, healthcare,
-            research, and practical tools. Each product keeps its own identity;
+            education, and practical tools. Each product keeps its own identity;
             Thirty Seven provides the operating home behind it.
           </p>
         </div>
@@ -162,7 +157,7 @@ export default function HomePage() {
               project={project}
               index={index}
               prominent={index < 2}
-              className={projectGridClasses[index]}
+              className={projectGridClasses[index] ?? "lg:col-span-4"}
             />
           ))}
         </ul>

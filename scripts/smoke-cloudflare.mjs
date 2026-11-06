@@ -43,9 +43,11 @@ for (const method of ["GET", "HEAD"]) {
 for (const path of [
   "/",
   "/faxit",
+  "/quickkey",
   "/contact",
   "/news",
   "/news/fax-it-comes-to-mac",
+  "/news/quickkey-joins-thirty-seven",
   "/sitemap.xml",
   "/robots.txt",
 ]) {
@@ -62,6 +64,14 @@ for (const path of [
       path,
     );
   const body = await response.text();
+  if (path === "/" || path === "/news")
+    assert.match(body, /href="\/news\/quickkey-joins-thirty-seven"/);
+  if (path === "/quickkey") {
+    assert.match(body, /https:\/\/37\.technology\/quickkey/);
+    assert.match(body, /EducationalApplication/);
+    assert.match(body, /quickkey-icon\.webp/);
+    assert.match(body, /href="\/news\/quickkey-joins-thirty-seven"/);
+  }
   if (path === "/faxit") {
     assert.match(body, /Fax for less\./);
     assert.match(body, /https:\/\/37\.technology\/faxit/);
@@ -88,7 +98,7 @@ if (publicProduction) {
     "www preserves path and query",
   );
 }
-for (const slug of ["", "faxit", "stitch-it"]) {
+for (const slug of ["", "faxit", "stitch-it", "quickkey"]) {
   const response = await fetch(
     `${origin}/api/og${slug ? `?slug=${slug}` : ""}`,
   );
