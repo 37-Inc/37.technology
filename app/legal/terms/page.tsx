@@ -17,7 +17,7 @@ export default function TermsPage() {
       <p>
         These are the terms of service for all products published by Thirty
         Seven, Inc., including Stitch It, Fax It, ColorCub, ReShoot, HowHigh,
-        and Goose Gifts. By using our products and services you agree to these
+        and Stupid Gifts. By using our products and services you agree to these
         terms; if you access them on behalf of a company, you confirm you have
         authority to bind that company. These terms supersede any earlier
         app-specific terms previously posted on this site. Where a product has

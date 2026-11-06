@@ -5,7 +5,7 @@ import { colorcub } from "./colorcub";
 import { howhigh } from "./howhigh";
 import { faxit } from "./faxit";
 import { ereps } from "./ereps";
-import { gooseGifts } from "./goose-gifts";
+import { stupidGifts } from "./stupid-gifts";
 
 export * from "./types";
 
@@ -16,11 +16,14 @@ export const projects: Project[] = [
   howhigh,
   faxit,
   ereps,
-  gooseGifts,
+  stupidGifts,
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined =>
-  projects.find((project) => project.slug === slug);
+  projects.find(
+    (project) =>
+      project.slug === (slug === "goose-gifts" ? "stupid-gifts" : slug),
+  );
 
 const portfolioOrder = [
   "ereps",
@@ -29,7 +32,7 @@ const portfolioOrder = [
   "reshoot",
   "colorcub",
   "howhigh",
-  "goose-gifts",
+  "stupid-gifts",
 ];
 
 export const orderedProjects = projects.slice().sort((a, b) => {

@@ -1,13 +1,13 @@
 import { handleContact, type ContactEnvironment } from "../lib/contact-handler";
-import { projects } from "../data/projects";
+import { getProjectBySlug } from "../data/projects";
 
 export interface WorkerEnvironment extends ContactEnvironment {
   ASSETS: { fetch(request: Request): Promise<Response> };
   DEPLOYMENT_ENV: "preview" | "production";
 }
 
-const projectSlugs = new Set(projects.map((project) => project.slug));
-const legalRedirects: Record<string, string> = {
+const legacyRedirects: Record<string, string> = {
+  "/goose-gifts": "/stupid-gifts",
   "/legal/privacy/faxit": "/legal/privacy",
   "/legal/terms/faxit": "/legal/terms",
 };
@@ -22,8 +22,8 @@ export async function handleWorkerRequest(
   if (url.hostname === "www.37.technology") {
     url.hostname = "37.technology";
     response = Response.redirect(url.toString(), 308);
-  } else if (legalRedirects[url.pathname.replace(/\/$/, "")]) {
-    url.pathname = legalRedirects[url.pathname.replace(/\/$/, "")];
+  } else if (legacyRedirects[url.pathname.replace(/\/$/, "")]) {
+    url.pathname = legacyRedirects[url.pathname.replace(/\/$/, "")];
     response = Response.redirect(url.toString(), 308);
   } else if (url.pathname === "/api/contact") {
     if (request.method !== "POST") {
@@ -52,8 +52,8 @@ export async function handleWorkerRequest(
         headers: { Allow: "GET, HEAD" },
       });
     } else {
-      const slug = url.searchParams.get("slug") ?? "";
-      url.pathname = `/assets/og/${projectSlugs.has(slug) ? slug : "homepage"}.png`;
+      const project = getProjectBySlug(url.searchParams.get("slug") ?? "");
+      url.pathname = `/assets/og/${project?.slug ?? "homepage"}.png`;
       url.search = "";
       response = await env.ASSETS.fetch(
         new Request(url, {

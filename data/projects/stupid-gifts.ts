@@ -1,19 +1,19 @@
 import type { Project } from "./types";
 
-export const gooseGifts: Project = {
-  slug: "goose-gifts",
-  name: "Goose Gifts",
+export const stupidGifts: Project = {
+  slug: "stupid-gifts",
+  name: "Stupid Gifts",
   category: "Funny and unusual gift catalog",
-  oneLiner: "The internet's least serious gift catalog.",
+  oneLiner: "Stupid gifts. Excellent taste.",
   description:
-    "Goose Gifts is the internet’s least serious gift catalog—a searchable collection of funny, unusual, and actually purchasable gifts for people who are hard to surprise.",
+    "Stupid Gifts is a searchable catalog of funny, unusual, and actually purchasable gifts for people who are hard to surprise.",
   problem: {
     heading: "You know the person. You don't know the gift.",
     body: "Searching a marketplace by category surfaces the same generic bestsellers everyone else already bought. Gift-guide listicles recycle the same twenty items with affiliate padding. So you stall, and they get another gift card.",
   },
   solution: {
     heading: "A catalog built for weird, specific people",
-    body: "Goose Gifts hand-picks absurd, useful, and deeply unnecessary finds and organizes them into guides for real situations — white elephant exchanges, coworker gifts, dads who want nothing. Search the catalog by describing the person, then jump straight to the product on Amazon.",
+    body: "Stupid Gifts hand-picks absurd, useful, and deeply unnecessary finds and organizes them into guides for real situations — white elephant exchanges, coworker gifts, dads who want nothing. Search the catalog by describing the person, then jump straight to the product on Amazon.",
   },
   features: [
     {
@@ -56,7 +56,7 @@ export const gooseGifts: Project = {
     },
   ],
   comparison: {
-    heading: "Goose Gifts vs. the usual gift hunt",
+    heading: "Stupid Gifts vs. the usual gift hunt",
     rows: [
       {
         alternative: "Scrolling marketplace categories",
@@ -77,11 +77,11 @@ export const gooseGifts: Project = {
   },
   faqs: [
     {
-      question: "Is Goose Gifts free to use?",
+      question: "Is Stupid Gifts free to use?",
       answer: "Yes. Browsing and searching the catalog is free and requires no account. The site earns a commission through Amazon affiliate links when you buy something.",
     },
     {
-      question: "Can I buy gifts directly on goose.gifts?",
+      question: "Can I buy gifts directly on stupid.gifts?",
       answer: "No — every item links to its listing on Amazon, where you check the current price and complete the purchase with normal Amazon shipping and returns.",
     },
     {
@@ -110,9 +110,9 @@ export const gooseGifts: Project = {
     "weird gifts that are actually useful",
   ],
   seo: {
-    title: "Goose Gifts — Funny Gift Ideas & White Elephant Finder",
+    title: "Stupid Gifts — Funny Gift Ideas & White Elephant Finder",
     description:
-      "You know the person, not the gift. Goose Gifts is a curated catalog of funny, weird, real products — gift guides and search for hard-to-shop-for people.",
+      "You know the person, not the gift. Stupid Gifts is a curated catalog of funny, weird, real products — gift guides and search for hard-to-shop-for people.",
   },
   applicationCategory: "ShoppingApplication",
   theme: {
@@ -122,11 +122,11 @@ export const gooseGifts: Project = {
   },
   tags: ["Web", "E-commerce"],
   featured: true,
-  hero: "/assets/projects/goose-gifts.png",
+  hero: "/assets/projects/stupid-gifts.svg",
   platforms: [
     {
       label: "Website",
-      url: "https://goose.gifts/",
+      url: "https://stupid.gifts/",
       kind: "website",
     },
   ],
