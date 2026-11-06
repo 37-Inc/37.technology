@@ -65,6 +65,20 @@ describe("Cloudflare routing", () => {
     expect(new URL(request.url).search).toBe("");
   });
 
+  it.each(["stupid-gifts", "goose-gifts"])(
+    "serves the current sharing image for %s links",
+    async (slug) => {
+      const env = environment();
+      await handleWorkerRequest(
+        new Request(`https://${hostname}/api/og?slug=${slug}`),
+        env,
+      );
+      const request = vi.mocked(env.ASSETS.fetch).mock.calls[0][0];
+      expect(new URL(request.url).pathname).toBe("/assets/og/stupid-gifts.png");
+      expect(new URL(request.url).search).toBe("");
+    },
+  );
+
   it("does not permit path traversal through sharing-image slugs", async () => {
     const env = environment();
     await handleWorkerRequest(
@@ -76,18 +90,22 @@ describe("Cloudflare routing", () => {
     ).toBe("/assets/og/homepage.png");
   });
 
-  it.each(["privacy", "terms"])("retains the legacy %s alias in both environments", async (policy) => {
+  it.each([
+    ["privacy", "/legal/privacy/faxit", "/legal/privacy"],
+    ["terms", "/legal/terms/faxit", "/legal/terms"],
+    ["Goose Gifts", "/goose-gifts", "/stupid-gifts"],
+  ])("retains the legacy %s alias in both environments", async (_name, source, destination) => {
     for (const mode of ["preview", "production"] as const) {
       for (const suffix of ["", "/"]) {
         for (const method of ["GET", "HEAD"]) {
           const env = environment({ DEPLOYMENT_ENV: mode });
           const response = await handleWorkerRequest(
-            new Request(`https://${hostname}/legal/${policy}/faxit${suffix}?source=store`, { method }),
+            new Request(`https://${hostname}${source}${suffix}?source=store`, { method }),
             env,
           );
           expect(response.status).toBe(308);
           expect(response.headers.get("Location")).toBe(
-            `https://${hostname}/legal/${policy}?source=store`,
+            `https://${hostname}${destination}?source=store`,
           );
           expect(response.headers.has("X-Robots-Tag")).toBe(mode === "preview");
           expect(env.ASSETS.fetch).not.toHaveBeenCalled();

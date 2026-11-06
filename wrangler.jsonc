@@ -14,6 +14,8 @@
     "not_found_handling": "404-page",
     "run_worker_first": [
       "/api/*",
+      "/goose-gifts",
+      "/goose-gifts/",
       "/legal/privacy/faxit",
       "/legal/privacy/faxit/",
       "/legal/terms/faxit",

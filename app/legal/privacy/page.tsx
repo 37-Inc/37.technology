@@ -27,7 +27,7 @@ export default function PrivacyPage() {
       <p>
         This policy applies to the 37.technology website and to the apps and
         services published by Thirty Seven, Inc., including Stitch It, Fax It,
-        ColorCub, ReShoot, HowHigh, Goose Gifts, and Quick Key (acquired
+        ColorCub, ReShoot, HowHigh, Stupid Gifts, and Quick Key (acquired
         September 2026; this policy replaces the Quick Key policy previously
         published by Design by Educators / Validated Learning Company). Where
         an app has practices
@@ -192,9 +192,9 @@ export default function PrivacyPage() {
         has no third-party trackers.
       </p>
 
-      <h2>Goose Gifts</h2>
+      <h2>Stupid Gifts</h2>
       <p>
-        Goose Gifts is a browsable catalog. It requires no account, and
+        Stupid Gifts is a browsable catalog. It requires no account, and
         product links lead to Amazon, where Amazon&apos;s own privacy policy
         applies. Links may include an affiliate tag, which tells Amazon the
         visit came from us but tells us nothing about you.

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" role="img" aria-labelledby="title">
+  <title id="title">Stupid Gifts</title>
+  <rect width="192" height="192" rx="36" fill="#fff"/>
+  <g fill="#22231f" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="600" letter-spacing="-2.5">
+    <text x="26" y="91">stupid</text>
+    <text x="26" y="140"><tspan fill="#c2410c">.</tspan>gifts</text>
+  </g>
+</svg>
