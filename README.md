@@ -38,6 +38,10 @@ stays on its newest supported 6.0.x release while
 `typescript-eslint` requires TypeScript below 6.1. Do not bypass those peer
 constraints with `--force` or `--legacy-peer-deps`.
 
+The lint parser's `minimatch` is scoped to patched version 11.0.5 in
+`overrides` for GHSA-g3hv-75wg-m249. Remove this override when
+`@typescript-eslint/typescript-estree` requires a patched version itself.
+
 Dependency install scripts are explicitly reviewed in `package.json`:
 native build helpers are approved at exact versions, and the optional `core-js`
 donation message is denied. Review new or changed scripts before updating those
