@@ -135,7 +135,7 @@ export const stitchIt: Project = {
   },
   tags: ["iOS", "macOS", "Android", "Utilities"],
   featured: true,
-  hero: "/assets/projects/stitch-it.jpg",
+  hero: "/assets/projects/stitch-it-icon.webp",
   heroMedia: {
     src: "/assets/projects/stitch-it/mac-one-clean-result.webp",
     width: 1286,
