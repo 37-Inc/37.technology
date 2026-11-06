@@ -116,6 +116,9 @@ export interface Project {
   /** Optional long-form capability callout */
   spotlight?: ProjectSpotlight;
   platforms: PlatformLink[];
+  resources?: { label: string; url: string }[];
+  /** Related editorial slug; shown only when the article is visible. */
+  newsSlug?: string;
   /** Machine-readable JSON-LD offer; price is "0" for free products */
   offer?: { price: string; description?: string };
   /** e.g. "iOS", "iOS, Android", "Web" — used in JSON-LD */

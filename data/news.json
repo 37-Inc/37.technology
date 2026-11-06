@@ -1,5 +1,81 @@
 [
   {
+    "slug": "quickkey-joins-thirty-seven",
+    "title": "QuickKey Joins Thirty Seven",
+    "summary": "A new home for a teacher-built grading tool, with rebuilt mobile apps and a practical plan for what comes next.",
+    "seoTitle": "QuickKey Joins Thirty Seven: A New Chapter for Teachers",
+    "seoDescription": "Thirty Seven acquired QuickKey in September 2026. Read about the native app relaunch, released improvements, and the next priorities for teachers.",
+    "keywords": [
+      "QuickKey acquisition",
+      "Quick Key grading app",
+      "QuickKey native apps",
+      "Thirty Seven QuickKey"
+    ],
+    "kind": "company-note",
+    "projectSlug": "quickkey",
+    "publishedLabel": "November 6, 2026",
+    "publishAt": "2026-11-06T23:20:00.000Z",
+    "status": "published",
+    "heroMedia": {
+      "src": "/assets/projects/quickkey/hero.webp",
+      "alt": "Published QuickKey iPhone scanning and iPad results artwork, with fictional classroom examples",
+      "width": 1200,
+      "height": 800
+    },
+    "shareImage": {
+      "src": "/assets/projects/quickkey/share.webp",
+      "alt": "QuickKey joins Thirty Seven, with the current rabbit icon and published native app artwork",
+      "width": 1200,
+      "height": 630
+    },
+    "highlights": [
+      {
+        "label": "Acquired",
+        "value": "September 2026"
+      },
+      {
+        "label": "Core workflow",
+        "value": "Paper to results"
+      },
+      {
+        "label": "Native app relaunch",
+        "value": "Rolling out"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When did Thirty Seven acquire QuickKey?",
+        "answer": "Thirty Seven acquired the assets behind QuickKey in September 2026. The native-app relaunch is a later milestone, not the acquisition date."
+      },
+      {
+        "question": "Have the new mobile apps been released?",
+        "answer": "The rebuilt 1.0.0 apps have begun their public iOS and Android rollouts. Additional 1.0.1 changes are in public beta; beta availability does not mean those changes have reached the production stores."
+      },
+      {
+        "question": "Where should existing teachers go?",
+        "answer": "Use quickkeyapp.com for account access, current forms, plans, and support. Returning users should sign in with their existing account in the rebuilt apps. App availability depends on the current store rollout."
+      }
+    ],
+    "sources": [
+      {
+        "label": "QuickKey website and teaching resources",
+        "url": "https://quickkeyapp.com/"
+      },
+      {
+        "label": "QuickKey on the App Store",
+        "url": "https://apps.apple.com/app/id686229501"
+      },
+      {
+        "label": "QuickKey on Google Play",
+        "url": "https://play.google.com/store/apps/details?id=com.kiteknology.quickkey"
+      },
+      {
+        "label": "QuickKey support",
+        "url": "https://quickkeyapp.com/contact-us/"
+      }
+    ]
+  },
+  {
     "slug": "stitch-it-since-2012",
     "title": "Stitch It, Since 2012",
     "summary": "Stitch It began as a focused iPhone utility for turning separate screenshots into one readable image and has kept evolving ever since.",

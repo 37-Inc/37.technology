@@ -113,7 +113,7 @@ function PortfolioMosaic() {
           <ProductTile key={project.slug} project={project} prominent />
         ))}
       </div>
-      <div className="relative mt-2.5 grid grid-cols-4 gap-2.5 sm:mt-3 sm:gap-3">
+      <div className="relative mt-2.5 grid grid-cols-3 gap-2.5 sm:mt-3 sm:grid-cols-5 sm:gap-3">
         {additionalProjects.map((project) => (
           <ProductTile key={project.slug} project={project} />
         ))}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { notFound } from "next/navigation";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { Breadcrumbs } from "@/components/landing/Breadcrumbs";
 import { ComparisonTable } from "@/components/landing/ComparisonTable";
 import { FaqList } from "@/components/landing/FaqList";
@@ -20,6 +21,7 @@ import {
 } from "@/components/landing/structured-data";
 import { projects, getProjectBySlug } from "@/data/projects";
 import { siteConfig } from "@/data/site";
+import { getNewsItemBySlug } from "@/data/news";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -92,6 +94,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     "--pa-soft": project.theme.accentSoft,
     "--pa-ink": project.theme.accentInk,
   } as CSSProperties;
+  const relatedArticle = project.newsSlug
+    ? getNewsItemBySlug(project.newsSlug)
+    : undefined;
 
   return (
     <article style={themeVars} className="space-y-16">
@@ -112,6 +117,32 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <UseCaseList useCases={project.useCases} />
       <ComparisonTable name={project.name} comparison={project.comparison} />
       <FaqList faqs={project.faqs} />
+      {project.resources?.length ? (
+        <section aria-labelledby="product-resources" className="rounded-3xl border border-hairline bg-surface p-6 sm:p-8">
+          <h2 id="product-resources" className="font-serif text-2xl leading-tight text-ink">
+            Setup, support, and the details
+          </h2>
+          <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-4 text-sm font-medium text-ink">
+            {project.resources.map((resource) => (
+              <li key={resource.url}>
+                <a href={resource.url} target="_blank" rel="noopener noreferrer" className="underline decoration-hairline underline-offset-4 hover:decoration-ink">
+                  {resource.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+      {relatedArticle ? (
+        <section className="rounded-3xl border border-hairline bg-[var(--pa-soft)] p-6 sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--pa-ink)]">From Thirty Seven</p>
+          <h2 className="mt-3 text-balance font-serif text-3xl leading-tight text-ink">{relatedArticle.title}</h2>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted">{relatedArticle.summary}</p>
+          <TrackedLink href={`/news/${relatedArticle.slug}`} eventName="news_article_open" eventProperties={{ slug: relatedArticle.slug, placement: "project_page" }} className="mt-5 inline-flex text-sm font-semibold text-ink underline decoration-current/30 underline-offset-4">
+            Read the story <span aria-hidden="true" className="ml-2">&rarr;</span>
+          </TrackedLink>
+        </section>
+      ) : null}
       <FinalCta project={project} />
     </article>
   );

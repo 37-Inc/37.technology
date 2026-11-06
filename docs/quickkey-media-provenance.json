@@ -1,0 +1,83 @@
+{
+  "reviewedOn": "2026-11-06",
+  "store": "https://apps.apple.com/app/id686229501",
+  "artworkSet": "v1-approved; current public 1.0.0 store screenshot names independently matched November 6",
+  "secondaryHeroSource": {
+    "source": "release-prep-20261031/v1-approved/exports/ipad/en-US/05-plan-the-next-lesson.png",
+    "sha256": "5d5aed74890f7d547ef3be84ee02c58bd3ee3d06018df323ec14fe0a8e1c0feb"
+  },
+  "records": [
+    {
+      "source": "mobile/ios/QuickKey/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg",
+      "sourceSha256": "8ea156e9a65f715fa16424705e4d6dfc8714be78830ba151a7f7d289fdbe5b3a",
+      "file": "public/assets/projects/quickkey-icon.webp",
+      "sha256": "5ed6cd7a30f5cba34286e59958cd58bd7ee87aaf158713a8ec3e6249891d19ef",
+      "width": 192,
+      "height": 192,
+      "note": "Resize-only derivative of the existing native rabbit icon."
+    },
+    {
+      "source": "release-prep-20261031/v1-approved/exports/iphone/en-US/02-your-answer-key.png",
+      "sourceSha256": "0f650950d84f41fc01480611c6b95bb712f8fd4485dbd52e2727723832b8cc2f",
+      "file": "public/assets/projects/quickkey/answer-key.webp",
+      "sha256": "72b80a4d1949537f349a96ae06164605dd643bab3790a7f08a86e158b1dcbe93",
+      "width": 442,
+      "height": 960,
+      "note": "Published iPhone store artwork, fictional classroom examples; complete image retained."
+    },
+    {
+      "source": "release-prep-20261031/v1-approved/exports/iphone/en-US/03-ready-to-print.png",
+      "sourceSha256": "3d4636643f6dcda74b78330482e5526a83ce267ed697f4450034a2f816e8f920",
+      "file": "public/assets/projects/quickkey/print.webp",
+      "sha256": "0cfabb7739dfbdb6577228e7c50fa08a144760d431195151bbe7aa64b5764f2a",
+      "width": 442,
+      "height": 960,
+      "note": "Published iPhone store artwork, fictional classroom examples; complete image retained."
+    },
+    {
+      "source": "release-prep-20261031/v1-approved/exports/iphone/en-US/01-paper-to-results.png",
+      "sourceSha256": "09a1240308284041185ba616849007e58aeb54259145b44840418036363e78a9",
+      "file": "public/assets/projects/quickkey/scan.webp",
+      "sha256": "73f59ddb5e174cbd2d3dc0fb3aad59093296fb52f65ed37c8a1a11f2649c35d0",
+      "width": 442,
+      "height": 960,
+      "note": "Published iPhone store artwork, fictional classroom examples; complete image retained."
+    },
+    {
+      "source": "release-prep-20261031/v1-approved/exports/iphone/en-US/04-review-with-confidence.png",
+      "sourceSha256": "2635c973e18f18acbef9aa4161452512f4aed5dcc916332e5dd7a03e5347e824",
+      "file": "public/assets/projects/quickkey/review.webp",
+      "sha256": "beea828a607fdcaffc4dfabbb8ded53cec7c18c5c81ff2ce31a74cdb4e7b82dc",
+      "width": 442,
+      "height": 960,
+      "note": "Published iPhone store artwork, fictional classroom examples; complete image retained."
+    },
+    {
+      "source": "release-prep-20261031/v1-approved/exports/iphone/en-US/05-plan-the-next-lesson.png",
+      "sourceSha256": "3804f9190ff0554515e901aca208977e33b560c55e6ad4b776f134cf12d4e718",
+      "file": "public/assets/projects/quickkey/results.webp",
+      "sha256": "50ba72a252e3c87fe9fdf1af5076f7113e6cbd68debd11ba2d437855a5bc2052",
+      "width": 442,
+      "height": 960,
+      "note": "Published iPhone store artwork, fictional classroom examples; complete image retained."
+    },
+    {
+      "source": "release-prep-20261031/v1-approved/exports/iphone/en-US/01-paper-to-results.png",
+      "sourceSha256": "09a1240308284041185ba616849007e58aeb54259145b44840418036363e78a9",
+      "file": "public/assets/projects/quickkey/hero.webp",
+      "sha256": "ab0ef53795bb7327b34441eeb9a8d2619d732d03185d177407ae235428201e21",
+      "width": 1200,
+      "height": 800,
+      "note": "Full published iPhone scanning and iPad results posters, resized onto a neutral brand-tint background without altering app UI."
+    },
+    {
+      "source": "release-prep-20261031/v1-approved/exports/iphone/en-US/01-paper-to-results.png",
+      "sourceSha256": "09a1240308284041185ba616849007e58aeb54259145b44840418036363e78a9",
+      "file": "public/assets/projects/quickkey/share.webp",
+      "sha256": "bad023805d92ddb5279be2ec27f948bcec7c2a16b1934d2aa839fc843283f5ad",
+      "width": 1200,
+      "height": 630,
+      "note": "Announcement composition; full published phone artwork retained, no fabricated app screen."
+    }
+  ]
+}

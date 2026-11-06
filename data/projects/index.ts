@@ -6,6 +6,7 @@ import { howhigh } from "./howhigh";
 import { faxit } from "./faxit";
 import { ereps } from "./ereps";
 import { stupidGifts } from "./stupid-gifts";
+import { quickkey } from "./quickkey";
 
 export * from "./types";
 
@@ -17,6 +18,7 @@ export const projects: Project[] = [
   faxit,
   ereps,
   stupidGifts,
+  quickkey,
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined =>
@@ -33,6 +35,7 @@ const portfolioOrder = [
   "colorcub",
   "howhigh",
   "stupid-gifts",
+  "quickkey",
 ];
 
 export const orderedProjects = projects.slice().sort((a, b) => {
