@@ -3,8 +3,8 @@
   "store": "https://apps.apple.com/app/id686229501",
   "artworkSet": "v1-approved; current public 1.0.0 store screenshot names independently matched November 6",
   "secondaryHeroSource": {
-    "source": "release-prep-20261031/v1-approved/exports/ipad/en-US/05-plan-the-next-lesson.png",
-    "sha256": "5d5aed74890f7d547ef3be84ee02c58bd3ee3d06018df323ec14fe0a8e1c0feb"
+    "source": "release-prep-20261031/v1-approved/exports/iphone/en-US/04-review-with-confidence.png",
+    "sha256": "2635c973e18f18acbef9aa4161452512f4aed5dcc916332e5dd7a03e5347e824"
   },
   "records": [
     {
@@ -65,10 +65,10 @@
       "source": "release-prep-20261031/v1-approved/exports/iphone/en-US/01-paper-to-results.png",
       "sourceSha256": "09a1240308284041185ba616849007e58aeb54259145b44840418036363e78a9",
       "file": "public/assets/projects/quickkey/hero.webp",
-      "sha256": "ab0ef53795bb7327b34441eeb9a8d2619d732d03185d177407ae235428201e21",
+      "sha256": "3540d3491dd7e619c0562c090859b38b769844a1f295093e343dfe07f9b460d3",
       "width": 1200,
       "height": 800,
-      "note": "Full published iPhone scanning and iPad results posters, resized onto a neutral brand-tint background without altering app UI."
+      "note": "Full published iPhone scanning and answer-review posters, resized onto a neutral brand-tint background without altering app UI."
     },
     {
       "source": "release-prep-20261031/v1-approved/exports/iphone/en-US/01-paper-to-results.png",

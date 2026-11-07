@@ -73,7 +73,7 @@ describe("QuickKey corporate publication", () => {
     expect(new Set(quickkey.screenshots!.map((image) => image.width))).toEqual(new Set([442]));
   });
 
-  it("keeps acquisition, released apps, beta changes and future work distinct", () => {
+  it("keeps release chronology and teacher priorities without beta-update detail", () => {
     const article = getNewsItemBySlug(quickkey.newsSlug!)!;
     expect(article.status).toBe("published");
     expect(article.publishedLabel).toBe("November 6, 2026");
@@ -82,7 +82,10 @@ describe("QuickKey corporate publication", () => {
     expect(article.eventAt).toBeUndefined();
     expect(article.seoDescription!.length).toBeLessThanOrEqual(155);
     const body = readFileSync(`content/news/${article.slug}.md`, "utf8");
-    for (const text of ["September 2026", "November 3, 2026", "controlled production rollout", "1.0.1", "public beta", "What comes next", "fictional"]) expect(body).toContain(text);
+    for (const text of ["September 2026", "November 3, 2026", "controlled production rollout", "What comes next", "fictional", "keeping QuickKey stable", "modernizing the mobile apps and web app", "listening to teachers"]) expect(body).toContain(text);
+    expect(body + JSON.stringify(article)).not.toMatch(/What is still being tested|1\.0\.1|public beta/i);
+    expect(article.heroMedia?.alt).toContain("answer-review");
+    expect(article.heroMedia?.alt).not.toContain("iPad");
     expect(body).not.toMatch(/\$\d|purchase price|seller name|guaranteed|all bugs/i);
     expect(body).toContain("[QuickKey product page](/quickkey)");
     expect(readFileSync("public/app-ads.txt", "utf8").trim().split("\n").length).toBeGreaterThan(200);

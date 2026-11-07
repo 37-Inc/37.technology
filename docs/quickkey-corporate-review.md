@@ -25,8 +25,6 @@ second publishing path. Publication date is November 6, not the acquisition date
   app `686229501`; seller Thirty Seven Inc., languages EN/ES.
 - Android: 1.0.0 controlled production rollout, verified in the existing release
   receipts and `roadmap-i37s.39.4.1`. No rollout percentage is advertised.
-- 1.0.1 is a separate public beta, not a production launch. Current release Beads
-  distinguish it from the public 1.0.0 apps.
 - Published workflows use supported QuickKey forms and teacher review. No perfect
   recognition, arbitrary-form, fully-offline, adoption, rating or compliance claims.
 - English/Spanish mobile apps and homepage/signup are shipped. Supporting web
@@ -42,7 +40,9 @@ The native rabbit icon and approved `v1-approved` artwork match the public Apple
 listing. No new app captures or unpublished finishing-batch images were used.
 
 The iPhone gallery follows answer key, printing, scanning, review and results.
-The hero deliberately pairs complete iPhone scanning and iPad reporting posters.
+Following owner review, the hero pairs complete iPhone scanning and answer-review
+posters instead of the low-detail iPad report. The article omits beta-update detail
+and keeps its next priorities focused on stability, monitoring and modernization.
 Their classroom examples are fictional. Icon is 192px; screenshots are at most
 960px tall; hero is 1200x800 and sharing image is 1200x630.
 

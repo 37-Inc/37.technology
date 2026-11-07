@@ -18,7 +18,7 @@
     "status": "published",
     "heroMedia": {
       "src": "/assets/projects/quickkey/hero.webp",
-      "alt": "Published QuickKey iPhone scanning and iPad results artwork, with fictional classroom examples",
+      "alt": "Published QuickKey iPhone scanning and answer-review artwork, with fictional classroom examples",
       "width": 1200,
       "height": 800
     },
@@ -49,7 +49,7 @@
       },
       {
         "question": "Have the new mobile apps been released?",
-        "answer": "The rebuilt 1.0.0 apps have begun their public iOS and Android rollouts. Additional 1.0.1 changes are in public beta; beta availability does not mean those changes have reached the production stores."
+        "answer": "The rebuilt apps have begun their public iOS and Android rollouts. Check the App Store or Google Play for current availability."
       },
       {
         "question": "Where should existing teachers go?",
