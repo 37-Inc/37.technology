@@ -104,7 +104,7 @@ export const quickkey: Project = {
   hero: "/assets/projects/quickkey-icon.webp",
   heroMedia: {
     src: "/assets/projects/quickkey/hero.webp",
-    alt: "Published QuickKey artwork showing paper scanning on iPhone and class results on iPad, using fictional classroom examples",
+    alt: "Published QuickKey artwork showing paper scanning and answer review on iPhone, using fictional classroom examples",
     width: 1200,
     height: 800,
   },

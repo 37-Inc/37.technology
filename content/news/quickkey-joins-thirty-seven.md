@@ -22,15 +22,9 @@ We have also refreshed the QuickKey website, added a Spanish homepage and signup
 
 The artwork on this page comes from the published native-app store listing and uses fictional classroom examples.
 
-## What is still being tested
-
-A further 1.0.1 update is in public beta on both platforms. Those changes are still being tested, rather than being part of the production-store release.
-
-We are continuing to test scanning and review on real devices and with representative teacher workflows. Additional account and billing-screen improvements are also in development.
-
 ## What comes next
 
-Our priorities are practical: make the scan-to-review path clearer, reduce avoidable setup and support friction, improve accessibility, and keep the English and Spanish experience consistent. Supporting website journeys and guides still have translation work ahead of them.
+Our first priorities are keeping QuickKey stable, monitoring how it performs, and modernizing the mobile apps and web app.
 
 We will keep listening to teachers, fixing the problems that interrupt their work, and improving the product in measured steps.
 
